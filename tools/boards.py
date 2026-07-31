@@ -294,6 +294,67 @@ BOARDS['c3lcd'] = dict(
 )
 
 
+# ── Seeed XIAO ESP32-S3 ───────────────────────────────────────────────────
+# Belegung abgelesen aus den beiden Seeed-Pinout-Grafiken (Ober- und
+# Unterseite). Achtung: NICHT identisch mit dem XIAO ESP32-C3.
+BOARDS['xiaos3'] = dict(
+    title='XIAO ESP32-S3',
+    subtitle='8 MB Flash + 8 MB PSRAM · USB-C · alle D-Pads sind ADC1, Touch und RTC',
+    board_w=150,
+    note='Andere GPIO-Nummern als der XIAO C3 — gleiche Pads, verschobene Zuordnung.',
+    left=[
+        [('name', 'D0'), ('gpio', 'GPIO1'), ('adc', 'A0')],
+        [('name', 'D1'), ('gpio', 'GPIO2'), ('adc', 'A1')],
+        [('name', 'D2'), ('gpio', 'GPIO3'), ('adc', 'A2')],
+        [('name', 'D3'), ('gpio', 'GPIO4'), ('adc', 'A3')],
+        [('name', 'D4'), ('gpio', 'GPIO5'), ('adc', 'A4'), ('i2c', 'SDA')],
+        [('name', 'D5'), ('gpio', 'GPIO6'), ('adc', 'A5'), ('i2c', 'SCL')],
+        [('name', 'D6'), ('gpio', 'GPIO43'), ('uart', 'TX')],
+    ],
+    right=[
+        [('power', '5V / VBUS')],
+        [('gnd', 'GND')],
+        [('power', '3V3-OUT')],
+        [('name', 'D10'), ('gpio', 'GPIO9'), ('adc', 'A10'), ('spi', 'MOSI')],
+        [('name', 'D9'), ('gpio', 'GPIO8'), ('adc', 'A9'), ('spi', 'MISO')],
+        [('name', 'D8'), ('gpio', 'GPIO7'), ('adc', 'A8'), ('spi', 'SCK')],
+        [('name', 'D7'), ('gpio', 'GPIO44'), ('uart', 'RX')],
+    ],
+)
+
+# ── XIAO ESP32-S3 Sense — Aufsatzplatine ──────────────────────────────────
+# Kamera, Mikrofon und microSD des Sense-Aufsatzes. Werte aus der Seeed-
+# Dokumentation, nicht aus einem eigenen Repo belegt.
+BOARDS['xiaos3sense'] = dict(
+    title='XIAO ESP32-S3 Sense · Aufsatz',
+    subtitle='OV2640 + PDM-Mikrofon + microSD · Belegung laut Seeed-Dokumentation',
+    board_w=175,
+    note='Der Aufsatz belegt GPIOs, die am nackten S3 gar nicht herausgefuehrt sind.',
+    left=[
+        [('periph', 'CAM XCLK'), ('gpio', 'GPIO10')],
+        [('periph', 'CAM SIOD'), ('gpio', 'GPIO40')],
+        [('periph', 'CAM SIOC'), ('gpio', 'GPIO39')],
+        [('periph', 'CAM VSYNC'), ('gpio', 'GPIO38')],
+        [('periph', 'CAM HREF'), ('gpio', 'GPIO47')],
+        [('periph', 'CAM PCLK'), ('gpio', 'GPIO13')],
+        [('periph', 'CAM Y9'), ('gpio', 'GPIO48')],
+        [('periph', 'CAM Y8'), ('gpio', 'GPIO11')],
+        [('periph', 'CAM Y7'), ('gpio', 'GPIO12')],
+    ],
+    right=[
+        [('periph', 'CAM Y6'), ('gpio', 'GPIO14')],
+        [('periph', 'CAM Y5'), ('gpio', 'GPIO16')],
+        [('periph', 'CAM Y4'), ('gpio', 'GPIO18')],
+        [('periph', 'CAM Y3'), ('gpio', 'GPIO17')],
+        [('periph', 'CAM Y2'), ('gpio', 'GPIO15')],
+        [('periph', 'Mikrofon CLK'), ('gpio', 'GPIO42')],
+        [('periph', 'Mikrofon DATA'), ('gpio', 'GPIO41')],
+        [('periph', 'microSD CS'), ('gpio', 'GPIO21')],
+        [('system', 'SD nutzt SPI'), ('spi', 'D8 / D9 / D10')],
+    ],
+)
+
+
 if __name__ == '__main__':
     import json, sys
     out = {k: render(**v) for k, v in BOARDS.items()}

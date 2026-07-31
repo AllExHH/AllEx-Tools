@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Acht ESP-Boards im Bestand mit Pinout-Grafiken, Minimalbeschaltung und Software-Katalog.">
+<meta name="description" content="Zehn ESP-Boards im Bestand mit Pinout-Grafiken, Minimalbeschaltung und Software-Katalog.">
 <meta name="color-scheme" content="light dark">
 <title>ESP-Hardware-Referenz — AllExTechnik</title>
 <style>
@@ -424,7 +424,6 @@
   .subsec { scroll-margin-top: 1.5rem; }
   .subsec h3 { color: var(--copper); font-size: var(--step-0); letter-spacing: 0.04em; text-transform: uppercase; }
 
-  /* Verweis zwischen den beiden Seiten */
   .pagelink { display: block; border: 1px solid var(--copper); border-left-width: 3px;
               border-radius: 3px; background: var(--copper-wash); padding: 1rem 1.25rem;
               text-decoration: none; color: var(--ink); }
@@ -438,7 +437,7 @@
   <div class="masthead-inner">
     <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
     <h1>ESP-Module</h1>
-    <p class="lede">Acht Boards im Bestand, mit Pinouts und Minimalbeschaltung. Dahinter, klar getrennt, die Boards, für die deine Projekte ursprünglich geschrieben wurden — und die Software-Ebene darüber: 28 Repos, vier Toolchains.</p>
+    <p class="lede">Zehn Boards im Bestand, mit Pinouts und Minimalbeschaltung. Dahinter, klar getrennt, die Boards, für die deine Projekte ursprünglich geschrieben wurden — und die Software-Ebene darüber: 28 Repos, vier Toolchains.</p>
     <div class="masthead-meta">
       <span>Stand: 31.07.2026</span>
       <span>Bestand vom Besitzer bestätigt</span>
@@ -471,6 +470,8 @@
     </div>
     <div class="rail-group">
       <div class="rail-title">Bestand · S3</div>
+      <a href="#xiaos3">XIAO ESP32-S3</a>
+      <a href="#xiaos3sense">XIAO S3 Sense</a>
       <a href="#s3devkit">S3-DevKitC-1 N16R8</a>
       <a href="#freenove">Freenove S3 CAM</a>
     </div>
@@ -517,7 +518,7 @@
             </tr>
             <tr>
               <td class="gpio">ESP32-S3</td><td>2× 240 MHz</td><td>USB-OTG + CDC</td><td>WLAN + BLE 5</td><td>bis 8 MB oktal</td>
-              <td>S3-DevKitC N16R8 · Freenove CAM</td>
+              <td>XIAO S3 · S3 Sense · S3-DevKitC N16R8 · Freenove CAM</td>
             </tr>
           </tbody>
         </table>
@@ -543,10 +544,10 @@
             <tr><th scope="row">pov-esp32</th><td>ESP32 generisch, <strong>nur APA102</strong></td><td class="hit">ja — DevKitC</td></tr>
             <tr><th scope="row">squeezelite-esp32</th><td>ESP32 mit BT Classic</td><td class="hit">ja — DevKitC</td></tr>
             <tr><th scope="row">SuperGreenOS</th><td>ESP32</td><td class="hit">ja — DevKitC</td></tr>
-            <tr><th scope="row">ESP32-BLE-Keyboard</th><td>ESP32 / C3 / S3</td><td class="hit">ja — DevKitC, XIAO C3, S3-DevKit</td></tr>
+            <tr><th scope="row">ESP32-BLE-Keyboard</th><td>ESP32 / C3 / S3</td><td class="hit">ja — auch als <strong>USB-HID</strong> auf XIAO S3</td></tr>
             <tr><th scope="row">LVGL / CYD-Demos</th><td class="pin">esp32dev</td><td class="warnrow">teilweise — Repo ist für die <strong>kapazitive</strong> Variante, du hast die resistive</td></tr>
             <tr><th scope="row">Launcher</th><td>M5Stack, CYD, Marauder</td><td class="hit">ja — über die CYD-Schiene</td></tr>
-            <tr><th scope="row">esp32-cam-webserver</th><td>AI-Thinker ESP32-CAM</td><td class="warnrow">mit Portierung — du hast die Freenove-S3-Variante</td></tr>
+            <tr><th scope="row">esp32-cam-webserver</th><td>AI-Thinker ESP32-CAM</td><td class="hit">ja — Freenove S3 oder XIAO S3 Sense, je nach Portierung</td></tr>
             <tr><th scope="row">ESP32-Bus-Pirate</th><td class="pin">m5stack-stamps3 · s3-devkitc1-n16r8</td><td class="hit">ja — über das N16R8-Target</td></tr>
             <tr><th scope="row">SmartPoi</th><td class="pin">firebeetle2_esp32s3 · beetle_esp32c3</td><td class="miss">nein — weder Geräte noch Platinen</td></tr>
             <tr><th scope="row">FluidDial</th><td class="pin">m5stack-stamps3 (M5Dial)</td><td class="miss">nein — M5Dial fehlt; CYD-Target nur resistiv-untypisch</td></tr>
@@ -1482,7 +1483,282 @@
     <!-- ══════════ BESTAND · S3 ══════════ -->
     <section id="bs3">
       <h2><span class="num">06</span> Bestand · ESP32-S3</h2>
-      <p class="section-note">Deine beiden einzigen Boards mit USB-OTG. Alles, was HID oder Kamera braucht, landet hier.</p>
+      <p class="section-note">Vier Boards, alle mit USB-OTG. Alles, was HID oder Kamera braucht, landet hier — und seit dem XIAO S3 auch alles, was klein bleiben soll.</p>
+
+      <article class="board" id="xiaos3">
+        <div class="board-head">
+          <h3>Seeed XIAO ESP32-S3</h3>
+          <div class="chips"><span class="chip">USB-HID möglich</span><span class="chip">BLE-Keyboard</span></div>
+          <div class="spec">ESP32-S3R8 · 8 MB Flash + 8 MB PSRAM · USB-C · u.FL</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><svg viewBox="0 0 652 357" role="img" aria-label="Pinout XIAO ESP32-S3" xmlns="http://www.w3.org/2000/svg">
+<text x="12" y="20" font-size="14" font-weight="700" font-family="var(--font-display)" fill="var(--ink)">XIAO ESP32-S3</text>
+<text x="12" y="36" font-size="10.5" font-family="var(--font-display)" fill="var(--ink-3)">8 MB Flash + 8 MB PSRAM · USB-C · alle D-Pads sind ADC1, Touch und RTC</text>
+<rect x="237" y="46" width="150" height="227" rx="9" fill="#1b2124" stroke="#2f383c"/>
+<circle cx="244" cy="69" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="69" r="2.1" fill="#1b2124"/>
+<rect x="67" y="58" width="38" height="22" rx="3" fill="#7a5843"/><text x="86" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D0</text>
+<rect x="118" y="58" width="48" height="22" rx="3" fill="#4f9243"/><text x="142" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO1</text>
+<rect x="173" y="58" width="38" height="22" rx="3" fill="#cf8524"/><text x="192" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A0</text>
+<line x1="211" y1="69" x2="238" y2="69" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="98" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="98" r="2.1" fill="#1b2124"/>
+<rect x="67" y="87" width="38" height="22" rx="3" fill="#7a5843"/><text x="86" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D1</text>
+<rect x="118" y="87" width="48" height="22" rx="3" fill="#4f9243"/><text x="142" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO2</text>
+<rect x="173" y="87" width="38" height="22" rx="3" fill="#cf8524"/><text x="192" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A1</text>
+<line x1="211" y1="98" x2="238" y2="98" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="127" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="127" r="2.1" fill="#1b2124"/>
+<rect x="67" y="116" width="38" height="22" rx="3" fill="#7a5843"/><text x="86" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D2</text>
+<rect x="118" y="116" width="48" height="22" rx="3" fill="#4f9243"/><text x="142" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO3</text>
+<rect x="173" y="116" width="38" height="22" rx="3" fill="#cf8524"/><text x="192" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A2</text>
+<line x1="211" y1="127" x2="238" y2="127" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="156" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="156" r="2.1" fill="#1b2124"/>
+<rect x="67" y="145" width="38" height="22" rx="3" fill="#7a5843"/><text x="86" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D3</text>
+<rect x="118" y="145" width="48" height="22" rx="3" fill="#4f9243"/><text x="142" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO4</text>
+<rect x="173" y="145" width="38" height="22" rx="3" fill="#cf8524"/><text x="192" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A3</text>
+<line x1="211" y1="156" x2="238" y2="156" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="185" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="185" r="2.1" fill="#1b2124"/>
+<rect x="12" y="174" width="38" height="22" rx="3" fill="#7a5843"/><text x="31" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D4</text>
+<rect x="57" y="174" width="48" height="22" rx="3" fill="#4f9243"/><text x="81" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO5</text>
+<rect x="128" y="174" width="38" height="22" rx="3" fill="#cf8524"/><text x="147" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A4</text>
+<rect x="173" y="174" width="38" height="22" rx="3" fill="#2b8fc4"/><text x="192" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SDA</text>
+<line x1="211" y1="185" x2="238" y2="185" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="214" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="214" r="2.1" fill="#1b2124"/>
+<rect x="12" y="203" width="38" height="22" rx="3" fill="#7a5843"/><text x="31" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D5</text>
+<rect x="57" y="203" width="48" height="22" rx="3" fill="#4f9243"/><text x="81" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO6</text>
+<rect x="128" y="203" width="38" height="22" rx="3" fill="#cf8524"/><text x="147" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A5</text>
+<rect x="173" y="203" width="38" height="22" rx="3" fill="#2b8fc4"/><text x="192" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SCL</text>
+<line x1="211" y1="214" x2="238" y2="214" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="244" cy="243" r="4.6" fill="#c9922f"/>
+<circle cx="244" cy="243" r="2.1" fill="#1b2124"/>
+<rect x="67" y="232" width="38" height="22" rx="3" fill="#7a5843"/><text x="86" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D6</text>
+<rect x="112" y="232" width="54" height="22" rx="3" fill="#4f9243"/><text x="139" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO43</text>
+<rect x="173" y="232" width="38" height="22" rx="3" fill="#158b7c"/><text x="192" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">TX</text>
+<line x1="211" y1="243" x2="238" y2="243" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="69" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="69" r="2.1" fill="#1b2124"/>
+<rect x="413" y="58" width="73" height="22" rx="3" fill="#c0392b"/><text x="450" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">5V / VBUS</text>
+<line x1="386" y1="69" x2="413" y2="69" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="98" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="98" r="2.1" fill="#1b2124"/>
+<rect x="413" y="87" width="38" height="22" rx="3" fill="#33393d"/><text x="432" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GND</text>
+<line x1="386" y1="98" x2="413" y2="98" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="127" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="127" r="2.1" fill="#1b2124"/>
+<rect x="413" y="116" width="60" height="22" rx="3" fill="#c0392b"/><text x="443" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">3V3-OUT</text>
+<line x1="386" y1="127" x2="413" y2="127" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="156" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="156" r="2.1" fill="#1b2124"/>
+<rect x="413" y="145" width="38" height="22" rx="3" fill="#7a5843"/><text x="432" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D10</text>
+<rect x="493" y="145" width="48" height="22" rx="3" fill="#4f9243"/><text x="517" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO9</text>
+<rect x="554" y="145" width="38" height="22" rx="3" fill="#cf8524"/><text x="573" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A10</text>
+<rect x="599" y="145" width="41" height="22" rx="3" fill="#8e56a8"/><text x="620" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">MOSI</text>
+<line x1="386" y1="156" x2="413" y2="156" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="185" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="185" r="2.1" fill="#1b2124"/>
+<rect x="413" y="174" width="38" height="22" rx="3" fill="#7a5843"/><text x="432" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D9</text>
+<rect x="493" y="174" width="48" height="22" rx="3" fill="#4f9243"/><text x="517" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO8</text>
+<rect x="554" y="174" width="38" height="22" rx="3" fill="#cf8524"/><text x="573" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A9</text>
+<rect x="599" y="174" width="41" height="22" rx="3" fill="#8e56a8"/><text x="620" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">MISO</text>
+<line x1="386" y1="185" x2="413" y2="185" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="214" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="214" r="2.1" fill="#1b2124"/>
+<rect x="413" y="203" width="38" height="22" rx="3" fill="#7a5843"/><text x="432" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D8</text>
+<rect x="493" y="203" width="48" height="22" rx="3" fill="#4f9243"/><text x="517" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO7</text>
+<rect x="554" y="203" width="38" height="22" rx="3" fill="#cf8524"/><text x="573" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">A8</text>
+<rect x="599" y="203" width="38" height="22" rx="3" fill="#8e56a8"/><text x="618" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SCK</text>
+<line x1="386" y1="214" x2="413" y2="214" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="380" cy="243" r="4.6" fill="#c9922f"/>
+<circle cx="380" cy="243" r="2.1" fill="#1b2124"/>
+<rect x="413" y="232" width="38" height="22" rx="3" fill="#7a5843"/><text x="432" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D7</text>
+<rect x="493" y="232" width="54" height="22" rx="3" fill="#4f9243"/><text x="520" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO44</text>
+<rect x="554" y="232" width="38" height="22" rx="3" fill="#158b7c"/><text x="573" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">RX</text>
+<line x1="386" y1="243" x2="413" y2="243" stroke="var(--rule)" stroke-width="1"/>
+<text x="312" y="160" text-anchor="middle" fill="#8b979b" font-size="10.5" font-family="var(--font-display)" font-weight="600">XIAO ESP32-S3</text>
+<rect x="12" y="293" width="48" height="22" rx="3" fill="#c0392b"/><text x="36" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">POWER</text>
+<rect x="67" y="293" width="38" height="22" rx="3" fill="#33393d"/><text x="86" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GND</text>
+<rect x="112" y="293" width="41" height="22" rx="3" fill="#4f9243"/><text x="132" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO</text>
+<rect x="160" y="293" width="38" height="22" rx="3" fill="#cf8524"/><text x="179" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">ADC</text>
+<rect x="205" y="293" width="67" height="22" rx="3" fill="#7a5843"/><text x="238" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">PIN NAME</text>
+<rect x="279" y="293" width="38" height="22" rx="3" fill="#8e56a8"/><text x="298" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SPI</text>
+<rect x="324" y="293" width="41" height="22" rx="3" fill="#158b7c"/><text x="344" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">UART</text>
+<rect x="372" y="293" width="38" height="22" rx="3" fill="#2b8fc4"/><text x="391" y="308" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">I2C</text>
+<text x="12" y="335" font-size="10.5" font-family="var(--font-display)" fill="var(--ink-3)">Andere GPIO-Nummern als der XIAO C3 — gleiche Pads, verschobene Zuordnung.</text>
+</svg></div>
+
+
+          <div class="note danger">
+            <p><strong>Die Falle, wenn man C3 und S3 nebeneinander hat.</strong> Beide XIAO haben dieselben Pads mit denselben Aufdrucken — aber andere GPIO-Nummern dahinter. <code>D0</code> ist am C3 <code>GPIO2</code>, am S3 <code>GPIO1</code>. Code, der GPIO-Nummern hart verdrahtet, läuft auf dem falschen Board still auf den falschen Pins.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Gleiches Pad, andere Nummer</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Pad</th><th>XIAO C3</th><th>XIAO S3</th><th>Pad</th><th>XIAO C3</th><th>XIAO S3</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">D0</td><td class="gpio">GPIO2</td><td class="gpio">GPIO1</td><td class="pin">D6</td><td class="gpio">GPIO21</td><td class="gpio">GPIO43</td></tr>
+                  <tr><td class="pin">D1</td><td class="gpio">GPIO3</td><td class="gpio">GPIO2</td><td class="pin">D7</td><td class="gpio">GPIO20</td><td class="gpio">GPIO44</td></tr>
+                  <tr><td class="pin">D2</td><td class="gpio">GPIO4</td><td class="gpio">GPIO3</td><td class="pin">D8</td><td class="gpio">GPIO8</td><td class="gpio">GPIO7</td></tr>
+                  <tr><td class="pin">D3</td><td class="gpio">GPIO5</td><td class="gpio">GPIO4</td><td class="pin">D9</td><td class="gpio">GPIO9</td><td class="gpio">GPIO8</td></tr>
+                  <tr><td class="pin">D4</td><td class="gpio">GPIO6</td><td class="gpio">GPIO5</td><td class="pin">D10</td><td class="gpio">GPIO10</td><td class="gpio">GPIO9</td></tr>
+                  <tr><td class="pin">D5</td><td class="gpio">GPIO7</td><td class="gpio">GPIO6</td><td class="pin">Boot</td><td class="gpio">GPIO9 (= D9)</td><td class="gpio">GPIO0 (eigener Pad)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="note good">
+            <p><strong>Was der S3 kann, was der C3 nicht kann.</strong> USB-OTG, also echtes USB-HID — das Board meldet sich als Tastatur oder Maus am Rechner an. Dazu 8 MB PSRAM, Kamera- und LCD-Peripherie. Und der Boot-Taster sitzt auf einem eigenen Pad (<code>GPIO0</code>) statt auf <code>D9</code>, der damit frei bleibt.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Nicht auf den Pads</div>
+            <ul>
+              <li><code>GPIO21</code> — User-LED, aktiv LOW</li>
+              <li><code>GPIO0</code> — Boot-Taster</li>
+              <li><code>BAT+</code> / <code>BAT−</code> — Akkupads auf der Unterseite, Laderegler an Bord</li>
+              <li><code>MTDO / MTDI / MTCK / MTMS</code> — JTAG auf der Unterseite</li>
+              <li><code>LNA_IN</code> — Umschaltung auf die u.FL-Antenne</li>
+            </ul>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Der IR-Mate-Aufsatz passt mechanisch, aber nicht per Nummer.</strong> Er sitzt auf denselben Pads — deine IR-MATE-Firmware müsste für den S3 also nach <em>Pad-Bezeichnung</em> umgeschrieben werden, nicht nach GPIO-Nummer: IR-Sender D1 wäre dort <code>GPIO2</code> statt <code>GPIO3</code>, der Empfänger D2 <code>GPIO3</code> statt <code>GPIO4</code>. Der Reset-Taster auf D9 verliert seine Doppelrolle, weil Boot beim S3 auf einem eigenen Pad liegt.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="xiaos3sense">
+        <div class="board-head">
+          <h3>Seeed XIAO ESP32-S3 Sense</h3>
+          <div class="chips"><span class="chip">cam-webserver</span></div>
+          <div class="spec">S3 + Aufsatz: OV2640 · PDM-Mikrofon · microSD</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><svg viewBox="0 0 590 415" role="img" aria-label="Pinout XIAO ESP32-S3 Sense · Aufsatz" xmlns="http://www.w3.org/2000/svg">
+<text x="12" y="20" font-size="14" font-weight="700" font-family="var(--font-display)" fill="var(--ink)">XIAO ESP32-S3 Sense · Aufsatz</text>
+<text x="12" y="36" font-size="10.5" font-family="var(--font-display)" fill="var(--ink-3)">OV2640 + PDM-Mikrofon + microSD · Belegung laut Seeed-Dokumentation</text>
+<rect x="172" y="46" width="175" height="285" rx="9" fill="#1b2124" stroke="#2f383c"/>
+<circle cx="179" cy="69" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="69" r="2.1" fill="#1b2124"/>
+<rect x="18" y="58" width="67" height="22" rx="3" fill="#1a5468"/><text x="52" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM XCLK</text>
+<rect x="92" y="58" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO10</text>
+<line x1="146" y1="69" x2="173" y2="69" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="98" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="98" r="2.1" fill="#1b2124"/>
+<rect x="18" y="87" width="67" height="22" rx="3" fill="#1a5468"/><text x="52" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM SIOD</text>
+<rect x="92" y="87" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO40</text>
+<line x1="146" y1="98" x2="173" y2="98" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="127" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="127" r="2.1" fill="#1b2124"/>
+<rect x="18" y="116" width="67" height="22" rx="3" fill="#1a5468"/><text x="52" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM SIOC</text>
+<rect x="92" y="116" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO39</text>
+<line x1="146" y1="127" x2="173" y2="127" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="156" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="156" r="2.1" fill="#1b2124"/>
+<rect x="12" y="145" width="73" height="22" rx="3" fill="#1a5468"/><text x="48" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM VSYNC</text>
+<rect x="92" y="145" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO38</text>
+<line x1="146" y1="156" x2="173" y2="156" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="185" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="185" r="2.1" fill="#1b2124"/>
+<rect x="18" y="174" width="67" height="22" rx="3" fill="#1a5468"/><text x="52" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM HREF</text>
+<rect x="92" y="174" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO47</text>
+<line x1="146" y1="185" x2="173" y2="185" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="214" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="214" r="2.1" fill="#1b2124"/>
+<rect x="18" y="203" width="67" height="22" rx="3" fill="#1a5468"/><text x="52" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM PCLK</text>
+<rect x="92" y="203" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO13</text>
+<line x1="146" y1="214" x2="173" y2="214" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="243" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="243" r="2.1" fill="#1b2124"/>
+<rect x="31" y="232" width="54" height="22" rx="3" fill="#1a5468"/><text x="58" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y9</text>
+<rect x="92" y="232" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO48</text>
+<line x1="146" y1="243" x2="173" y2="243" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="272" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="272" r="2.1" fill="#1b2124"/>
+<rect x="31" y="261" width="54" height="22" rx="3" fill="#1a5468"/><text x="58" y="276" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y8</text>
+<rect x="92" y="261" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="276" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO11</text>
+<line x1="146" y1="272" x2="173" y2="272" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="179" cy="301" r="4.6" fill="#c9922f"/>
+<circle cx="179" cy="301" r="2.1" fill="#1b2124"/>
+<rect x="31" y="290" width="54" height="22" rx="3" fill="#1a5468"/><text x="58" y="305" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y7</text>
+<rect x="92" y="290" width="54" height="22" rx="3" fill="#4f9243"/><text x="119" y="305" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO12</text>
+<line x1="146" y1="301" x2="173" y2="301" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="69" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="69" r="2.1" fill="#1b2124"/>
+<rect x="373" y="58" width="54" height="22" rx="3" fill="#1a5468"/><text x="400" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y6</text>
+<rect x="479" y="58" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="73" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO14</text>
+<line x1="346" y1="69" x2="373" y2="69" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="98" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="98" r="2.1" fill="#1b2124"/>
+<rect x="373" y="87" width="54" height="22" rx="3" fill="#1a5468"/><text x="400" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y5</text>
+<rect x="479" y="87" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="102" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO16</text>
+<line x1="346" y1="98" x2="373" y2="98" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="127" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="127" r="2.1" fill="#1b2124"/>
+<rect x="373" y="116" width="54" height="22" rx="3" fill="#1a5468"/><text x="400" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y4</text>
+<rect x="479" y="116" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="131" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO18</text>
+<line x1="346" y1="127" x2="373" y2="127" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="156" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="156" r="2.1" fill="#1b2124"/>
+<rect x="373" y="145" width="54" height="22" rx="3" fill="#1a5468"/><text x="400" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y3</text>
+<rect x="479" y="145" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="160" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO17</text>
+<line x1="346" y1="156" x2="373" y2="156" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="185" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="185" r="2.1" fill="#1b2124"/>
+<rect x="373" y="174" width="54" height="22" rx="3" fill="#1a5468"/><text x="400" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">CAM Y2</text>
+<rect x="479" y="174" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="189" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO15</text>
+<line x1="346" y1="185" x2="373" y2="185" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="214" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="214" r="2.1" fill="#1b2124"/>
+<rect x="373" y="203" width="92" height="22" rx="3" fill="#1a5468"/><text x="419" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">Mikrofon CLK</text>
+<rect x="479" y="203" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="218" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO42</text>
+<line x1="346" y1="214" x2="373" y2="214" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="243" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="243" r="2.1" fill="#1b2124"/>
+<rect x="373" y="232" width="99" height="22" rx="3" fill="#1a5468"/><text x="422" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">Mikrofon DATA</text>
+<rect x="479" y="232" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="247" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO41</text>
+<line x1="346" y1="243" x2="373" y2="243" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="272" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="272" r="2.1" fill="#1b2124"/>
+<rect x="373" y="261" width="80" height="22" rx="3" fill="#1a5468"/><text x="413" y="276" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">microSD CS</text>
+<rect x="479" y="261" width="54" height="22" rx="3" fill="#4f9243"/><text x="506" y="276" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO21</text>
+<line x1="346" y1="272" x2="373" y2="272" stroke="var(--rule)" stroke-width="1"/>
+<circle cx="340" cy="301" r="4.6" fill="#c9922f"/>
+<circle cx="340" cy="301" r="2.1" fill="#1b2124"/>
+<rect x="373" y="290" width="92" height="22" rx="3" fill="#78868f"/><text x="419" y="305" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SD nutzt SPI</text>
+<rect x="479" y="290" width="99" height="22" rx="3" fill="#8e56a8"/><text x="528" y="305" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">D8 / D9 / D10</text>
+<line x1="346" y1="301" x2="373" y2="301" stroke="var(--rule)" stroke-width="1"/>
+<text x="260" y="188" text-anchor="middle" fill="#8b979b" font-size="10.5" font-family="var(--font-display)" font-weight="600">XIAO ESP32-S3 Sense</text>
+<rect x="12" y="351" width="54" height="22" rx="3" fill="#78868f"/><text x="39" y="366" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SYSTEM</text>
+<rect x="73" y="351" width="41" height="22" rx="3" fill="#4f9243"/><text x="94" y="366" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">GPIO</text>
+<rect x="121" y="351" width="38" height="22" rx="3" fill="#8e56a8"/><text x="140" y="366" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">SPI</text>
+<rect x="166" y="351" width="60" height="22" rx="3" fill="#1a5468"/><text x="196" y="366" text-anchor="middle" fill="#fff" font-size="11.0" font-family="var(--font-display)" font-weight="600">ONBOARD</text>
+<text x="12" y="393" font-size="10.5" font-family="var(--font-display)" fill="var(--ink-3)">Der Aufsatz belegt GPIOs, die am nackten S3 gar nicht herausgefuehrt sind.</text>
+</svg></div>
+
+
+          <div class="field">
+            <p>Derselbe XIAO ESP32-S3 mit aufgestecktem Sense-Aufsatz. Der Aufsatz greift auf GPIOs zu, die am nackten Board gar nicht auf den Pads liegen — die elf D-Pads bleiben dadurch weitgehend frei.</p>
+          </div>
+
+          <div class="note good">
+            <p><strong>Dein drittes Kameraboard — und das kleinste.</strong> Neben ESP32-CAM-Portierung und Freenove S3 ist das hier die kompakteste Variante, mit Mikrofon und SD-Slot obendrein. Für <code>esp32-cam-webserver-servos</code> wäre es die naheliegende Zielplattform, wenn es klein werden soll; für Servos bleiben die D-Pads frei.</p>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Diese Belegung ist nicht aus deinen Repos belegt</strong>, sondern aus der Seeed-Dokumentation. Bevor du darauf aufbaust, gegen das Wiki deiner Revision prüfen — beim SD-Slot teilen sich Karte und Aufsatz den SPI-Bus mit <code>D8/D9/D10</code>.</p>
+          </div>
+        </div>
+      </article>
 
       <article class="board" id="s3devkit">
         <div class="board-head">
@@ -2350,9 +2626,9 @@
     </section>
 
     <footer>
-      <p><strong>Bestand.</strong> Acht Boards, vom Besitzer bestätigt. Pinout-Grafiken aus Pin-Daten erzeugt, damit alle acht dieselbe Farbcodierung und Anordnung tragen.</p>
-      <p style="margin-top:0.8rem"><strong>Belegt aus den Repos:</strong> ESP-01-Shield-Netzliste (Eagle), XIAO-IR-Mate-Belegung (README), CYD-Schaltplan V1.0, Freenove-Belegung aus <code>ESP32S3_Pinout.png</code>, sämtliche PlatformIO-Targets. Aus Chip-Dokumentation ergänzt: D1&nbsp;mini, DevKitC, S3-DevKit und die Strapping-Tabellen.</p>
-      <p style="margin-top:0.8rem"><strong>Ein offener Punkt:</strong> der WS2812-Pin des 01Space C3-Boards — je nach Revision GPIO2 oder GPIO8. Beim 01Space-Board zeigt die Grafik eine Funktionskarte statt einer Pad-Reihenfolge, weil deren physische Anordnung nicht belegt ist.</p>
+      <p><strong>Bestand.</strong> Zehn Boards, vom Besitzer bestätigt. Die Pinout-Grafiken werden aus Pin-Daten erzeugt (<code>tools/</code>), damit Farbcodierung, Anordnung und Legende über alle Boards identisch bleiben.</p>
+      <p style="margin-top:0.8rem"><strong>Belegt:</strong> ESP-01-Shield aus dem eigenen Eagle-Schaltplan, XIAO IR Mate aus dem eigenen README, CYD aus Schaltplan V1.0, Freenove aus <code>ESP32S3_Pinout.png</code>, XIAO ESP32-S3 aus den Seeed-Pinout-Grafiken beider Platinenseiten. Aus Chip- und Herstellerdokumentation ergänzt: D1&nbsp;mini, DevKitC, S3-DevKit, der Sense-Aufsatz und die Strapping-Tabellen.</p>
+      <p style="margin-top:0.8rem"><strong>Zwei offene Punkte:</strong> der WS2812-Pin des 01Space C3-Boards (revisionsabhängig GPIO2 oder GPIO8) und die Belegung des Sense-Aufsatzes, die nur aus der Seeed-Dokumentation stammt. Beim 01Space-Board zeigt die Grafik eine Funktionskarte statt einer Pad-Reihenfolge, weil deren physische Anordnung nicht belegt ist.</p>
     </footer>
 
   </main>
