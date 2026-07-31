@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Boards, fuer die die geforkten Projekte geschrieben wurden, ohne sie im Bestand zu haben.">
+<meta name="color-scheme" content="light dark">
+<title>Nicht im Bestand — ESP-Hardware-Referenz</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img, svg { max-width: 100%; }
+  h1, h2, h3, p, ul, figure { margin: 0; }
+  ul { padding: 0; list-style-position: outside; }
+  table { border-collapse: collapse; }
+</style>
+<style>
+  :root {
+    color-scheme: light dark;
+
+    /* Neutrale mit leichter Kupfer-Neigung – nicht reines Grau */
+    --paper:      #f1f3f1;
+    --panel:      #fbfcfb;
+    --panel-2:    #e8ebe8;
+    --ink:        #14191a;
+    --ink-2:      #414a49;
+    --ink-3:      #6d7876;
+    --rule:       #cfd6d3;
+    --rule-soft:  #dee4e1;
+
+    /* Akzent: Leiterbahn-Kupfer */
+    --copper:     #9a5a2b;
+    --copper-lit: #b8703a;
+    --copper-wash:#f0e2d6;
+
+    /* Signalfarben (getrennt vom Akzent) */
+    --v5:         #b23a2b;
+    --v5-wash:    #f6dfda;
+    --v33:        #1f6b4f;
+    --v33-wash:   #d9eae1;
+    --warn:       #8a6a10;
+    --warn-wash:  #f6ecce;
+
+    --font-display: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --step--1: clamp(0.75rem, 0.72rem + 0.14vw, 0.82rem);
+    --step-0:  clamp(0.92rem, 0.89rem + 0.16vw, 1rem);
+    --step-1:  clamp(1.1rem, 1.03rem + 0.32vw, 1.28rem);
+    --step-2:  clamp(1.35rem, 1.2rem + 0.7vw, 1.75rem);
+    --step-3:  clamp(1.8rem, 1.5rem + 1.4vw, 2.7rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:      #0e1213;
+      --panel:      #161b1c;
+      --panel-2:    #1e2425;
+      --ink:        #e6ebe9;
+      --ink-2:      #b0bab7;
+      --ink-3:      #7f8b88;
+      --rule:       #2c3435;
+      --rule-soft:  #232a2b;
+      --copper:     #d08a52;
+      --copper-lit: #e5a068;
+      --copper-wash:#2d211a;
+      --v5:         #e0705c;
+      --v5-wash:    #331d1a;
+      --v33:        #57b98c;
+      --v33-wash:   #16291f;
+      --warn:       #d6b155;
+      --warn-wash:  #2c2515;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:#0e1213; --panel:#161b1c; --panel-2:#1e2425;
+    --ink:#e6ebe9; --ink-2:#b0bab7; --ink-3:#7f8b88;
+    --rule:#2c3435; --rule-soft:#232a2b;
+    --copper:#d08a52; --copper-lit:#e5a068; --copper-wash:#2d211a;
+    --v5:#e0705c; --v5-wash:#331d1a;
+    --v33:#57b98c; --v33-wash:#16291f;
+    --warn:#d6b155; --warn-wash:#2c2515;
+  }
+  :root[data-theme="light"] {
+    --paper:#f1f3f1; --panel:#fbfcfb; --panel-2:#e8ebe8;
+    --ink:#14191a; --ink-2:#414a49; --ink-3:#6d7876;
+    --rule:#cfd6d3; --rule-soft:#dee4e1;
+    --copper:#9a5a2b; --copper-lit:#b8703a; --copper-wash:#f0e2d6;
+    --v5:#b23a2b; --v5-wash:#f6dfda;
+    --v33:#1f6b4f; --v33-wash:#d9eae1;
+    --warn:#8a6a10; --warn-wash:#f6ecce;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--copper); text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--copper-lit);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  code, .mono { font-family: var(--font-display); font-variant-ligatures: none; }
+
+  /* ---------- Kopf ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    background: var(--panel);
+  }
+  .masthead-inner {
+    max-width: 78rem;
+    margin: 0 auto;
+    padding: 3.2rem 1.5rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+  .masthead h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .lede {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--ink-2);
+    font-size: var(--step-1);
+  }
+  .masthead-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.6rem;
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    color: var(--ink-3);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 1rem;
+  }
+
+  /* ---------- Gerüst ---------- */
+  .shell {
+    max-width: 78rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 62rem) {
+    .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .rail { display: none; }
+  }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    padding: 2.5rem 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+  }
+  .rail-group { margin-bottom: 1.5rem; }
+  .rail-title {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+    margin-bottom: 0.5rem;
+  }
+  .rail a {
+    display: block;
+    padding: 0.2rem 0 0.2rem 0.7rem;
+    border-left: 2px solid var(--rule);
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .rail a:hover { color: var(--copper); border-left-color: var(--copper); }
+
+  main { padding-top: 2.5rem; min-width: 0; }
+
+  section { margin-bottom: 4rem; scroll-margin-top: 1.5rem; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    text-wrap: balance;
+  }
+  h2 .num {
+    font-size: var(--step--1);
+    color: var(--copper);
+    letter-spacing: 0.1em;
+  }
+  .section-note {
+    margin: 0 0 1.6rem;
+    color: var(--ink-2);
+    max-width: 68ch;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Tabellen ---------- */
+  .scroller {
+    overflow-x: auto;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--panel);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--step--1);
+    font-variant-numeric: tabular-nums;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+  thead th {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 0.72rem;
+    color: var(--ink-3);
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.pin, td.gpio { font-family: var(--font-display); white-space: nowrap; }
+  td.gpio { color: var(--copper); }
+
+  /* ---------- Board-Karten ---------- */
+  .board {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .board-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    padding: 1.1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    border-left: 3px solid var(--copper);
+  }
+  .board-head .spec {
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    color: var(--ink-3);
+    margin-left: auto;
+    text-align: right;
+  }
+  .board-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .board-body > .scroller { border-radius: 3px; }
+
+  .field-label {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-3);
+    margin-bottom: 0.4rem;
+  }
+  .field p, .field ul { margin: 0; }
+  .field ul { padding-left: 1.1rem; }
+  .field li + li { margin-top: 0.25rem; }
+
+  /* ---------- Chips ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    padding: 0.13rem 0.45rem;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+    color: var(--ink-2);
+    background: var(--paper);
+    white-space: nowrap;
+  }
+  .chip.own { border-color: var(--copper); color: var(--copper); background: var(--copper-wash); }
+  .chip.v5  { border-color: var(--v5); color: var(--v5); background: var(--v5-wash); }
+  .chip.v33 { border-color: var(--v33); color: var(--v33); background: var(--v33-wash); }
+
+  /* ---------- Hinweisboxen ---------- */
+  .note {
+    border-left: 3px solid var(--ink-3);
+    background: var(--panel-2);
+    padding: 0.7rem 0.9rem;
+    border-radius: 0 3px 3px 0;
+    font-size: var(--step--1);
+  }
+  .note strong { font-family: var(--font-display); }
+  .note.danger { border-left-color: var(--v5); background: var(--v5-wash); }
+  .note.caution { border-left-color: var(--warn); background: var(--warn-wash); }
+  .note.good { border-left-color: var(--v33); background: var(--v33-wash); }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 0.5rem; }
+
+  /* ---------- Matrix ---------- */
+  .matrix td.hit { color: var(--v33); font-family: var(--font-display); font-weight: 600; }
+  .matrix td.miss { color: var(--rule); font-family: var(--font-display); }
+  .matrix th.rot { font-size: 0.68rem; }
+  .matrix tbody th {
+    font-weight: 500;
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    white-space: nowrap;
+    background: var(--panel);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  /* ---------- Schaltung ---------- */
+  .circuit {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .circuit svg { width: 100%; height: auto; max-width: 34rem; margin: 0 auto; display: block; }
+  .svg-ink { stroke: var(--ink-2); }
+  .svg-copper { stroke: var(--copper); }
+  .svg-label { fill: var(--ink-2); font-family: var(--font-display); font-size: 10px; }
+  .svg-label-accent { fill: var(--copper); font-family: var(--font-display); font-size: 10px; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+  }
+
+  details {
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--panel);
+    padding: 0.6rem 0.9rem;
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    color: var(--ink-2);
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 2rem;
+    padding: 2rem 0 0;
+    font-size: var(--step--1);
+    color: var(--ink-3);
+  }
+  footer ul { padding-left: 1.1rem; margin: 0.5rem 0 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* Pinout-Grafiken: lieber scrollen als unleserlich schrumpfen */
+  .pinout { overflow-x: auto; border: 1px solid var(--rule-soft); border-radius: 3px;
+            background: var(--paper); padding: 6px 8px; }
+  .pinout svg { display: block; width: 100%; min-width: 640px; height: auto; }
+
+  /* Referenz-Karten: gedämpft, damit Bestand optisch führt */
+  .board.ref { background: transparent; border-style: dashed; }
+  .board.ref .board-head { border-left-color: var(--rule); }
+  .board.ref .board-head h3 { color: var(--ink-2); font-weight: 500; }
+  .board.ref .board-body { color: var(--ink-2); }
+  .board.ref .board-body > p { margin: 0; }
+  .chip.ref { border-style: dashed; color: var(--ink-3); background: transparent; }
+  .matrix td.warnrow { color: var(--warn); font-family: var(--font-display); }
+  .matrix td.miss, td.miss { color: var(--ink-3); font-family: var(--font-display); }
+  .subsec { scroll-margin-top: 1.5rem; }
+  .subsec h3 { color: var(--copper); font-size: var(--step-0); letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* Verweis zwischen den beiden Seiten */
+  .pagelink { display: block; border: 1px solid var(--copper); border-left-width: 3px;
+              border-radius: 3px; background: var(--copper-wash); padding: 1rem 1.25rem;
+              text-decoration: none; color: var(--ink); }
+  .pagelink:hover { background: var(--panel-2); }
+  .pagelink strong { font-family: var(--font-display); color: var(--copper); }
+  .pagelink span { display: block; color: var(--ink-2); font-size: var(--step--1); margin-top: 0.3rem; }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz · Seite 2</div>
+    <h1>Nicht im Bestand</h1>
+    <p class="lede">Neun Boards, die nicht bei dir liegen. Sie stehen hier, weil deine geforkten Projekte für sie geschrieben wurden — nützlich, um zu verstehen, was ein Repo erwartet und was eine Portierung kosten würde.</p>
+    <div class="masthead-meta">
+      <span>Stand: 31.07.2026</span>
+      <span><a href="index.html">← Seite 1 · Boards im Bestand</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Inhalt">
+    <div class="rail-group">
+      <div class="rail-title">Seite 1</div>
+      <a href="index.html">← Boards im Bestand</a>
+    </div>
+    <div class="rail-group">
+      <div class="rail-title">Diese Seite</div>
+      <a href="#referenz">Projekt-Ursprung</a>
+      <a href="#smartpoi">SmartPoi</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ══════════ REFERENZ ══════════ -->
+    <section id="referenz">
+      <h2><span class="num">01</span> Boards, die den Projekten zugrunde liegen</h2>
+      <p class="section-note">Diese Boards liegen nicht bei dir. Sie stehen hier, weil deine geforkten Projekte für sie geschrieben wurden — nützlich, um zu verstehen, was ein Repo eigentlich erwartet und was eine Portierung kosten würde.</p>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>Wemos D1 mini ESP32</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: WLED-wemos-shield</div>
+        </div>
+        <div class="board-body">
+          <p>Das Shield-Repo deckt beide Wemos-Größen ab. Relevant bleibt eine Warnung, falls du das Board doch einmal kaufst: <strong>gleicher Umriss, andere Pinbelegung</strong> als der ESP8266-D1-mini. Ein Shield, das auf dem einen läuft, legt auf dem anderen fremde Signale auf dieselben Löcher.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>ESP32-CAM (AI-Thinker)</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: esp32-cam-webserver-servos</div>
+        </div>
+        <div class="board-body">
+          <p>Das Zielboard des Fork-Originals. Du hast stattdessen die Freenove-S3-Kamera — siehe Abschnitt 06 für die Portierung. Was der AI-Thinker anders macht: kein USB (FTDI nötig, <code>GPIO0</code> auf GND zum Flashen), 4 MB PSRAM statt 8, und ein notorisch knappes Netzteil-Budget von über 500 mA Spitze beim Kamera-Init.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>CYD ESP32-2432S024<span style="color:var(--ink-3)">C</span> · kapazitiv</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: esp32-2432S024-Capacitive</div>
+        </div>
+        <div class="board-body">
+          <p>Die Schwestervariante deiner Platine — dasselbe Layout, andere Touch-Bestückung. Dein LVGL-Fork ist dafür geschrieben. Zum Umschreiben auf deine resistive Version:</p>
+          <div class="scroller" style="margin-top:0.7rem">
+            <table>
+              <thead><tr><th>Signal</th><th>Kapazitiv (Fork)</th><th>Resistiv (dein Board)</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">Controller</td><td class="gpio">CST816 / GT911, I²C</td><td class="gpio">XPT2046, SPI</td></tr>
+                <tr><td class="pin">GPIO33</td><td class="gpio">CTP_SDA</td><td class="gpio">TP_CS</td></tr>
+                <tr><td class="pin">GPIO32</td><td class="gpio">CTP_SCL</td><td class="gpio">frei</td></tr>
+                <tr><td class="pin">GPIO25</td><td class="gpio">CTP_RST</td><td class="gpio">frei</td></tr>
+                <tr><td class="pin">GPIO21</td><td class="gpio">CTP_INT</td><td class="gpio">frei (auf P3)</td></tr>
+                <tr><td class="pin">GPIO36</td><td class="gpio">—</td><td class="gpio">TP_IRQ, 10 k Pull-up</td></tr>
+                <tr><td class="pin">Bus</td><td class="gpio">eigener I²C</td><td class="gpio">geteilt mit dem Display</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:0.7rem">Display, Backlight, SD, RGB-LED, LDR und Audio sind bei beiden Varianten identisch — nur der Touch-Block unterscheidet sich.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>M5Stack StampS3 — M5Dial, Cardputer, AtomS3</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: ESP32-Bus-Pirate, FluidDial, Launcher</div>
+        </div>
+        <div class="board-body">
+          <p>In allen vier Geräten steckt derselbe ESP32-S3FN8 mit 8 MB Flash und ohne PSRAM — deshalb teilen sich Bus-Pirate und FluidDial dieselbe Board-Definition <code>m5stack-stamps3</code>, und der Unterschied liegt nur im Display- und Eingabetreiber.</p>
+          <div class="scroller" style="margin-top:0.7rem">
+            <table>
+              <thead><tr><th>Gerät</th><th>Display</th><th>Eingabe</th><th>Für welches Projekt</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">M5Dial</td><td>GC9A01 rund, 240×240</td><td>Drehgeber, RFID, RTC</td><td>FluidDial — das Hauptziel</td></tr>
+                <tr><td class="pin">Cardputer</td><td>ST7789 1,14″, 240×135</td><td>56-Tasten-Keyboard</td><td>Bus-Pirate</td></tr>
+                <tr><td class="pin">AtomS3 Lite</td><td>—</td><td>ein Taster</td><td>Bus-Pirate</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note good" style="margin-top:0.8rem">
+            <p><strong>Bus-Pirate brauchst du davon nicht</strong> — das <code>s3-devkit-n16r8</code>-Target läuft auf deinem S3-DevKit. Nur für <strong>FluidDial</strong> wäre ein M5Dial die einzige wirklich passende Hardware.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref" id="smartpoi">
+        <div class="board-head">
+          <h3>SmartPoi</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: SmartPoi-Firmware · SmartPoi_ESP32 · Downloader</div>
+        </div>
+        <div class="board-body">
+          <p>Drei Repos zu einem Gerät, das du (noch) nicht hast: Firmware, ESP32-Neufassung und ein Downloader zum Übertragen der Bildsequenzen. Die ältere Generation läuft auf ESP8266, die neue auf ESP32.</p>
+          <div class="scroller" style="margin-top:0.7rem">
+            <table>
+              <thead><tr><th>Target</th><th>Board</th><th>Eckdaten</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">dfrobot_firebeetle2_esp32s3</td><td class="gpio">FireBeetle 2 ESP32-S3</td><td>16 MB Flash, 8 MB PSRAM, LiPo</td></tr>
+                <tr><td class="pin">dfrobot_beetle_esp32c3</td><td class="gpio">Beetle ESP32-C3</td><td>4 MB, kein PSRAM, sehr klein</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note caution" style="margin-top:0.8rem">
+            <p><strong>Ein Fehler in der Projektkonfiguration</strong>, falls du es doch baust: <code>board_build.psram = enabled</code> steht bei <em>beiden</em> Targets. Beim C3 läuft das ins Leere — der Chip hat kein PSRAM. Wirksam ist die Zeile nur beim FireBeetle-S3.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>DFRobot Beetle ESP32-C3 · FireBeetle 2 ESP32-S3</h3>
+          <div class="chips"><span class="chip ref">nicht als lose Platine</span></div>
+          <div class="spec">Ursprung: SmartPoi_ESP32</div>
+        </div>
+        <div class="board-body">
+          <p>Die beiden Build-Ziele von SmartPoi. Beide bringen LiPo-Laderegler und Akkumessung mit — der Grund, warum sie in akkubetriebenen Poi stecken. Als lose Boards hast du sie nicht; ob eines davon in deinen fertigen Poi verbaut ist, klärt nur ein Blick ins Gehäuse.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>ESP32-DIV</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: cifertech/ESP32-DIV</div>
+        </div>
+        <div class="board-body">
+          <p>Ein zweiteiliges Eigenbau-Gerät: Mainboard mit ESP32, ILI9341 2,8″, LF33-Regler, IP5306-Laderegler, CP2102 und PCF8574 als Taster-Expander — dazu ein Shield mit 3× NRF24L01, 1× CC1101 und Infrarot. Muss selbst gebaut oder als Kit gekauft werden; einzelne Devboards reichen nicht.</p>
+          <div class="note caution">
+            <p>Im Design teilt sich der Buzzer einen GPIO mit dem Batterie-Spannungsteiler und ist deshalb als optional geführt. Eine vollständige Pin-Tabelle steht nicht im README — die läge nur im Schaltplan des Repos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head" style="border-left-color: var(--v5)">
+          <h3>XIAO nRF52840 Sense — kein ESP</h3>
+          <div class="chips"><span class="chip ref">andere Plattform</span></div>
+          <div class="spec">Ursprung: cifertech/XIAO-Controller</div>
+        </div>
+        <div class="board-body">
+          <div class="note danger">
+            <p>Das Repo sitzt zwischen den ESP-Projekten, gehört aber nicht dazu. Der XIAO-Controller läuft auf einem <strong>Nordic nRF52840</strong>, ARM Cortex-M4, kein WLAN, kein espressif32-Target. Nur der XIAO-Formfaktor ist mit deinem IR-Mate-Board gemeinsam — Toolchain und Bibliotheken sind es nicht.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head" style="border-left-color: var(--ink-3)">
+          <h3>Reine Bibliotheken — ohne eigenes Board</h3>
+          <div class="chips"><span class="chip ref">plattformübergreifend</span></div>
+          <div class="spec">laufen auf mehreren Zielen</div>
+        </div>
+        <div class="board-body">
+          <div class="scroller">
+            <table>
+              <thead><tr><th>Repo</th><th>Was es ist</th><th>Auf deiner Hardware</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">ESP32-BLE-Keyboard</td><td>BLE-HID-Bibliothek</td><td class="gpio">DevKitC, XIAO C3, S3-DevKit</td></tr>
+                <tr><td class="pin">ESPAsyncWebServer</td><td>Webserver</td><td class="gpio">alle; im IR-MATE aus dem esp32async-Fork</td></tr>
+                <tr><td class="pin">ESPConnect</td><td>WLAN-Provisioning</td><td class="gpio">alle</td></tr>
+                <tr><td class="pin">pov-esp32</td><td>POV-Bibliothek, LittleFS + DotStar</td><td class="gpio">DevKitC — <strong>nur APA102</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="zurueck">
+      <a class="pagelink" href="index.html">
+        <strong>← Seite 1 · Boards im Bestand</strong>
+        <span>Acht Boards mit Pinout-Grafik, Minimalbeschaltung, Strapping-Tabellen und dem Katalog der Software-Projekte.</span>
+      </a>
+    </section>
+
+    <footer>
+      <p>Keines dieser Boards ist im Bestand. Die Angaben stammen aus den READMEs und Build-Konfigurationen der jeweiligen Repos sowie aus der Chip-Dokumentation — sie sind als Einkaufs- und Portierungshilfe gedacht, nicht als Bauanleitung.</p>
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
