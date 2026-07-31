@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Pinouts, Minimalbeschaltungen und Projekt-Zuordnung aller eingesetzten ESP8266- und ESP32-Module.">
+<meta name="description" content="ESP-Boards im Bestand mit Pinouts und Minimalbeschaltung, getrennt von den Boards, fuer die die geforkten Projekte urspruenglich geschrieben wurden.">
 <meta name="color-scheme" content="light dark">
 <title>ESP-Hardware-Referenz — AllExTechnik</title>
 <style>
@@ -406,18 +406,27 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
   }
+
+  /* Referenz-Karten: gedämpft, damit Bestand optisch führt */
+  .board.ref { background: transparent; border-style: dashed; }
+  .board.ref .board-head { border-left-color: var(--rule); }
+  .board.ref .board-head h3 { color: var(--ink-2); font-weight: 500; }
+  .board.ref .board-body { color: var(--ink-2); }
+  .board.ref .board-body > p { margin: 0; }
+  .chip.ref { border-style: dashed; color: var(--ink-3); background: transparent; }
+  .matrix td.warnrow { color: var(--warn); font-family: var(--font-display); }
 </style>
 </head>
 <body>
 <header class="masthead">
   <div class="masthead-inner">
     <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
-    <h1>ESP-Module im Bestand</h1>
-    <p class="lede">Pinouts, Minimalbeschaltungen und Projekt-Zuordnung für alle ESP-Boards, die in deinen Repos vorkommen. Vierzehn Module über vier Chip-Familien.</p>
+    <h1>ESP-Module</h1>
+    <p class="lede">Neun Boards im Bestand, mit Pinouts und Minimalbeschaltung. Dahinter, klar getrennt, die Boards, für die deine Projekte ursprünglich geschrieben wurden — als Referenz, nicht als Inventar.</p>
     <div class="masthead-meta">
-      <span>Stand: 30.07.2026</span>
-      <span>Quelle: 28 Repos auf github.com/AllExHH</span>
-      <span>Alle Angaben 3V3-Logik sofern nicht markiert</span>
+      <span>Stand: 31.07.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
     </div>
   </div>
 </header>
@@ -430,36 +439,37 @@
       <a href="#matrix">Projekt-Matrix</a>
     </div>
     <div class="rail-group">
-      <div class="rail-title">ESP8266</div>
+      <div class="rail-title">Bestand · ESP8266</div>
       <a href="#esp01">ESP-01 / ESP-01S</a>
       <a href="#d1mini">Wemos D1 mini</a>
     </div>
     <div class="rail-group">
-      <div class="rail-title">ESP32</div>
+      <div class="rail-title">Bestand · ESP32</div>
       <a href="#devkit">DevKitC / WROOM-32</a>
-      <a href="#d1mini32">D1 mini ESP32</a>
-      <a href="#espcam">ESP32-CAM</a>
-      <a href="#cyd">CYD 2432S024</a>
-      <a href="#div">ESP32-DIV</a>
+      <a href="#cyd">CYD 2432S024R</a>
     </div>
     <div class="rail-group">
-      <div class="rail-title">ESP32-C3</div>
-      <a href="#xiaoc3">XIAO ESP32-C3</a>
-      <a href="#beetlec3">Beetle ESP32-C3</a>
-      <a href="#c3lcd">C3 0.42″ LCD</a>
+      <div class="rail-title">Bestand · C3</div>
+      <a href="#xiaoc3">XIAO C3 + IR Mate</a>
+      <a href="#c3lcd">01Space C3 0.42″</a>
     </div>
     <div class="rail-group">
-      <div class="rail-title">ESP32-S3</div>
-      <a href="#stamps3">M5 StampS3</a>
-      <a href="#s3devkit">S3-DevKitC-1</a>
-      <a href="#firebeetle">FireBeetle 2 S3</a>
+      <div class="rail-title">Bestand · S3</div>
+      <a href="#s3devkit">S3-DevKitC-1 N16R8</a>
       <a href="#freenove">Freenove S3 CAM</a>
+    </div>
+    <div class="rail-group">
+      <div class="rail-title">Bestand · Geräte</div>
+      <a href="#smartpoi">SmartPoi</a>
+    </div>
+    <div class="rail-group">
+      <div class="rail-title">Nicht im Bestand</div>
+      <a href="#referenz">Projekt-Ursprung</a>
     </div>
     <div class="rail-group">
       <div class="rail-title">Praxis</div>
       <a href="#strapping">Strapping-Pins</a>
       <a href="#minimal">Minimalbeschaltung</a>
-      <a href="#sonderfall">Sonderfälle</a>
     </div>
   </nav>
 
@@ -472,146 +482,70 @@
       <div class="scroller">
         <table>
           <thead>
-            <tr>
-              <th>Chip</th><th>Kerne / Takt</th><th>USB</th><th>Funk</th><th>PSRAM</th><th>Charakter</th>
-            </tr>
+            <tr><th>Chip</th><th>Kerne / Takt</th><th>USB</th><th>Funk</th><th>PSRAM</th><th>Deine Boards</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td class="gpio">ESP8266EX</td>
-              <td>1× 80/160 MHz</td>
-              <td>nur UART-Brücke</td>
-              <td>WLAN b/g/n</td>
-              <td>nein</td>
-              <td>Wenige GPIOs, 1 ADC (0–1 V). Reicht für WLED bis ~800 LEDs.</td>
+              <td class="gpio">ESP8266EX</td><td>1× 80/160 MHz</td><td>nur UART-Brücke</td><td>WLAN b/g/n</td><td>nein</td>
+              <td>ESP-01S · D1 mini</td>
             </tr>
             <tr>
-              <td class="gpio">ESP32</td>
-              <td>2× 240 MHz</td>
-              <td>nur UART-Brücke</td>
-              <td>WLAN + BT Classic + BLE</td>
-              <td>optional</td>
-              <td>Der Allrounder. Einziger mit BT Classic (A2DP-Audio).</td>
+              <td class="gpio">ESP32</td><td>2× 240 MHz</td><td>nur UART-Brücke</td><td>WLAN + BT Classic + BLE</td><td>optional</td>
+              <td>DevKitC · CYD 2432S024R</td>
             </tr>
             <tr>
-              <td class="gpio">ESP32-C3</td>
-              <td>1× RISC-V 160 MHz</td>
-              <td>USB-CDC (seriell)</td>
-              <td>WLAN + BLE 5</td>
-              <td>nein</td>
-              <td>Klein und günstig. <strong>Kein USB-OTG → kein HID.</strong></td>
+              <td class="gpio">ESP32-C3</td><td>1× RISC-V 160 MHz</td><td>USB-CDC (seriell)</td><td>WLAN + BLE 5</td><td>nein</td>
+              <td>XIAO C3 · 01Space 0.42″</td>
             </tr>
             <tr>
-              <td class="gpio">ESP32-S3</td>
-              <td>2× 240 MHz</td>
-              <td>USB-OTG + CDC</td>
-              <td>WLAN + BLE 5</td>
-              <td>bis 8 MB oktal</td>
-              <td>USB-HID, Kamera, LCD-Peripherie, KI-Befehle. Die Zukunftsplattform.</td>
+              <td class="gpio">ESP32-S3</td><td>2× 240 MHz</td><td>USB-OTG + CDC</td><td>WLAN + BLE 5</td><td>bis 8 MB oktal</td>
+              <td>S3-DevKitC N16R8 · Freenove CAM</td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="note" style="margin-top:1rem">
+        <p><strong>Bluetooth Classic gibt es nur beim klassischen ESP32.</strong> Deshalb bleibt squeezelite-esp32 auf dem DevKitC und lässt sich nicht auf C3 oder S3 umziehen — dort fehlt A2DP-Audio schlicht in der Hardware.</p>
       </div>
     </section>
 
     <!-- ══════════ MATRIX ══════════ -->
     <section id="matrix">
-      <h2><span class="num">02</span> Welches Board für welches Projekt</h2>
-      <p class="section-note">Abgeleitet aus den Build-Targets deiner Repos. <span class="chip own">eigenes Repo</span> markiert Projekte, die du selbst geschrieben hast — dort ist die Zuordnung belegt, nicht geraten.</p>
+      <h2><span class="num">02</span> Welches Projekt läuft worauf</h2>
+      <p class="section-note">Die letzte Spalte ist die entscheidende: ob du das Projekt <em>heute</em> starten kannst oder erst Hardware brauchst.</p>
       <div class="scroller">
         <table class="matrix">
           <thead>
-            <tr>
-              <th>Projekt</th>
-              <th class="rot">8266</th>
-              <th class="rot">ESP32</th>
-              <th class="rot">C3</th>
-              <th class="rot">S3</th>
-              <th>Konkretes Ziel-Board</th>
-            </tr>
+            <tr><th>Projekt</th><th>Ziel-Board laut Repo</th><th>Läuft auf deiner Hardware</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">WLED</th>
-              <td class="hit">✓</td><td class="hit">✓</td><td class="hit">✓</td><td class="hit">✓</td>
-              <td>ESP-01S, D1 mini, D1 mini ESP32 — läuft auf allen vieren</td>
-            </tr>
-            <tr>
-              <th scope="row">XIAO IR-MATE <span class="chip own">eigen</span></th>
-              <td class="miss">—</td><td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td>
-              <td class="pin">seeed_xiao_esp32c3</td>
-            </tr>
-            <tr>
-              <th scope="row">ESP-01 Shield <span class="chip own">eigen</span></th>
-              <td class="hit">✓</td><td class="miss">—</td><td class="miss">—</td><td class="miss">—</td>
-              <td>ESP-01 / ESP-01S, 2×4-Header</td>
-            </tr>
-            <tr>
-              <th scope="row">SmartPoi</th>
-              <td class="miss">—</td><td class="miss">—</td><td class="hit">✓</td><td class="hit">✓</td>
-              <td class="pin">dfrobot_firebeetle2_esp32s3 · dfrobot_beetle_esp32c3</td>
-            </tr>
-            <tr>
-              <th scope="row">ESP32-Bus-Pirate</th>
-              <td class="miss">—</td><td class="miss">—</td><td class="miss">—</td><td class="hit">✓</td>
-              <td class="pin">m5stack-stamps3 · esp32-s3-devkitc1-n16r8</td>
-            </tr>
-            <tr>
-              <th scope="row">FluidDial</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td class="pin">m5stack-stamps3 (M5Dial) · esp32dev (CYD)</td>
-            </tr>
-            <tr>
-              <th scope="row">LVGL / CYD-Demos</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td class="pin">esp32dev (2432S024)</td>
-            </tr>
-            <tr>
-              <th scope="row">ESP32-DIV</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="miss">—</td>
-              <td>eigene Platine, ESP32-WROOM-32</td>
-            </tr>
-            <tr>
-              <th scope="row">pov-esp32</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td>ESP32 generisch — <strong>nur APA102</strong>, kein WS2812</td>
-            </tr>
-            <tr>
-              <th scope="row">squeezelite-esp32</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td>ESP32 mit PSRAM — BT-Audio nur auf ESP32</td>
-            </tr>
-            <tr>
-              <th scope="row">ESP32-BLE-Keyboard</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td>BLE-HID, kein USB nötig — läuft auch auf C3</td>
-            </tr>
-            <tr>
-              <th scope="row">esp32-cam-webserver</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td>AI-Thinker ESP32-CAM · Freenove S3</td>
-            </tr>
-            <tr>
-              <th scope="row">Launcher</th>
-              <td class="miss">—</td><td class="hit">✓</td><td class="miss">—</td><td class="hit">✓</td>
-              <td>M5Stack, CYD, Marauder-Geräte</td>
-            </tr>
+            <tr><th scope="row">WLED</th><td>ESP8266 / ESP32, beliebig</td><td class="hit">ja — ESP-01S, D1 mini, DevKitC</td></tr>
+            <tr><th scope="row">XIAO IR-MATE <span class="chip own">eigen</span></th><td class="pin">seeed_xiao_esp32c3</td><td class="hit">ja — XIAO C3 + IR Mate</td></tr>
+            <tr><th scope="row">ESP-01 Shield <span class="chip own">eigen</span></th><td>ESP-01 / ESP-01S</td><td class="hit">ja</td></tr>
+            <tr><th scope="row">pov-esp32</th><td>ESP32 generisch, <strong>nur APA102</strong></td><td class="hit">ja — DevKitC</td></tr>
+            <tr><th scope="row">squeezelite-esp32</th><td>ESP32 mit BT Classic</td><td class="hit">ja — DevKitC</td></tr>
+            <tr><th scope="row">SuperGreenOS</th><td>ESP32</td><td class="hit">ja — DevKitC</td></tr>
+            <tr><th scope="row">ESP32-BLE-Keyboard</th><td>ESP32 / C3 / S3</td><td class="hit">ja — DevKitC, XIAO C3, S3-DevKit</td></tr>
+            <tr><th scope="row">LVGL / CYD-Demos</th><td class="pin">esp32dev</td><td class="warnrow">teilweise — Repo ist für die <strong>kapazitive</strong> Variante, du hast die resistive</td></tr>
+            <tr><th scope="row">Launcher</th><td>M5Stack, CYD, Marauder</td><td class="hit">ja — über die CYD-Schiene</td></tr>
+            <tr><th scope="row">esp32-cam-webserver</th><td>AI-Thinker ESP32-CAM</td><td class="warnrow">mit Portierung — du hast die Freenove-S3-Variante</td></tr>
+            <tr><th scope="row">ESP32-Bus-Pirate</th><td class="pin">m5stack-stamps3 · s3-devkitc1-n16r8</td><td class="hit">ja — über das N16R8-Target</td></tr>
+            <tr><th scope="row">SmartPoi</th><td class="pin">firebeetle2_esp32s3 · beetle_esp32c3</td><td class="warnrow">Geräte da, lose Platinen nicht</td></tr>
+            <tr><th scope="row">FluidDial</th><td class="pin">m5stack-stamps3 (M5Dial)</td><td class="miss">nein — M5Dial fehlt; CYD-Target nur resistiv-untypisch</td></tr>
+            <tr><th scope="row">ESP32-DIV</th><td>eigene Platine + Funk-Shield</td><td class="miss">nein — Hardware nicht vorhanden</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- ══════════ ESP8266 ══════════ -->
-    <section id="esp8266">
-      <h2><span class="num">03</span> ESP8266</h2>
-      <p class="section-note">Zwei Module, beide auf WLED ausgerichtet. Der ESP-01 ist der Grenzfall — er funktioniert, aber nur mit der richtigen Variante und der richtigen Beschaltung.</p>
+    <!-- ══════════ BESTAND · ESP8266 ══════════ -->
+    <section id="b8266">
+      <h2><span class="num">03</span> Bestand · ESP8266</h2>
 
       <article class="board" id="esp01">
         <div class="board-head">
           <h3>ESP-01 / ESP-01S</h3>
-          <div class="chips">
-            <span class="chip own">WLED-ESP-01-shield</span>
-          </div>
+          <div class="chips"><span class="chip own">eigenes Shield</span></div>
           <div class="spec">ESP8266EX · 2×4 Header 2,54 mm</div>
         </div>
         <div class="board-body">
@@ -621,7 +555,7 @@
           </div>
 
           <div class="field">
-            <div class="field-label">Pinbelegung — Nummerierung wie im Schaltplan deines Shields (JP2)</div>
+            <div class="field-label">Pinbelegung — Nummerierung wie in deinem Schaltplan (JP2)</div>
             <div class="scroller">
               <table>
                 <thead><tr><th>Pin</th><th>Signal</th><th>Im Shield verdrahtet auf</th><th>Anmerkung</th></tr></thead>
@@ -669,7 +603,7 @@
       <article class="board" id="d1mini">
         <div class="board-head">
           <h3>Wemos D1 mini</h3>
-          <div class="chips"><span class="chip">WLED-wemos-shield</span><span class="chip">WLED</span></div>
+          <div class="chips"><span class="chip">WLED</span></div>
           <div class="spec">ESP8266EX · 4 MB · micro-USB</div>
         </div>
         <div class="board-body">
@@ -694,16 +628,15 @@
             </div>
           </div>
           <div class="note">
-            <p><strong>Shield-Ausstattung</strong> (srg74): 74AHCT125-Pegelwandler, Sicherung, IR-Empfänger, Relais- und Temperatursensor-Add-ons. Nimmt dir die komplette Beschaltung aus Abschnitt 06 ab.</p>
+            <p><strong>Das srg74-Shield</strong> aus deinem Fork nimmt dir die Beschaltung aus Abschnitt 10 komplett ab: 74AHCT125-Pegelwandler, Sicherung, IR-Empfänger, dazu Add-ons für Relais und Temperatursensor.</p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ══════════ ESP32 ══════════ -->
-    <section id="esp32">
-      <h2><span class="num">04</span> ESP32 (klassisch)</h2>
-      <p class="section-note">Fünf Module. Der einzige Chip mit Bluetooth Classic — deshalb hängt squeezelite-esp32 hier fest und wandert nicht auf C3 oder S3.</p>
+    <!-- ══════════ BESTAND · ESP32 ══════════ -->
+    <section id="b32">
+      <h2><span class="num">04</span> Bestand · ESP32</h2>
 
       <article class="board" id="devkit">
         <div class="board-head">
@@ -720,7 +653,7 @@
                 <tbody>
                   <tr><td class="pin">Tabu</td><td class="gpio">6, 7, 8, 9, 10, 11</td><td>Interner SPI-Flash. Anfassen = Board tot.</td></tr>
                   <tr><td class="pin">Nur Eingang</td><td class="gpio">34, 35, 36, 39</td><td>Kein Ausgang, <strong>kein interner Pull-up</strong> — extern beschalten.</td></tr>
-                  <tr><td class="pin">Strapping</td><td class="gpio">0, 2, 5, 12, 15</td><td>Bestimmen den Boot-Modus, siehe Abschnitt 05.</td></tr>
+                  <tr><td class="pin">Strapping</td><td class="gpio">0, 2, 5, 12, 15</td><td>Bestimmen den Boot-Modus, siehe Abschnitt 09.</td></tr>
                   <tr><td class="pin">ADC1</td><td class="gpio">32–39</td><td>Funktioniert bei aktivem WLAN.</td></tr>
                   <tr><td class="pin">ADC2</td><td class="gpio">0, 2, 4, 12–15, 25–27</td><td><strong>Unbrauchbar, solange WLAN läuft.</strong></td></tr>
                   <tr><td class="pin">Unkritisch</td><td class="gpio">4, 13, 14, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33</td><td>Die üblichen Verdächtigen für LED-Daten, I²C, SPI.</td></tr>
@@ -734,142 +667,57 @@
         </div>
       </article>
 
-      <article class="board" id="d1mini32">
-        <div class="board-head">
-          <h3>Wemos D1 mini ESP32</h3>
-          <div class="chips"><span class="chip">WLED-wemos-shield</span></div>
-          <div class="spec">ESP32 · gleicher Formfaktor, andere Pins</div>
-        </div>
-        <div class="board-body">
-          <div class="note danger">
-            <p><strong>Die Shield-Falle.</strong> Das Board hat den Umriss des ESP8266-D1-mini, aber <strong>nicht dessen Pinbelegung</strong>. Ein Shield, das auf dem 8266 funktioniert, legt hier andere Signale auf dieselben Löcher. Vor dem Aufstecken immer gegen den Aufdruck prüfen — nicht gegen die Erinnerung.</p>
-          </div>
-          <div class="field">
-            <div class="field-label">Verlässliche Pins</div>
-            <ul>
-              <li>LED-Daten: <code>GPIO16</code>, <code>GPIO17</code>, <code>GPIO18</code>, <code>GPIO19</code></li>
-              <li>I²C-Standard: <code>GPIO21</code> = SDA, <code>GPIO22</code> = SCL</li>
-              <li>Taster / Analog: <code>GPIO32–39</code> (ADC1, WLAN-fest)</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <article class="board" id="espcam">
-        <div class="board-head">
-          <h3>ESP32-CAM (AI-Thinker)</h3>
-          <div class="chips"><span class="chip">esp32-cam-webserver-servos</span></div>
-          <div class="spec">ESP32-S WROOM · 4 MB Flash + 4 MB PSRAM · OV2640</div>
-        </div>
-        <div class="board-body">
-          <div class="field">
-            <div class="field-label">Was nach der Kamera übrig bleibt</div>
-            <div class="scroller">
-              <table>
-                <thead><tr><th>Pin</th><th>Status</th><th>Nutzung</th></tr></thead>
-                <tbody>
-                  <tr><td class="pin">GPIO0</td><td class="gpio">Kamera XCLK</td><td>Gleichzeitig Flash-Strapping → beim Programmieren auf GND</td></tr>
-                  <tr><td class="pin">GPIO4</td><td class="gpio">frei-ish</td><td>Weiße Blitz-LED. Sehr hell, zieht viel Strom.</td></tr>
-                  <tr><td class="pin">GPIO2</td><td class="gpio">frei-ish</td><td>Auch SD-Data0 — frei, wenn keine SD-Karte</td></tr>
-                  <tr><td class="pin">GPIO12–15</td><td class="gpio">frei-ish</td><td>SD-Interface. Ohne SD-Karte für Servos nutzbar.</td></tr>
-                  <tr><td class="pin">GPIO16</td><td class="gpio">frei</td><td>Meist der einzige wirklich freie Pin</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="field">
-            <div class="field-label">Flashen — es gibt keinen USB-Anschluss</div>
-            <ul>
-              <li>FTDI auf <strong>3V3-Pegel</strong> stellen, aber über <code>5V</code> speisen</li>
-              <li><code>U0T</code> → FTDI RX · <code>U0R</code> → FTDI TX · GND gemeinsam</li>
-              <li><code>GPIO0</code> auf <code>GND</code> brücken → Reset → flashen → Brücke lösen</li>
-            </ul>
-          </div>
-          <div class="note danger">
-            <p><strong>Brownout ist die Standard-Fehlerursache.</strong> Beim Kamera-Init zieht das Modul über 500 mA Spitze. Ein FTDI-Adapter liefert das nicht. Netzteil mit ≥ 1 A an <code>5V</code> und ein 1000-µF-Elko direkt am Modul lösen 90 % aller „startet ständig neu"-Fälle.</p>
-          </div>
-        </div>
-      </article>
-
       <article class="board" id="cyd">
         <div class="board-head">
-          <h3>CYD — ESP32-2432S024 (2,4″ kapazitiv)</h3>
-          <div class="chips"><span class="chip">LVGL</span><span class="chip">FluidDial</span><span class="chip">Launcher</span></div>
-          <div class="spec">ESP32-WROOM-32 · ILI9341 240×320 · CST816 Touch</div>
+          <h3>CYD — ESP32-2432S024<span style="color:var(--copper)">R</span> · resistiv</h3>
+          <div class="chips"><span class="chip">LVGL</span><span class="chip">Launcher</span></div>
+          <div class="spec">ESP32-WROOM-32 · ILI9341 240×320 · XPT2046</div>
         </div>
         <div class="board-body">
+
+          <div class="note danger">
+            <p><strong>Der resistive Touch hängt am Display-Bus.</strong> Nicht auf einem eigenen SPI. Der XPT2046 teilt sich SCK/MOSI/MISO mit dem ILI9341 und wird nur über <code>CS = GPIO33</code> unterschieden. Wer die verbreitete 2432S028-Beschaltung übernimmt — Touch auf 25/32/39 — bekommt einen toten Touchscreen bei funktionierendem Display.</p>
+          </div>
+
           <div class="field">
-            <div class="field-label">Onboard-Verdrahtung — fest, nicht änderbar</div>
+            <div class="field-label">Onboard-Verdrahtung — aus dem Schaltplan V1.0 deines Repos</div>
             <div class="scroller">
               <table>
-                <thead><tr><th>Funktion</th><th>Pins</th></tr></thead>
+                <thead><tr><th>Funktion</th><th>Pins</th><th>Quelle</th></tr></thead>
                 <tbody>
-                  <tr><td class="pin">TFT (SPI)</td><td class="gpio">SCK 14 · MOSI 13 · MISO 12 · CS 15 · DC 2 · BL 27</td></tr>
-                  <tr><td class="pin">Touch kapazitiv (I²C)</td><td class="gpio">SDA 33 · SCL 32 · RST 25 · INT 21</td></tr>
-                  <tr><td class="pin">microSD (eigener SPI)</td><td class="gpio">SCK 18 · MISO 19 · MOSI 23 · CS 5</td></tr>
-                  <tr><td class="pin">RGB-LED</td><td class="gpio">R 4 · G 16 · B 17 — <strong>aktiv LOW</strong></td></tr>
-                  <tr><td class="pin">Lichtsensor (LDR)</td><td class="gpio">34</td></tr>
-                  <tr><td class="pin">Lautsprecher</td><td class="gpio">26</td></tr>
+                  <tr><td class="pin">TFT ILI9341 (SPI)</td><td class="gpio">SCK 14 · MOSI 13 · MISO 12 · DC 2 · CS 15 · RST −1</td><td>P1, 18-pol.</td></tr>
+                  <tr><td class="pin">Backlight</td><td class="gpio">GPIO27 → Gate Q2 (AO3402)</td><td>MOSFET-Treiber</td></tr>
+                  <tr><td class="pin">Touch XPT2046 (U3)</td><td class="gpio">CLK 14 · DIN 13 · DOUT 12 · <strong>CS 33</strong> · IRQ 36</td><td>gemeinsamer Bus</td></tr>
+                  <tr><td class="pin">microSD (eigener SPI)</td><td class="gpio">CLK 18 · MISO 19 · MOSI 23 · CS 5</td><td>—</td></tr>
+                  <tr><td class="pin">RGB-LED (MHP5050)</td><td class="gpio">4 · 16 · 17 — <strong>aktiv LOW</strong></td><td>gemeinsame Anode</td></tr>
+                  <tr><td class="pin">Lichtsensor (LDR)</td><td class="gpio">GPIO34</td><td>GT36516 + 1 M</td></tr>
+                  <tr><td class="pin">Audio (SC8002B)</td><td class="gpio">GPIO26 → Verstärker → JST P4</td><td>—</td></tr>
+                  <tr><td class="pin">Frei auf P3 / CN1</td><td class="gpio">21 · 22 · 35</td><td>HC-1.25-4PWT</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="note caution">
-            <p><strong>Nicht mit dem 2432S028 verwechseln.</strong> Die 2,8″-Variante hat einen <em>resistiven</em> XPT2046-Touch an einem dritten SPI-Bus. Firmware für das eine Board läuft auf dem anderen mit totem Touchscreen. Dein Repo ist die kapazitive 2,4″-Version — in PlatformIO entsprechend <code>esp32dev</code>, nicht das S3-Target.</p>
-          </div>
-          <div class="note">
-            <p><strong>Freie Pins</strong> liegen auf den Steckern P3, CN1 und P1. Reichlich ist es nicht — Display, Touch und SD belegen fast alles.</p>
-          </div>
-        </div>
-      </article>
 
-      <article class="board" id="div">
-        <div class="board-head">
-          <h3>ESP32-DIV</h3>
-          <div class="chips"><span class="chip">ESP32-DIV Firmware</span></div>
-          <div class="spec">Zweiteilig: Mainboard + Funk-Shield</div>
-        </div>
-        <div class="board-body">
-          <div class="grid-2">
-            <div class="field">
-              <div class="field-label">Mainboard</div>
-              <ul>
-                <li>ESP32 + ILI9341 2,8″ TFT</li>
-                <li>LF33 — 3,3-V-Regler</li>
-                <li>IP5306 — LiPo-Laden und Schutz</li>
-                <li>CP2102 — USB-seriell</li>
-                <li>PCF8574 — I/O-Expander für die Taster</li>
-              </ul>
-            </div>
-            <div class="field">
-              <div class="field-label">Shield</div>
-              <ul>
-                <li>3× NRF24L01 — 2,4 GHz</li>
-                <li>1× CC1101 — Sub-GHz</li>
-                <li>Infrarot</li>
-                <li>Mehrere Antennen</li>
-              </ul>
-            </div>
-          </div>
           <div class="note caution">
-            <p><strong>Buzzer teilt sich einen GPIO</strong> mit dem Batterie-Spannungsteiler. Beides gleichzeitig geht nicht — der Buzzer ist deshalb im Design als optional geführt.</p>
+            <p><strong>Vorsicht mit den Vendor-Demos im Repo.</strong> Das Paket deckt mehrere Panels ab. <code>7_1_Touch_button_ILI9341</code> setzt Backlight auf GPIO21 und Touch auf einen eigenen Bus — das ist die 2,8″-Platine. <code>7_3_..._2.4RTP</code> hat die richtige Touch-Beschaltung, ist aber auf einen ST7796 mit 320×480 konfiguriert. Für dein Board: Panel <strong>ILI9341 240×320</strong> aus 7_1, Touch- und Backlight-Werte aus 7_3.</p>
           </div>
+
           <div class="note">
-            <p>Eine vollständige Pin-Tabelle steht nicht im README. Vor dem Umbau den Schaltplan im Repo heranziehen — die Zuordnung hier stammt aus der Bauteilliste, nicht aus einer Netzliste.</p>
+            <p><strong>GPIO33 ist der Unterschied zwischen den Varianten.</strong> Auf der resistiven Platine ist er Touch-CS, auf der kapazitiven die I²C-Datenleitung. Beide Bestückungen sind im selben Schaltplan vorgesehen und schließen sich gegenseitig aus.</p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ══════════ C3 ══════════ -->
-    <section id="c3">
-      <h2><span class="num">05</span> ESP32-C3</h2>
-      <p class="section-note">Drei Module. Alle teilen dieselbe Einschränkung: <strong>GPIO9 ist der Boot-Pin</strong> und <strong>USB-HID ist nicht möglich</strong>.</p>
+    <!-- ══════════ BESTAND · C3 ══════════ -->
+    <section id="bc3">
+      <h2><span class="num">05</span> Bestand · ESP32-C3</h2>
+      <p class="section-note">Beide teilen dieselben zwei Einschränkungen: <strong>GPIO9 ist der Boot-Pin</strong> und <strong>USB-HID ist nicht möglich</strong>.</p>
 
       <article class="board" id="xiaoc3">
         <div class="board-head">
-          <h3>Seeed XIAO ESP32-C3 <span class="chip own">eigene Firmware</span></h3>
-          <div class="chips"><span class="chip own">XIAO IR-MATE Server</span></div>
+          <h3>Seeed XIAO ESP32-C3 + IR Mate</h3>
+          <div class="chips"><span class="chip own">eigene Firmware v2.0</span></div>
           <div class="spec">ESP32-C3 · 4 MB · USB-C · Keramikantenne + u.FL</div>
         </div>
         <div class="board-body">
@@ -897,7 +745,7 @@
           </div>
 
           <div class="field">
-            <div class="field-label">Mit XIAO IR Mate Aufsatz — belegt, aus deinem README</div>
+            <div class="field-label">Mit IR-Mate-Aufsatz — belegt, aus deinem README</div>
             <div class="scroller">
               <table>
                 <thead><tr><th>GPIO</th><th>Pin</th><th>Funktion</th><th>Pegel</th></tr></thead>
@@ -918,7 +766,7 @@
           </div>
 
           <div class="note danger">
-            <p><strong>Kein USB-HID.</strong> Der C3 hat kein USB-OTG, nur USB-CDC. Das Board kann sich also nicht als Tastatur oder Maus am Rechner melden — Hardware-Grenze, nicht Firmware. Wenn du HID brauchst: S3 nehmen, oder über BLE gehen (dafür gibt es dein ESP32-BLE-Keyboard-Repo).</p>
+            <p><strong>Kein USB-HID.</strong> Der C3 hat kein USB-OTG, nur USB-CDC. Das Board kann sich nicht als Tastatur oder Maus melden — Hardware-Grenze, nicht Firmware. Wenn du HID brauchst: das S3-DevKit nehmen, oder über BLE gehen.</p>
           </div>
 
           <div class="field">
@@ -933,26 +781,10 @@
         </div>
       </article>
 
-      <article class="board" id="beetlec3">
-        <div class="board-head">
-          <h3>DFRobot Beetle ESP32-C3</h3>
-          <div class="chips"><span class="chip">SmartPoi</span></div>
-          <div class="spec">ESP32-C3 · 4 MB · LiPo-Laderegler onboard</div>
-        </div>
-        <div class="board-body">
-          <div class="field">
-            <p>Das kleinere der beiden SmartPoi-Ziele (<code>dfrobot_beetle_esp32c3</code>). Sehr kompakt, mit Akkuanschluss und Ladeelektronik direkt auf der Platine — der Grund für den Einsatz in Poi. Nur ein Teil der GPIOs ist herausgeführt; die Belegung folgt der C3-Konvention, GPIO9 bleibt Boot-Pin.</p>
-          </div>
-          <div class="note caution">
-            <p><strong>Kein PSRAM.</strong> In der <code>platformio.ini</code> steht bei beiden SmartPoi-Targets <code>board_build.psram = enabled</code> — beim C3 läuft das ins Leere. Wirksam ist die Zeile nur beim FireBeetle-S3-Target.</p>
-          </div>
-        </div>
-      </article>
-
       <article class="board" id="c3lcd">
         <div class="board-head">
           <h3>01Space ESP32-C3 0.42″ LCD</h3>
-          <div class="chips"><span class="chip">ESP32-C3-0.42LCD</span></div>
+          <div class="chips"><span class="chip">eigene Experimente</span></div>
           <div class="spec">ESP32-C3FH4 · 4 MB · OLED 72×40 SSD1306</div>
         </div>
         <div class="board-body">
@@ -964,14 +796,14 @@
                 <tbody>
                   <tr><td class="pin">I²C SDA</td><td class="gpio">GPIO5</td><td>zum OLED</td></tr>
                   <tr><td class="pin">I²C SCL</td><td class="gpio">GPIO6</td><td>zum OLED</td></tr>
-                  <tr><td class="pin">WS2812</td><td class="gpio">GPIO2 oder GPIO8</td><td>revisionsabhängig — beide durchprobieren</td></tr>
+                  <tr><td class="pin">WS2812</td><td class="gpio">GPIO2 oder GPIO8</td><td>revisionsabhängig</td></tr>
                   <tr><td class="pin">Boot</td><td class="gpio">GPIO9</td><td>C3-Standard</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="note caution">
-            <p><strong>Der Display-Offset.</strong> Das Panel ist ein 72×40-Ausschnitt aus einem 128×64-SSD1306-Controller. Ohne Versatz zeichnest du ins Leere. In u8g2 mit <code>x = 30</code>, <code>y = 12</code> arbeiten — das ist die verbreitete, funktionierende Korrektur.</p>
+            <p><strong>Der Display-Offset.</strong> Das Panel ist ein 72×40-Ausschnitt aus einem 128×64-SSD1306-Controller. Ohne Versatz zeichnest du ins Leere. In u8g2 mit <code>x = 30</code>, <code>y = 12</code> arbeiten.</p>
           </div>
           <div class="note">
             <p><strong>Treiber unter Windows:</strong> laut deinem README erst <a href="https://zadig.akeo.ie/">Zadig</a> installieren, sonst taucht der USB-Seriell-Port nicht auf.</p>
@@ -980,45 +812,15 @@
       </article>
     </section>
 
-    <!-- ══════════ S3 ══════════ -->
-    <section id="s3">
-      <h2><span class="num">06</span> ESP32-S3</h2>
-      <p class="section-note">Vier Module. Alles, was USB-HID, Kamera oder größere Displays braucht, landet hier.</p>
-
-      <article class="board" id="stamps3">
-        <div class="board-head">
-          <h3>M5Stack StampS3 — und was darauf aufbaut</h3>
-          <div class="chips"><span class="chip">Bus-Pirate</span><span class="chip">FluidDial</span><span class="chip">Launcher</span></div>
-          <div class="spec">ESP32-S3FN8 · 8 MB Flash · kein PSRAM</div>
-        </div>
-        <div class="board-body">
-          <div class="field">
-            <div class="field-label">Dasselbe Modul in vier Gehäusen</div>
-            <div class="scroller">
-              <table>
-                <thead><tr><th>Gerät</th><th>Display</th><th>Eingabe</th><th>Build-Target</th></tr></thead>
-                <tbody>
-                  <tr><td class="pin">M5Dial</td><td>GC9A01 rund, 240×240</td><td>Drehgeber, RFID, RTC</td><td class="gpio">m5dial → m5stack-stamps3</td></tr>
-                  <tr><td class="pin">Cardputer</td><td>ST7789 1,14″, 240×135</td><td>56-Tasten-Keyboard</td><td class="gpio">cardputer</td></tr>
-                  <tr><td class="pin">AtomS3 Lite</td><td>—</td><td>ein Taster</td><td class="gpio">atom-lite-s3</td></tr>
-                  <tr><td class="pin">StampS3 nackt</td><td>—</td><td>—</td><td class="gpio">m5stack-stamps3</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="note good">
-            <p><strong>Ein Target, vier Geräte.</strong> Weil überall derselbe StampS3 steckt, teilen sich Bus-Pirate und FluidDial dieselbe Board-Definition — der Unterschied liegt nur im Display- und Eingabetreiber. Praktisch: Firmware für ein Gerät lässt sich meist mit einem Flag auf das nächste ziehen.</p>
-          </div>
-          <div class="note caution">
-            <p><strong>8 MB Flash, kein PSRAM.</strong> Der Bus-Pirate nutzt deshalb eine eigene Partitionstabelle (<code>app3M5_spiffs_4M5_8MB.csv</code>). Wer größere Dateisysteme will, muss auf das N16R8-DevKit ausweichen.</p>
-          </div>
-        </div>
-      </article>
+    <!-- ══════════ BESTAND · S3 ══════════ -->
+    <section id="bs3">
+      <h2><span class="num">06</span> Bestand · ESP32-S3</h2>
+      <p class="section-note">Deine beiden einzigen Boards mit USB-OTG. Alles, was HID oder Kamera braucht, landet hier.</p>
 
       <article class="board" id="s3devkit">
         <div class="board-head">
           <h3>ESP32-S3-DevKitC-1 / N16R8</h3>
-          <div class="chips"><span class="chip">Bus-Pirate</span></div>
+          <div class="chips"><span class="chip">Bus-Pirate</span><span class="chip">BLE-Keyboard</span></div>
           <div class="spec">16 MB Flash + 8 MB Oktal-PSRAM · zwei USB-Buchsen</div>
         </div>
         <div class="board-body">
@@ -1047,21 +849,8 @@
               <li><strong>USB / OTG</strong>: HID, MSC, CDC — und wenn die Firmware abstürzt, verschwindet der Port. Dann über UART flashen.</li>
             </ul>
           </div>
-        </div>
-      </article>
-
-      <article class="board" id="firebeetle">
-        <div class="board-head">
-          <h3>DFRobot FireBeetle 2 ESP32-S3</h3>
-          <div class="chips"><span class="chip">SmartPoi (Haupt-Target)</span></div>
-          <div class="spec">ESP32-S3 · 16 MB Flash · 8 MB PSRAM · LiPo</div>
-        </div>
-        <div class="board-body">
-          <div class="field">
-            <p>Das Haupt-Target von SmartPoi (<code>dfrobot_firebeetle2_esp32s3</code>), gebaut mit LittleFS und aktiviertem PSRAM. Ausgelegt auf niedrigen Ruhestrom mit Laderegler und Akku-Messung an Bord — genau das, was ein akkubetriebenes Poi braucht.</p>
-          </div>
-          <div class="note">
-            <p><strong>Toolchain-Detail:</strong> beide SmartPoi-Targets bauen nicht mit dem offiziellen Espressif-Platform-Paket, sondern mit <code>pioarduino</code> 51.03.04. Für neuere Arduino-Cores auf S3 ist das inzwischen der übliche Weg — ein PlatformIO-Standardsetup baut das Projekt nicht.</p>
+          <div class="note good">
+            <p><strong>Dein Bus-Pirate-Target.</strong> Von den vier Build-Zielen des Projekts ist <code>s3-devkit-n16r8</code> das einzige, für das du die Hardware hast — und zugleich das mit dem größten Dateisystem (12 MB SPIFFS statt 4,5 MB).</p>
           </div>
         </div>
       </article>
@@ -1069,7 +858,7 @@
       <article class="board" id="freenove">
         <div class="board-head">
           <h3>Freenove ESP32-S3-WROOM CAM</h3>
-          <div class="chips"><span class="chip">Freenove Kit</span><span class="chip">cam-webserver</span></div>
+          <div class="chips"><span class="chip">cam-webserver</span></div>
           <div class="spec">ESP32-S3-WROOM-1 · 8 MB Flash + 8 MB PSRAM · OV2640</div>
         </div>
         <div class="board-body">
@@ -1098,16 +887,192 @@
               <li>RGB-LED: <code>GPIO48</code></li>
             </ul>
           </div>
+          <div class="note caution">
+            <p><strong>Für den Servo-Webserver ist eine Portierung nötig.</strong> Dein <code>esp32-cam-webserver-servos</code>-Fork ist auf den AI-Thinker ESP32-CAM geschrieben — anderer Chip, andere Kamera-Pins, andere Servo-GPIOs. Der Kamerateil ist über die Tabelle oben ausgetauscht; die Servo-Pins musst du auf freie S3-GPIOs neu legen.</p>
+          </div>
           <div class="note good">
-            <p><strong>Die angenehmere ESP32-CAM.</strong> USB-C direkt an Bord, 8 MB PSRAM statt 4, und die Stromversorgung bricht beim Kamera-Init nicht ein. Für neue Kameraprojekte diesem Board vor dem AI-Thinker den Vorzug geben.</p>
+            <p><strong>Der bessere Weg.</strong> USB-C direkt an Bord, 8 MB PSRAM statt 4, und die Stromversorgung bricht beim Kamera-Init nicht ein — der klassische Brownout-Ärger des AI-Thinker entfällt hier.</p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ══════════ STRAPPING ══════════ -->
+    <!-- ══════════ BESTAND · GERÄTE ══════════ -->
+    <section id="bgeraete">
+      <h2><span class="num">07</span> Bestand · Fertige Geräte</h2>
+
+      <article class="board" id="smartpoi">
+        <div class="board-head">
+          <h3>SmartPoi</h3>
+          <div class="chips"><span class="chip">SmartPoi-Firmware</span><span class="chip">SmartPoi_ESP32</span><span class="chip">Downloader</span></div>
+          <div class="spec">fertig aufgebaut · Platine je nach Generation</div>
+        </div>
+        <div class="board-body">
+          <div class="note caution">
+            <p><strong>Offener Punkt: welche Platine steckt drin?</strong> Du hast die Poi als fertige Geräte, aber keine losen DFRobot-Boards. Die ältere SmartPoi-Generation läuft auf ESP8266, die neue auf ESP32. Bevor du <code>SmartPoi_ESP32</code> flashst, aufschrauben und nachsehen — die beiden Firmware-Zweige sind nicht austauschbar.</p>
+          </div>
+          <div class="field">
+            <div class="field-label">Build-Ziele des ESP32-Zweigs</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Target</th><th>Board</th><th>Eckdaten</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">dfrobot_firebeetle2_esp32s3</td><td class="gpio">FireBeetle 2 ESP32-S3</td><td>16 MB Flash, 8 MB PSRAM, LiPo</td></tr>
+                  <tr><td class="pin">dfrobot_beetle_esp32c3</td><td class="gpio">Beetle ESP32-C3</td><td>4 MB, kein PSRAM, sehr klein</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="note">
+            <p><strong>Toolchain-Detail:</strong> beide Targets bauen nicht mit dem offiziellen Espressif-Paket, sondern mit <code>pioarduino</code> 51.03.04, Dateisystem LittleFS. Ein PlatformIO-Standardsetup baut das Projekt nicht.</p>
+          </div>
+          <div class="note caution">
+            <p><strong>Ein Fehler in der Projektkonfiguration:</strong> <code>board_build.psram = enabled</code> steht bei <em>beiden</em> Targets. Beim C3 läuft das ins Leere — der Chip hat kein PSRAM. Wirksam ist die Zeile nur beim FireBeetle-S3.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══════════ REFERENZ ══════════ -->
+    <section id="referenz">
+      <h2><span class="num">08</span> Nicht im Bestand — Projekt-Ursprung</h2>
+      <p class="section-note">Diese Boards liegen nicht bei dir. Sie stehen hier, weil deine geforkten Projekte für sie geschrieben wurden — nützlich, um zu verstehen, was ein Repo eigentlich erwartet und was eine Portierung kosten würde.</p>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>Wemos D1 mini ESP32</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: WLED-wemos-shield</div>
+        </div>
+        <div class="board-body">
+          <p>Das Shield-Repo deckt beide Wemos-Größen ab. Relevant bleibt eine Warnung, falls du das Board doch einmal kaufst: <strong>gleicher Umriss, andere Pinbelegung</strong> als der ESP8266-D1-mini. Ein Shield, das auf dem einen läuft, legt auf dem anderen fremde Signale auf dieselben Löcher.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>ESP32-CAM (AI-Thinker)</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: esp32-cam-webserver-servos</div>
+        </div>
+        <div class="board-body">
+          <p>Das Zielboard des Fork-Originals. Du hast stattdessen die Freenove-S3-Kamera — siehe Abschnitt 06 für die Portierung. Was der AI-Thinker anders macht: kein USB (FTDI nötig, <code>GPIO0</code> auf GND zum Flashen), 4 MB PSRAM statt 8, und ein notorisch knappes Netzteil-Budget von über 500 mA Spitze beim Kamera-Init.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>CYD ESP32-2432S024<span style="color:var(--ink-3)">C</span> · kapazitiv</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: esp32-2432S024-Capacitive</div>
+        </div>
+        <div class="board-body">
+          <p>Die Schwestervariante deiner Platine — dasselbe Layout, andere Touch-Bestückung. Dein LVGL-Fork ist dafür geschrieben. Zum Umschreiben auf deine resistive Version:</p>
+          <div class="scroller" style="margin-top:0.7rem">
+            <table>
+              <thead><tr><th>Signal</th><th>Kapazitiv (Fork)</th><th>Resistiv (dein Board)</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">Controller</td><td class="gpio">CST816 / GT911, I²C</td><td class="gpio">XPT2046, SPI</td></tr>
+                <tr><td class="pin">GPIO33</td><td class="gpio">CTP_SDA</td><td class="gpio">TP_CS</td></tr>
+                <tr><td class="pin">GPIO32</td><td class="gpio">CTP_SCL</td><td class="gpio">frei</td></tr>
+                <tr><td class="pin">GPIO25</td><td class="gpio">CTP_RST</td><td class="gpio">frei</td></tr>
+                <tr><td class="pin">GPIO21</td><td class="gpio">CTP_INT</td><td class="gpio">frei (auf P3)</td></tr>
+                <tr><td class="pin">GPIO36</td><td class="gpio">—</td><td class="gpio">TP_IRQ, 10 k Pull-up</td></tr>
+                <tr><td class="pin">Bus</td><td class="gpio">eigener I²C</td><td class="gpio">geteilt mit dem Display</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:0.7rem">Display, Backlight, SD, RGB-LED, LDR und Audio sind bei beiden Varianten identisch — nur der Touch-Block unterscheidet sich.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>M5Stack StampS3 — M5Dial, Cardputer, AtomS3</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: ESP32-Bus-Pirate, FluidDial, Launcher</div>
+        </div>
+        <div class="board-body">
+          <p>In allen vier Geräten steckt derselbe ESP32-S3FN8 mit 8 MB Flash und ohne PSRAM — deshalb teilen sich Bus-Pirate und FluidDial dieselbe Board-Definition <code>m5stack-stamps3</code>, und der Unterschied liegt nur im Display- und Eingabetreiber.</p>
+          <div class="scroller" style="margin-top:0.7rem">
+            <table>
+              <thead><tr><th>Gerät</th><th>Display</th><th>Eingabe</th><th>Für welches Projekt</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">M5Dial</td><td>GC9A01 rund, 240×240</td><td>Drehgeber, RFID, RTC</td><td>FluidDial — das Hauptziel</td></tr>
+                <tr><td class="pin">Cardputer</td><td>ST7789 1,14″, 240×135</td><td>56-Tasten-Keyboard</td><td>Bus-Pirate</td></tr>
+                <tr><td class="pin">AtomS3 Lite</td><td>—</td><td>ein Taster</td><td>Bus-Pirate</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note good" style="margin-top:0.8rem">
+            <p><strong>Bus-Pirate brauchst du davon nicht</strong> — das <code>s3-devkit-n16r8</code>-Target läuft auf deinem S3-DevKit. Nur für <strong>FluidDial</strong> wäre ein M5Dial die einzige wirklich passende Hardware.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>DFRobot Beetle ESP32-C3 · FireBeetle 2 ESP32-S3</h3>
+          <div class="chips"><span class="chip ref">nicht als lose Platine</span></div>
+          <div class="spec">Ursprung: SmartPoi_ESP32</div>
+        </div>
+        <div class="board-body">
+          <p>Die beiden Build-Ziele von SmartPoi. Beide bringen LiPo-Laderegler und Akkumessung mit — der Grund, warum sie in akkubetriebenen Poi stecken. Als lose Boards hast du sie nicht; ob eines davon in deinen fertigen Poi verbaut ist, klärt nur ein Blick ins Gehäuse.</p>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head">
+          <h3>ESP32-DIV</h3>
+          <div class="chips"><span class="chip ref">nicht im Bestand</span></div>
+          <div class="spec">Ursprung: cifertech/ESP32-DIV</div>
+        </div>
+        <div class="board-body">
+          <p>Ein zweiteiliges Eigenbau-Gerät: Mainboard mit ESP32, ILI9341 2,8″, LF33-Regler, IP5306-Laderegler, CP2102 und PCF8574 als Taster-Expander — dazu ein Shield mit 3× NRF24L01, 1× CC1101 und Infrarot. Muss selbst gebaut oder als Kit gekauft werden; einzelne Devboards reichen nicht.</p>
+          <div class="note caution">
+            <p>Im Design teilt sich der Buzzer einen GPIO mit dem Batterie-Spannungsteiler und ist deshalb als optional geführt. Eine vollständige Pin-Tabelle steht nicht im README — die läge nur im Schaltplan des Repos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head" style="border-left-color: var(--v5)">
+          <h3>XIAO nRF52840 Sense — kein ESP</h3>
+          <div class="chips"><span class="chip ref">andere Plattform</span></div>
+          <div class="spec">Ursprung: cifertech/XIAO-Controller</div>
+        </div>
+        <div class="board-body">
+          <div class="note danger">
+            <p>Das Repo sitzt zwischen den ESP-Projekten, gehört aber nicht dazu. Der XIAO-Controller läuft auf einem <strong>Nordic nRF52840</strong>, ARM Cortex-M4, kein WLAN, kein espressif32-Target. Nur der XIAO-Formfaktor ist mit deinem IR-Mate-Board gemeinsam — Toolchain und Bibliotheken sind es nicht.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board ref">
+        <div class="board-head" style="border-left-color: var(--ink-3)">
+          <h3>Reine Bibliotheken — ohne eigenes Board</h3>
+          <div class="chips"><span class="chip ref">plattformübergreifend</span></div>
+          <div class="spec">laufen auf mehreren Zielen</div>
+        </div>
+        <div class="board-body">
+          <div class="scroller">
+            <table>
+              <thead><tr><th>Repo</th><th>Was es ist</th><th>Auf deiner Hardware</th></tr></thead>
+              <tbody>
+                <tr><td class="pin">ESP32-BLE-Keyboard</td><td>BLE-HID-Bibliothek</td><td class="gpio">DevKitC, XIAO C3, S3-DevKit</td></tr>
+                <tr><td class="pin">ESPAsyncWebServer</td><td>Webserver</td><td class="gpio">alle; im IR-MATE aus dem esp32async-Fork</td></tr>
+                <tr><td class="pin">ESPConnect</td><td>WLAN-Provisioning</td><td class="gpio">alle</td></tr>
+                <tr><td class="pin">pov-esp32</td><td>POV-Bibliothek, LittleFS + DotStar</td><td class="gpio">DevKitC — <strong>nur APA102</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+    </section>
+
+<!-- ══════════ STRAPPING ══════════ -->
     <section id="strapping">
-      <h2><span class="num">07</span> Strapping-Pins</h2>
+      <h2><span class="num">09</span> Strapping-Pins</h2>
       <p class="section-note">Die häufigste Ursache für ein Board, das „auf einmal nicht mehr startet". Diese Pins werden im Moment des Resets abgetastet; was danach passiert, ist egal — aber was in diesem Moment daran hängt, entscheidet über den Boot.</p>
       <div class="scroller">
         <table>
@@ -1135,7 +1100,7 @@
 
     <!-- ══════════ MINIMALBESCHALTUNG ══════════ -->
     <section id="minimal">
-      <h2><span class="num">08</span> Minimalbeschaltung LED-Ausgang</h2>
+      <h2><span class="num">10</span> Minimalbeschaltung LED-Ausgang</h2>
       <p class="section-note">Das Rezept, das für jedes deiner WLED- und POV-Projekte gilt — unabhängig vom Board. Dein ESP-01-Shield ist die kompakteste Umsetzung davon.</p>
 
       <div class="circuit">
@@ -1214,49 +1179,14 @@
       </details>
     </section>
 
-    <!-- ══════════ SONDERFÄLLE ══════════ -->
-    <section id="sonderfall">
-      <h2><span class="num">09</span> Sonderfälle</h2>
-
-      <article class="board">
-        <div class="board-head" style="border-left-color: var(--v5)">
-          <h3>XIAO-Controller — kein ESP</h3>
-          <div class="spec">Nordic nRF52840 Sense</div>
-        </div>
-        <div class="board-body">
-          <div class="note danger">
-            <p>Das Repo sitzt zwischen den ESP-Projekten, gehört aber nicht dazu: cifertechs XIAO-Controller läuft auf dem <strong>XIAO nRF52840 Sense</strong> — Nordic-Chip, ARM Cortex-M4, kein WLAN. Andere Toolchain, andere Bibliotheken, kein PlatformIO-espressif32-Target. Nur der XIAO-Formfaktor ist gemeinsam.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="board">
-        <div class="board-head" style="border-left-color: var(--ink-3)">
-          <h3>Reine Bibliotheken — kein eigenes Board</h3>
-          <div class="spec">laufen auf mehreren Zielen</div>
-        </div>
-        <div class="board-body">
-          <div class="scroller">
-            <table>
-              <thead><tr><th>Repo</th><th>Was es ist</th><th>Läuft auf</th></tr></thead>
-              <tbody>
-                <tr><td class="pin">ESP32-BLE-Keyboard</td><td>BLE-HID-Bibliothek</td><td class="gpio">ESP32, C3, S3 — HID über BLE, kein USB nötig</td></tr>
-                <tr><td class="pin">ESPAsyncWebServer</td><td>Webserver</td><td class="gpio">alle; im IR-MATE aus dem esp32async-Fork</td></tr>
-                <tr><td class="pin">ESPConnect</td><td>WLAN-Provisioning</td><td class="gpio">alle</td></tr>
-                <tr><td class="pin">pov-esp32</td><td>POV-Bibliothek, LittleFS + DotStar</td><td class="gpio">ESP32 — <strong>nur APA102</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </article>
-    </section>
-
+    
     <footer>
-      <p><strong>Herkunft der Angaben.</strong> Belegt aus deinen Repos: die komplette ESP-01-Shield-Netzliste (Eagle-Schaltplan), die XIAO-IR-Mate-Belegung (README), alle PlatformIO-Build-Targets, die ESP32-DIV-Bauteilliste. Aus Board- und Chip-Dokumentation ergänzt: Pinbelegungen von D1 mini, ESP32-CAM, CYD, Freenove, S3-DevKit sowie alle Strapping-Tabellen.</p>
-      <p style="margin-top:0.8rem"><strong>Zwei Punkte mit Restunsicherheit</strong>, jeweils im Text markiert:</p>
+      <p><strong>Bestand.</strong> Neun Positionen, vom Besitzer bestätigt: ESP-01/ESP-01S, Wemos D1 mini, ESP32 DevKitC, CYD&nbsp;2432S024R, XIAO&nbsp;ESP32-C3 mit IR&nbsp;Mate, 01Space C3 0.42&Prime;, ESP32-S3-DevKitC-1 N16R8, Freenove S3 CAM und die fertigen SmartPoi.</p>
+      <p style="margin-top:0.8rem"><strong>Belegt aus den Repos:</strong> die ESP-01-Shield-Netzliste (Eagle-Schaltplan), die XIAO-IR-Mate-Belegung (README), der komplette CYD-Schaltplan V1.0 inklusive beider Touch-Bestückungen, alle PlatformIO-Build-Targets. Aus Board- und Chip-Dokumentation ergänzt: D1&nbsp;mini, Freenove-Kamerapins, S3-DevKit und die Strapping-Tabellen.</p>
+      <p style="margin-top:0.8rem"><strong>Zwei offene Punkte</strong>, im Text markiert statt geraten:</p>
       <ul>
-        <li>WS2812-Pin des 01Space C3-0.42-Boards — je nach Revision GPIO2 oder GPIO8</li>
-        <li>ESP32-DIV — Bauteile belegt, exakte GPIO-Zuordnung nur im Schaltplan des Repos</li>
+        <li>Welche Platine in den fertigen SmartPoi steckt — ESP8266- oder ESP32-Generation</li>
+        <li>WS2812-Pin des 01Space C3-Boards — je nach Revision GPIO2 oder GPIO8</li>
       </ul>
     </footer>
 
