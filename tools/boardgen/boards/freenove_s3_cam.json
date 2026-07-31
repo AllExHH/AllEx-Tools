@@ -1,0 +1,183 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32s3",
+		"mcu": "esp32s3",
+		"variant": "freenove_s3_cam"
+	},
+	"name": "Freenove ESP32-S3-WROOM CAM",
+	"url": "https://github.com/Freenove/Freenove_ESP32_S3_WROOM_Board",
+	"vendor": "Freenove",
+	"upload": {
+		"flash_size": 8388608,
+		"maximum_size": 3355443,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "FREENOVE",
+		"templates": [
+			"pcb-black",
+			"freenove-s3-cam"
+		],
+		"scale": 16,
+		"pinout": {
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"5V": {
+				"PWR": "5V"
+			},
+			"GND": {
+				"GND": null
+			},
+			"RST": {
+				"CTRL": "RST"
+			},
+			"IO4": {
+				"GPIO": "IO4",
+				"DVP": "SIOD"
+			},
+			"IO5": {
+				"GPIO": "IO5",
+				"DVP": "SIOC"
+			},
+			"IO6": {
+				"GPIO": "IO6",
+				"DVP": "VSYNC"
+			},
+			"IO7": {
+				"GPIO": "IO7",
+				"DVP": "HREF"
+			},
+			"IO15": {
+				"GPIO": "IO15",
+				"DVP": "XCLK"
+			},
+			"IO16": {
+				"GPIO": "IO16",
+				"DVP": "Y9"
+			},
+			"IO17": {
+				"GPIO": "IO17",
+				"DVP": "Y8"
+			},
+			"IO18": {
+				"GPIO": "IO18",
+				"DVP": "Y7"
+			},
+			"IO8": {
+				"GPIO": "IO8",
+				"DVP": "Y4"
+			},
+			"IO9": {
+				"GPIO": "IO9",
+				"DVP": "Y3"
+			},
+			"IO10": {
+				"GPIO": "IO10",
+				"DVP": "Y5"
+			},
+			"IO11": {
+				"GPIO": "IO11",
+				"DVP": "Y2"
+			},
+			"IO12": {
+				"GPIO": "IO12",
+				"DVP": "Y6"
+			},
+			"IO13": {
+				"GPIO": "IO13",
+				"DVP": "PCLK"
+			},
+			"IO3": {
+				"GPIO": "IO3",
+				"CTRL": "JTAG"
+			},
+			"IO46": {
+				"GPIO": "IO46",
+				"CTRL": "LOG"
+			},
+			"IO14": {
+				"GPIO": "IO14"
+			},
+			"IO1": {
+				"GPIO": "IO1",
+				"ADC": 1
+			},
+			"IO2": {
+				"GPIO": "IO2",
+				"SD": "LED"
+			},
+			"IO42": {
+				"GPIO": "IO42"
+			},
+			"IO41": {
+				"GPIO": "IO41"
+			},
+			"IO40": {
+				"GPIO": "IO40",
+				"SD": "DATA"
+			},
+			"IO39": {
+				"GPIO": "IO39",
+				"SD": "CLK"
+			},
+			"IO38": {
+				"GPIO": "IO38",
+				"SD": "CMD"
+			},
+			"IO37": {
+				"GPIO": "IO37",
+				"CTRL": "PSRAM"
+			},
+			"IO36": {
+				"GPIO": "IO36",
+				"CTRL": "PSRAM"
+			},
+			"IO35": {
+				"GPIO": "IO35",
+				"CTRL": "PSRAM"
+			},
+			"IO0": {
+				"GPIO": "IO0",
+				"CTRL": "Boot"
+			},
+			"IO45": {
+				"GPIO": "IO45",
+				"CTRL": "Strap"
+			},
+			"IO48": {
+				"GPIO": "IO48",
+				"SD": "WS2812"
+			},
+			"IO47": {
+				"GPIO": "IO47"
+			},
+			"IO21": {
+				"GPIO": "IO21"
+			},
+			"IO20": {
+				"GPIO": "IO20",
+				"USB": "D+"
+			},
+			"IO19": {
+				"GPIO": "IO19",
+				"USB": "D-"
+			},
+			"IO43": {
+				"UART": "TX",
+				"GPIO": "IO43"
+			},
+			"IO44": {
+				"UART": "RX",
+				"GPIO": "IO44"
+			},
+			"CAM": {
+				"DVP": "OV2640"
+			},
+			"SD": {
+				"SD": "microSD"
+			}
+		}
+	}
+}

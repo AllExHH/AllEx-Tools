@@ -1,0 +1,166 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32",
+		"mcu": "esp32",
+		"variant": "esp32_devkitc"
+	},
+	"name": "ESP32 DevKitC / WROOM-32",
+	"url": "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html",
+	"vendor": "Espressif",
+	"upload": {
+		"flash_size": 4194304,
+		"maximum_size": 1677721,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "DEVKITC",
+		"templates": [
+			"pcb-black",
+			"esp32-devkitc"
+		],
+		"scale": 17,
+		"pinout": {
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"5V": {
+				"PWR": "5V"
+			},
+			"EN": {
+				"CTRL": "EN"
+			},
+			"GND1": {
+				"GND": null
+			},
+			"GND2": {
+				"GND": null
+			},
+			"GND3": {
+				"GND": null
+			},
+			"VP": {
+				"PHYSICAL": "VP",
+				"GPIO": "IO36",
+				"ADC": 1
+			},
+			"VN": {
+				"PHYSICAL": "VN",
+				"GPIO": "IO39",
+				"ADC": 1
+			},
+			"IO34": {
+				"GPIO": "IO34",
+				"ADC": 1
+			},
+			"IO35": {
+				"GPIO": "IO35",
+				"ADC": 1
+			},
+			"IO32": {
+				"GPIO": "IO32",
+				"ADC": 1
+			},
+			"IO33": {
+				"GPIO": "IO33",
+				"ADC": 1
+			},
+			"IO25": {
+				"GPIO": "IO25",
+				"ADC": 2
+			},
+			"IO26": {
+				"GPIO": "IO26",
+				"ADC": 2
+			},
+			"IO27": {
+				"GPIO": "IO27",
+				"ADC": 2
+			},
+			"IO14": {
+				"GPIO": "IO14",
+				"ADC": 2
+			},
+			"IO12": {
+				"GPIO": "IO12",
+				"CTRL": "MTDI"
+			},
+			"IO13": {
+				"GPIO": "IO13",
+				"ADC": 2
+			},
+			"IO23": {
+				"GPIO": "IO23",
+				"SPI": "MOSI"
+			},
+			"IO22": {
+				"GPIO": "IO22",
+				"I2C": "SCL"
+			},
+			"IO21": {
+				"GPIO": "IO21",
+				"I2C": "SDA"
+			},
+			"IO19": {
+				"GPIO": "IO19",
+				"SPI": "MISO"
+			},
+			"IO18": {
+				"GPIO": "IO18",
+				"SPI": "SCK"
+			},
+			"IO5": {
+				"GPIO": "IO5",
+				"SPI": "CS"
+			},
+			"IO17": {
+				"GPIO": "IO17"
+			},
+			"IO16": {
+				"GPIO": "IO16"
+			},
+			"IO4": {
+				"GPIO": "IO4",
+				"ADC": 2
+			},
+			"IO0": {
+				"GPIO": "IO0",
+				"CTRL": "Boot"
+			},
+			"IO2": {
+				"GPIO": "IO2",
+				"CTRL": "Strap"
+			},
+			"IO15": {
+				"GPIO": "IO15",
+				"CTRL": "Strap"
+			},
+			"TX0": {
+				"UART": "TX0",
+				"GPIO": "IO1"
+			},
+			"RX0": {
+				"UART": "RX0",
+				"GPIO": "IO3"
+			},
+			"SD0": {
+				"FLASH": "SD0"
+			},
+			"SD1": {
+				"FLASH": "SD1"
+			},
+			"SD2": {
+				"FLASH": "SD2"
+			},
+			"SD3": {
+				"FLASH": "SD3"
+			},
+			"CMD": {
+				"FLASH": "CMD"
+			},
+			"CLK": {
+				"FLASH": "CLK"
+			}
+		}
+	}
+}

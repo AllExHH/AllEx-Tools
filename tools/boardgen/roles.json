@@ -2,17 +2,17 @@
 	"PHYSICAL": {
 		"title": "Pad-Bezeichnung auf der Platine",
 		"color": "#7A5843",
-		"ratio": 1.5
+		"ratio": 1.6
 	},
 	"GPIO": {
 		"title": "GPIO-Nummer",
 		"color": "#4F9243",
-		"ratio": 1.7
+		"ratio": 1.8
 	},
 	"ADC": {
 		"title": "Analogeingang",
 		"color": "#CF8524",
-		"ratio": 1.7
+		"ratio": 1.8
 	},
 	"PWR": {
 		"title": "Versorgung",
@@ -27,7 +27,7 @@
 	"CTRL": {
 		"title": "Steuerpin",
 		"color": "#B8452F",
-		"ratio": 1.6
+		"ratio": 2.2
 	},
 	"I2C": {
 		"title": "I2C-Bus",
@@ -37,12 +37,12 @@
 	"SPI": {
 		"title": "SPI-Bus",
 		"color": "#8E56A8",
-		"ratio": 1.9
+		"ratio": 2.0
 	},
 	"UART": {
 		"title": "Serielle Schnittstelle",
 		"color": "#158B7C",
-		"ratio": 1.7
+		"ratio": 1.8
 	},
 	"USB": {
 		"title": "USB-Datenleitung",
@@ -52,17 +52,17 @@
 	"JTAG": {
 		"title": "JTAG-Debugschnittstelle",
 		"color": "#B08A2E",
-		"ratio": 1.9
+		"ratio": 2.0
 	},
 	"DVP": {
 		"title": "Kameraschnittstelle",
 		"color": "#3E7C9B",
-		"ratio": 2.4
+		"ratio": 2.2
 	},
 	"SD": {
 		"title": "SD-Karte",
 		"color": "#C2A33A",
-		"ratio": 2.1
+		"ratio": 2.4
 	},
 	"RTC": {
 		"title": "RTC-faehig",
@@ -73,5 +73,15 @@
 		"title": "Richtung",
 		"color": "#4E4C4C",
 		"ratio": 1.8
+	},
+	"I2S": {
+		"title": "I2S / PDM",
+		"color": "#B0603C",
+		"ratio": 2.0
+	},
+	"FLASH": {
+		"title": "Interner Flash",
+		"color": "#8A6E3A",
+		"ratio": 2.0
 	}
 }

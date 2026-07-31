@@ -1,0 +1,188 @@
+{
+	"name": "esp32-devkitc",
+	"title": "ESP32 DevKitC / WROOM-32 (28.2 x 53 mm)",
+	"width": 28.2,
+	"height": 53.0,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "28.20,53.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "10.35,50.50",
+			"size": "7.50,2.60",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#DCDCDC",
+					"0,1",
+					"#8E8E8E"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "11.45,51.30",
+			"size": "5.30,1.10",
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "5.10,2.14",
+			"size": "18.00,11.16",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "5.80,4.15",
+			"size": "16.60,5.58",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.10,6.83",
+			"text": "ESP32-WROOM",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.10,8.84",
+			"text": "4 MB",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "4.00,48.50",
+			"d": 2.6,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "4.00,48.50",
+			"d": 1.1700000000000002,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "24.20,48.50",
+			"d": 2.6,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "24.20,48.50",
+			"d": 1.1700000000000002,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.10,48.80",
+			"text": "ESP32 DevKitC",
+			"font_size": 0.9,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_header_vert",
+			"repeat": 19,
+			"pos": "0,3.64",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_header_vert",
+			"repeat": 19,
+			"pos": "28.20,3.64",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [],
+	"pads": {
+		"3V3": "esp32-devkitc.front.left.pin1",
+		"EN": "esp32-devkitc.front.left.pin2",
+		"VP": "esp32-devkitc.front.left.pin3",
+		"VN": "esp32-devkitc.front.left.pin4",
+		"IO34": "esp32-devkitc.front.left.pin5",
+		"IO35": "esp32-devkitc.front.left.pin6",
+		"IO32": "esp32-devkitc.front.left.pin7",
+		"IO33": "esp32-devkitc.front.left.pin8",
+		"IO25": "esp32-devkitc.front.left.pin9",
+		"IO26": "esp32-devkitc.front.left.pin10",
+		"IO27": "esp32-devkitc.front.left.pin11",
+		"IO14": "esp32-devkitc.front.left.pin12",
+		"IO12": "esp32-devkitc.front.left.pin13",
+		"GND1": "esp32-devkitc.front.left.pin14",
+		"IO13": "esp32-devkitc.front.left.pin15",
+		"SD2": "esp32-devkitc.front.left.pin16",
+		"SD3": "esp32-devkitc.front.left.pin17",
+		"CMD": "esp32-devkitc.front.left.pin18",
+		"5V": "esp32-devkitc.front.left.pin19",
+		"GND2": "esp32-devkitc.front.right.pin1",
+		"IO23": "esp32-devkitc.front.right.pin2",
+		"IO22": "esp32-devkitc.front.right.pin3",
+		"TX0": "esp32-devkitc.front.right.pin4",
+		"RX0": "esp32-devkitc.front.right.pin5",
+		"IO21": "esp32-devkitc.front.right.pin6",
+		"GND3": "esp32-devkitc.front.right.pin7",
+		"IO19": "esp32-devkitc.front.right.pin8",
+		"IO18": "esp32-devkitc.front.right.pin9",
+		"IO5": "esp32-devkitc.front.right.pin10",
+		"IO17": "esp32-devkitc.front.right.pin11",
+		"IO16": "esp32-devkitc.front.right.pin12",
+		"IO4": "esp32-devkitc.front.right.pin13",
+		"IO0": "esp32-devkitc.front.right.pin14",
+		"IO2": "esp32-devkitc.front.right.pin15",
+		"IO15": "esp32-devkitc.front.right.pin16",
+		"SD1": "esp32-devkitc.front.right.pin17",
+		"SD0": "esp32-devkitc.front.right.pin18",
+		"CLK": "esp32-devkitc.front.right.pin19"
+	},
+	"test_pads": {}
+}

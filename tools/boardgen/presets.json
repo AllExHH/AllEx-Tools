@@ -1,0 +1,11 @@
+{
+	"mask_yellow": {
+		"fill": {
+			"lgrad": ["1,0", "#F5D033", "0,1", "#D9B216"]
+		},
+		"stroke": {
+			"color": "#8A6E10",
+			"width": 0.15
+		}
+	}
+}

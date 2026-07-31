@@ -1,0 +1,278 @@
+{
+	"name": "xiao-s3-sense",
+	"title": "XIAO ESP32-S3 Sense (Aufsatz)",
+	"width": 17.5,
+	"height": 21.0,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "17.50,21.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "2.40,1.60",
+			"size": "12.70,9.40",
+			"rx": 0.4,
+			"ry": 0.4,
+			"fill": {
+				"color": "#22262B"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.20,2.40",
+			"size": "11.10,7.80",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#33393F"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,6.80",
+			"text": "OV2640",
+			"font_size": 0.95,
+			"fill": {
+				"color": "#C9D2D8"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "1.90,12.40",
+			"size": "13.70,5.40",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#D2D2D2",
+					"0,1",
+					"#8F8F8F"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.60,13.10",
+			"size": "12.30,4.00",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#6E6E6E"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,15.60",
+			"text": "microSD",
+			"font_size": 0.8,
+			"fill": {
+				"color": "#F2F2F2"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.90,18.70",
+			"size": "7.60,1.80",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#1C1C1C"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,11.60",
+			"text": "PDM-Mikrofon",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "sl1",
+			"name": "anchor_edge",
+			"pos": "0,3.20",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "sl2",
+			"name": "anchor_edge",
+			"pos": "0,5.74",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "sl3",
+			"name": "anchor_edge",
+			"pos": "0,8.28",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "sl4",
+			"name": "anchor_edge",
+			"pos": "0,10.82",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "sl5",
+			"name": "anchor_edge",
+			"pos": "0,13.36",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "sr1",
+			"name": "anchor_edge",
+			"pos": "17.5,3.20",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr2",
+			"name": "anchor_edge",
+			"pos": "17.5,5.74",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr3",
+			"name": "anchor_edge",
+			"pos": "17.5,8.28",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr4",
+			"name": "anchor_edge",
+			"pos": "17.5,10.82",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr5",
+			"name": "anchor_edge",
+			"pos": "17.5,13.36",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr6",
+			"name": "anchor_edge",
+			"pos": "17.5,15.90",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "sr7",
+			"name": "anchor_edge",
+			"pos": "17.5,18.44",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "17.50,21.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "text",
+			"pos": "8.75,2.40",
+			"text": "Unterseite",
+			"font_size": 0.9,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.90,4.00",
+			"size": "7.60,2.40",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#1C1C1C"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,7.60",
+			"text": "B2B zum XIAO",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,18.60",
+			"text": "seeed studio",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,19.80",
+			"text": "XIAO Sense",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "b1",
+			"name": "anchor_edge",
+			"pos": "0,11.0",
+			"vars": {
+				"PINDIR": "left"
+			}
+		}
+	],
+	"pads": {},
+	"test_pads": {
+		"XCLK": "xiao-s3-sense.front.sl1.a",
+		"SIOD": "xiao-s3-sense.front.sl2.a",
+		"SIOC": "xiao-s3-sense.front.sl3.a",
+		"VSYNC": "xiao-s3-sense.front.sl4.a",
+		"HREF": "xiao-s3-sense.front.sl5.a",
+		"PCLK": "xiao-s3-sense.front.sr1.a",
+		"CAM_Y9": "xiao-s3-sense.front.sr2.a",
+		"CAM_Y8": "xiao-s3-sense.front.sr3.a",
+		"CAM_Y7": "xiao-s3-sense.front.sr4.a",
+		"MIC_CLK": "xiao-s3-sense.front.sr5.a",
+		"MIC_DAT": "xiao-s3-sense.front.sr6.a",
+		"SD_CS": "xiao-s3-sense.front.sr7.a",
+		"SD_BUS": "xiao-s3-sense.back.b1.a"
+	}
+}

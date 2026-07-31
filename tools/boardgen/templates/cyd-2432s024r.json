@@ -1,0 +1,512 @@
+{
+	"name": "cyd-2432s024r",
+	"title": "CYD ESP32-2432S024R (68 x 43 mm)",
+	"width": 68.0,
+	"height": 43.0,
+	"vars": {
+		"RASTER": 3.4,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "68.00,43.00",
+			"rx": 1.6,
+			"ry": 1.6,
+			"preset": "mask_yellow"
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,3.20",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,39.80",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,3.20",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,39.80",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,3.20",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,39.80",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,3.20",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,39.80",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "8.50,1.50",
+			"size": "51.00,40.00",
+			"rx": 0.5,
+			"ry": 0.5,
+			"fill": {
+				"color": "#1A1A1A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.50,3.50",
+			"size": "47.00,36.00",
+			"fill": {
+				"color": "#0B1A2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,22.00",
+			"text": "2,4\" ILI9341 240x320",
+			"font_size": 1.6,
+			"fill": {
+				"color": "#7FA8CC"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,25.60",
+			"text": "resistiver Touch XPT2046",
+			"font_size": 1.2,
+			"fill": {
+				"color": "#5E7E9B"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "63.50,8.00",
+			"d": 2.4,
+			"fill": {
+				"color": "#E8E8E8"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "63.50,12.20",
+			"text": "RGB",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"id": "cl1",
+			"name": "anchor_edge",
+			"pos": "0,7.00",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl2",
+			"name": "anchor_edge",
+			"pos": "0,11.50",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl3",
+			"name": "anchor_edge",
+			"pos": "0,16.00",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl4",
+			"name": "anchor_edge",
+			"pos": "0,20.50",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl5",
+			"name": "anchor_edge",
+			"pos": "0,25.00",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl6",
+			"name": "anchor_edge",
+			"pos": "0,29.50",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl7",
+			"name": "anchor_edge",
+			"pos": "0,34.00",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "cl8",
+			"name": "anchor_edge",
+			"pos": "0,38.50",
+			"vars": {
+				"PINDIR": "left"
+			}
+		}
+	],
+	"back": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "68.00,43.00",
+			"rx": 1.6,
+			"ry": 1.6,
+			"preset": "mask_yellow"
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,3.20",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,39.80",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,3.20",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,39.80",
+			"d": 3.2,
+			"fill": {
+				"color": "#B9962A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,3.20",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.20,39.80",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,3.20",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "64.80,39.80",
+			"d": 1.9,
+			"fill": {
+				"color": "#101010"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "24.00,12.00",
+			"size": "20.00,18.00",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "24.70,15.24",
+			"size": "18.60,9.00",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,19.56",
+			"text": "ESP32-WROOM",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,22.80",
+			"text": "4 MB",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "1.00,17.00",
+			"size": "7.00,9.00",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#D2D2D2",
+					"0,1",
+					"#8F8F8F"
+				]
+			}
+		},
+		{
+			"type": "text",
+			"pos": "4.50,27.80",
+			"text": "microSD",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "30.00,39.00",
+			"size": "8.00,3.40",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#DCDCDC",
+					"0,1",
+					"#8E8E8E"
+				]
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,37.40",
+			"text": "micro-USB",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "59.00,8.00",
+			"size": "6.50,5.00",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "62.20,15.00",
+			"text": "P3",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "59.00,20.00",
+			"size": "6.50,5.00",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "62.20,27.00",
+			"text": "CN1",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "12.00,34.00",
+			"d": 2.0,
+			"fill": {
+				"color": "#5A4A1A"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.00,37.60",
+			"text": "LDR",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "48.00,34.00",
+			"d": 2.6,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "48.00,38.40",
+			"text": "Lautsprecher",
+			"font_size": 0.9,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "34.00,3.20",
+			"text": "Unterseite",
+			"font_size": 1.1,
+			"fill": {
+				"color": "#3A3000"
+			}
+		},
+		{
+			"id": "cr1",
+			"name": "anchor_edge",
+			"pos": "68.0,8.00",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr2",
+			"name": "anchor_edge",
+			"pos": "68.0,12.50",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr3",
+			"name": "anchor_edge",
+			"pos": "68.0,17.00",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr4",
+			"name": "anchor_edge",
+			"pos": "68.0,21.50",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr5",
+			"name": "anchor_edge",
+			"pos": "68.0,26.00",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr6",
+			"name": "anchor_edge",
+			"pos": "68.0,30.50",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "cr7",
+			"name": "anchor_edge",
+			"pos": "68.0,35.00",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"pads": {},
+	"test_pads": {
+		"TFT_SCK": "cyd-2432s024r.front.cl1.a",
+		"TFT_MOSI": "cyd-2432s024r.front.cl2.a",
+		"TFT_MISO": "cyd-2432s024r.front.cl3.a",
+		"TFT_DC": "cyd-2432s024r.front.cl4.a",
+		"TFT_CS": "cyd-2432s024r.front.cl5.a",
+		"TFT_BL": "cyd-2432s024r.front.cl6.a",
+		"TP_CS": "cyd-2432s024r.front.cl7.a",
+		"TP_IRQ": "cyd-2432s024r.front.cl8.a",
+		"SD_CLK": "cyd-2432s024r.back.cr1.a",
+		"SD_MISO": "cyd-2432s024r.back.cr2.a",
+		"SD_MOSI": "cyd-2432s024r.back.cr3.a",
+		"SD_CS": "cyd-2432s024r.back.cr4.a",
+		"RGB_R": "cyd-2432s024r.back.cr5.a",
+		"LDR": "cyd-2432s024r.back.cr6.a",
+		"SPK": "cyd-2432s024r.back.cr7.a"
+	}
+}

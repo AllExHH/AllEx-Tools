@@ -1,0 +1,86 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32",
+		"mcu": "esp32",
+		"variant": "cyd_2432s024r"
+	},
+	"name": "CYD ESP32-2432S024R",
+	"url": "https://github.com/AllExHH/CYD_2.4inch_ESP32-2432S024",
+	"vendor": "Guition",
+	"upload": {
+		"flash_size": 4194304,
+		"maximum_size": 1677721,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "CYD",
+		"templates": [
+			"pcb-black",
+			"cyd-2432s024r"
+		],
+		"scale": 13,
+		"pinout": {
+			"TFT_SCK": {
+				"SPI": "SCK",
+				"GPIO": "IO14"
+			},
+			"TFT_MOSI": {
+				"SPI": "MOSI",
+				"GPIO": "IO13"
+			},
+			"TFT_MISO": {
+				"SPI": "MISO",
+				"GPIO": "IO12"
+			},
+			"TFT_DC": {
+				"CTRL": "DC",
+				"GPIO": "IO2"
+			},
+			"TFT_CS": {
+				"SPI": "CS",
+				"GPIO": "IO15"
+			},
+			"TFT_BL": {
+				"CTRL": "BL",
+				"GPIO": "IO27"
+			},
+			"TP_CS": {
+				"SPI": "TP CS",
+				"GPIO": "IO33"
+			},
+			"TP_IRQ": {
+				"CTRL": "TP IRQ",
+				"GPIO": "IO36"
+			},
+			"SD_CLK": {
+				"SD": "CLK",
+				"GPIO": "IO18"
+			},
+			"SD_MISO": {
+				"SD": "MISO",
+				"GPIO": "IO19"
+			},
+			"SD_MOSI": {
+				"SD": "MOSI",
+				"GPIO": "IO23"
+			},
+			"SD_CS": {
+				"SD": "CS",
+				"GPIO": "IO5"
+			},
+			"RGB_R": {
+				"PHYSICAL": "RGB",
+				"CTRL": "4/16/17"
+			},
+			"LDR": {
+				"ADC": 1,
+				"GPIO": "IO34"
+			},
+			"SPK": {
+				"I2S": "Audio",
+				"GPIO": "IO26"
+			}
+		}
+	}
+}

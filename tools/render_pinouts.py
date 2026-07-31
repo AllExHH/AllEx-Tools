@@ -26,7 +26,10 @@ OWN = HERE / "boardgen"
 OUT = HERE / "out"
 
 BOARDS = [
-    "xiao_esp32s3",
+    "esp01s", "d1_mini",
+    "esp32_devkitc", "cyd_2432s024r",
+    "xiao_esp32c3",
+    "xiao_esp32s3", "xiao_s3_sense", "esp32s3_devkitc1", "freenove_s3_cam",
 ]
 
 
@@ -50,15 +53,15 @@ def build_base(tmp: Path, res: Path) -> Path:
     for name in ("presets.json", "roles.json", "flash.json"):
         shutil.copy(res / name, base / name)
 
-    # eigene Rollen (Farben, Labelbreiten) ueber die mitgelieferten legen
-    own_roles = OWN / "roles.json"
-    if own_roles.is_file():
-        merged = json.loads((base / "roles.json").read_text(encoding="utf-8"))
-        for key, value in json.loads(own_roles.read_text(encoding="utf-8")).items():
+    # eigene Rollen und Presets ueber die mitgelieferten legen
+    for name in ("roles.json", "presets.json"):
+        own = OWN / name
+        if not own.is_file():
+            continue
+        merged = json.loads((base / name).read_text(encoding="utf-8"))
+        for key, value in json.loads(own.read_text(encoding="utf-8")).items():
             merged.setdefault(key, {}).update(value)
-        (base / "roles.json").write_text(
-            json.dumps(merged, indent=2), encoding="utf-8"
-        )
+        (base / name).write_text(json.dumps(merged, indent=2), encoding="utf-8")
 
     # eigene Definitionen zuerst, mitgelieferte als Ergaenzung darunter
     for kind in ("boards", "templates", "shapes"):

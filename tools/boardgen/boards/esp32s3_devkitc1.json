@@ -1,0 +1,186 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32s3",
+		"mcu": "esp32s3",
+		"variant": "esp32s3_devkitc1"
+	},
+	"name": "ESP32-S3-DevKitC-1 N16R8",
+	"url": "https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html",
+	"vendor": "Espressif",
+	"upload": {
+		"flash_size": 16777216,
+		"maximum_size": 6710886,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "S3DEVKIT",
+		"templates": [
+			"pcb-black",
+			"esp32s3-devkitc1"
+		],
+		"scale": 15,
+		"pinout": {
+			"3V3a": {
+				"PWR": "3V3"
+			},
+			"3V3b": {
+				"PWR": "3V3"
+			},
+			"5V": {
+				"PWR": "5V"
+			},
+			"GNDa": {
+				"GND": null
+			},
+			"GNDb": {
+				"GND": null
+			},
+			"GNDc": {
+				"GND": null
+			},
+			"GNDd": {
+				"GND": null
+			},
+			"RST": {
+				"CTRL": "RST"
+			},
+			"IO4": {
+				"GPIO": "IO4",
+				"ADC": 1
+			},
+			"IO5": {
+				"GPIO": "IO5",
+				"ADC": 1
+			},
+			"IO6": {
+				"GPIO": "IO6",
+				"ADC": 1
+			},
+			"IO7": {
+				"GPIO": "IO7",
+				"ADC": 1
+			},
+			"IO15": {
+				"GPIO": "IO15",
+				"ADC": 2
+			},
+			"IO16": {
+				"GPIO": "IO16",
+				"ADC": 2
+			},
+			"IO17": {
+				"GPIO": "IO17",
+				"ADC": 2
+			},
+			"IO18": {
+				"GPIO": "IO18",
+				"ADC": 2
+			},
+			"IO8": {
+				"GPIO": "IO8",
+				"I2C": "SDA"
+			},
+			"IO9": {
+				"GPIO": "IO9",
+				"I2C": "SCL"
+			},
+			"IO3": {
+				"GPIO": "IO3",
+				"CTRL": "Strap"
+			},
+			"IO46": {
+				"GPIO": "IO46",
+				"CTRL": "Strap"
+			},
+			"IO10": {
+				"GPIO": "IO10",
+				"SPI": "CS"
+			},
+			"IO11": {
+				"GPIO": "IO11",
+				"SPI": "MOSI"
+			},
+			"IO12": {
+				"GPIO": "IO12",
+				"SPI": "SCK"
+			},
+			"IO13": {
+				"GPIO": "IO13",
+				"SPI": "MISO"
+			},
+			"IO14": {
+				"GPIO": "IO14"
+			},
+			"IO1": {
+				"GPIO": "IO1",
+				"ADC": 1
+			},
+			"IO2": {
+				"GPIO": "IO2",
+				"ADC": 1
+			},
+			"IO42": {
+				"GPIO": "IO42"
+			},
+			"IO41": {
+				"GPIO": "IO41"
+			},
+			"IO40": {
+				"GPIO": "IO40"
+			},
+			"IO39": {
+				"GPIO": "IO39"
+			},
+			"IO38": {
+				"GPIO": "IO38"
+			},
+			"IO37": {
+				"GPIO": "IO37",
+				"CTRL": "PSRAM"
+			},
+			"IO36": {
+				"GPIO": "IO36",
+				"CTRL": "PSRAM"
+			},
+			"IO35": {
+				"GPIO": "IO35",
+				"CTRL": "PSRAM"
+			},
+			"IO0": {
+				"GPIO": "IO0",
+				"CTRL": "Boot"
+			},
+			"IO45": {
+				"GPIO": "IO45",
+				"CTRL": "Strap"
+			},
+			"IO48": {
+				"GPIO": "IO48",
+				"SD": "WS2812"
+			},
+			"IO47": {
+				"GPIO": "IO47"
+			},
+			"IO21": {
+				"GPIO": "IO21"
+			},
+			"IO20": {
+				"GPIO": "IO20",
+				"USB": "D+"
+			},
+			"IO19": {
+				"GPIO": "IO19",
+				"USB": "D-"
+			},
+			"TX": {
+				"UART": "TX",
+				"GPIO": "IO43"
+			},
+			"RX": {
+				"UART": "RX",
+				"GPIO": "IO44"
+			}
+		}
+	}
+}

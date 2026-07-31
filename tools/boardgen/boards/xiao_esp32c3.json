@@ -1,0 +1,127 @@
+{
+	"build": {
+		"f_cpu": "160000000L",
+		"family": "esp32c3",
+		"mcu": "esp32c3",
+		"variant": "xiao_esp32c3"
+	},
+	"name": "Seeed XIAO ESP32-C3",
+	"url": "https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/",
+	"vendor": "Seeed Studio",
+	"upload": {
+		"flash_size": 4194304,
+		"maximum_size": 1677721,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "XIAO-C3",
+		"templates": [
+			"pcb-black",
+			"xiao-esp32c3"
+		],
+		"scale": 26,
+		"pinout": {
+			"D0": {
+				"PHYSICAL": "D0",
+				"GPIO": "IO2",
+				"ADC": 0
+			},
+			"D1": {
+				"PHYSICAL": "D1",
+				"GPIO": "IO3",
+				"ADC": 1,
+				"DVP": "IR TX"
+			},
+			"D2": {
+				"PHYSICAL": "D2",
+				"GPIO": "IO4",
+				"ADC": 2,
+				"DVP": "IR RX"
+			},
+			"D3": {
+				"PHYSICAL": "D3",
+				"GPIO": "IO5",
+				"ADC": 3,
+				"DVP": "Touch"
+			},
+			"D4": {
+				"PHYSICAL": "D4",
+				"GPIO": "IO6",
+				"I2C": "SDA",
+				"DVP": "Vibration"
+			},
+			"D5": {
+				"PHYSICAL": "D5",
+				"GPIO": "IO7",
+				"I2C": "SCL",
+				"DVP": "WS2812"
+			},
+			"D6": {
+				"PHYSICAL": "D6",
+				"GPIO": "IO21",
+				"UART": "TX"
+			},
+			"D7": {
+				"PHYSICAL": "D7",
+				"GPIO": "IO20",
+				"UART": "RX"
+			},
+			"D8": {
+				"PHYSICAL": "D8",
+				"GPIO": "IO8",
+				"SPI": "SCK",
+				"CTRL": "Strap"
+			},
+			"D9": {
+				"PHYSICAL": "D9",
+				"GPIO": "IO9",
+				"SPI": "MISO",
+				"CTRL": "Boot"
+			},
+			"D10": {
+				"PHYSICAL": "D10",
+				"GPIO": "IO10",
+				"SPI": "MOSI"
+			},
+			"5V": {
+				"PWR": "VBUS"
+			},
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"GND": {
+				"GND": null
+			},
+			"MTDO": {
+				"JTAG": "MTDO"
+			},
+			"MTDI": {
+				"JTAG": "MTDI"
+			},
+			"MTCK": {
+				"JTAG": "MTCK"
+			},
+			"MTMS": {
+				"JTAG": "MTMS"
+			},
+			"USB_DP": {
+				"USB": "D+"
+			},
+			"USB_DM": {
+				"USB": "D-"
+			},
+			"EN": {
+				"CTRL": "EN"
+			},
+			"GND_T": {
+				"GND": null
+			},
+			"BAT+": {
+				"PWR": "BAT+"
+			},
+			"BAT-": {
+				"PWR": "BAT-"
+			}
+		}
+	}
+}

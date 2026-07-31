@@ -1,0 +1,196 @@
+{
+	"name": "esp32s3-devkitc1",
+	"title": "ESP32-S3-DevKitC-1 N16R8 (25.5 x 63 mm)",
+	"width": 25.5,
+	"height": 63.0,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "25.50,63.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "8.35,60.50",
+			"size": "8.80,3.40",
+			"rx": 0.5,
+			"ry": 0.5,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E8E8E8",
+					"0,1",
+					"#9A9A9A"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "9.60,61.50",
+			"size": "6.30,1.50",
+			"rx": 0.7,
+			"ry": 0.7,
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.75,3.33",
+			"size": "18.00,11.16",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "4.45,5.34",
+			"size": "16.60,5.58",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.75,8.02",
+			"text": "ESP32-S3",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.75,10.03",
+			"text": "N16R8",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.60,58.00",
+			"d": 2.6,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.60,58.00",
+			"d": 1.1700000000000002,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "21.90,58.00",
+			"d": 2.6,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "21.90,58.00",
+			"d": 1.1700000000000002,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.75,58.80",
+			"text": "S3-DevKitC-1",
+			"font_size": 0.9,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_header_vert",
+			"repeat": 22,
+			"pos": "0,4.83",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_header_vert",
+			"repeat": 22,
+			"pos": "25.50,4.83",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [],
+	"pads": {
+		"3V3a": "esp32s3-devkitc1.front.left.pin1",
+		"3V3b": "esp32s3-devkitc1.front.left.pin2",
+		"RST": "esp32s3-devkitc1.front.left.pin3",
+		"IO4": "esp32s3-devkitc1.front.left.pin4",
+		"IO5": "esp32s3-devkitc1.front.left.pin5",
+		"IO6": "esp32s3-devkitc1.front.left.pin6",
+		"IO7": "esp32s3-devkitc1.front.left.pin7",
+		"IO15": "esp32s3-devkitc1.front.left.pin8",
+		"IO16": "esp32s3-devkitc1.front.left.pin9",
+		"IO17": "esp32s3-devkitc1.front.left.pin10",
+		"IO18": "esp32s3-devkitc1.front.left.pin11",
+		"IO8": "esp32s3-devkitc1.front.left.pin12",
+		"IO3": "esp32s3-devkitc1.front.left.pin13",
+		"IO46": "esp32s3-devkitc1.front.left.pin14",
+		"IO9": "esp32s3-devkitc1.front.left.pin15",
+		"IO10": "esp32s3-devkitc1.front.left.pin16",
+		"IO11": "esp32s3-devkitc1.front.left.pin17",
+		"IO12": "esp32s3-devkitc1.front.left.pin18",
+		"IO13": "esp32s3-devkitc1.front.left.pin19",
+		"IO14": "esp32s3-devkitc1.front.left.pin20",
+		"5V": "esp32s3-devkitc1.front.left.pin21",
+		"GNDa": "esp32s3-devkitc1.front.left.pin22",
+		"GNDb": "esp32s3-devkitc1.front.right.pin1",
+		"TX": "esp32s3-devkitc1.front.right.pin2",
+		"RX": "esp32s3-devkitc1.front.right.pin3",
+		"IO1": "esp32s3-devkitc1.front.right.pin4",
+		"IO2": "esp32s3-devkitc1.front.right.pin5",
+		"IO42": "esp32s3-devkitc1.front.right.pin6",
+		"IO41": "esp32s3-devkitc1.front.right.pin7",
+		"IO40": "esp32s3-devkitc1.front.right.pin8",
+		"IO39": "esp32s3-devkitc1.front.right.pin9",
+		"IO38": "esp32s3-devkitc1.front.right.pin10",
+		"IO37": "esp32s3-devkitc1.front.right.pin11",
+		"IO36": "esp32s3-devkitc1.front.right.pin12",
+		"IO35": "esp32s3-devkitc1.front.right.pin13",
+		"IO0": "esp32s3-devkitc1.front.right.pin14",
+		"IO45": "esp32s3-devkitc1.front.right.pin15",
+		"IO48": "esp32s3-devkitc1.front.right.pin16",
+		"IO47": "esp32s3-devkitc1.front.right.pin17",
+		"IO21": "esp32s3-devkitc1.front.right.pin18",
+		"IO20": "esp32s3-devkitc1.front.right.pin19",
+		"IO19": "esp32s3-devkitc1.front.right.pin20",
+		"GNDc": "esp32s3-devkitc1.front.right.pin21",
+		"GNDd": "esp32s3-devkitc1.front.right.pin22"
+	},
+	"test_pads": {}
+}

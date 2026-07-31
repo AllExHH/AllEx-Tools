@@ -1,0 +1,300 @@
+{
+	"name": "esp01s",
+	"title": "ESP-01S (24.8 x 14.3 mm)",
+	"width": 14.3,
+	"height": 24.8,
+	"vars": {
+		"PINTYPE_HORZ": "header_pad",
+		"RASTER": 2.54,
+		"PINDIR": "down",
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "14.30,24.80",
+			"rx": 0.8,
+			"ry": 0.8,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "2.00,1.40",
+			"size": "10.30,0.70",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.00,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.60,2.40",
+			"size": "0.70,2.60",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "7.20,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "9.80,2.40",
+			"size": "0.70,2.60",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "11.60,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.30,6.40",
+			"size": "9.70,6.60",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "3.00,7.59",
+			"size": "8.30,3.30",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,9.17",
+			"text": "ESP8266EX",
+			"font_size": 0.8083333333333332,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,10.36",
+			"text": "1 MB",
+			"font_size": 0.5388888888888889,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.00,14.40",
+			"size": "8.30,4.40",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#1E1E1E"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,17.00",
+			"text": "ESP-01S",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,20.60",
+			"text": "Header-Reihe 1/3/5/7",
+			"font_size": 0.75,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "row",
+			"name": "r_pins_horz",
+			"repeat": 4,
+			"pos": "3.2,22.2",
+			"vars": {
+				"PINDIR": "down"
+			}
+		},
+		{
+			"id": "pins",
+			"name": "r_labels_horz",
+			"repeat": 4,
+			"pos": "3.2,23.599999999999998",
+			"vars": {
+				"PINDIR": "down"
+			}
+		}
+	],
+	"back": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "14.30,24.80",
+			"rx": 0.8,
+			"ry": 0.8,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "2.00,1.40",
+			"size": "10.30,0.70",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.00,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.60,2.40",
+			"size": "0.70,2.60",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "7.20,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "9.80,2.40",
+			"size": "0.70,2.60",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "11.60,1.40",
+			"size": "0.70,3.20",
+			"fill": {
+				"color": "#C9922F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.30,6.40",
+			"size": "9.70,6.60",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "3.00,7.59",
+			"size": "8.30,3.30",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,9.17",
+			"text": "ESP8266EX",
+			"font_size": 0.8083333333333332,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,10.36",
+			"text": "1 MB",
+			"font_size": 0.5388888888888889,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.00,14.40",
+			"size": "8.30,4.40",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#1E1E1E"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,17.00",
+			"text": "ESP-01S",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,20.60",
+			"text": "Header-Reihe 2/4/6/8",
+			"font_size": 0.75,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "row",
+			"name": "r_pins_horz",
+			"repeat": 4,
+			"pos": "3.2,22.2",
+			"vars": {
+				"PINDIR": "down"
+			}
+		},
+		{
+			"id": "pins",
+			"name": "r_labels_horz",
+			"repeat": 4,
+			"pos": "3.2,23.599999999999998",
+			"vars": {
+				"PINDIR": "down"
+			}
+		}
+	],
+	"pads": {
+		"P1": "esp01s.front.pins.label1.anchor",
+		"P3": "esp01s.front.pins.label2.anchor",
+		"P5": "esp01s.front.pins.label3.anchor",
+		"P7": "esp01s.front.pins.label4.anchor"
+	},
+	"test_pads": {
+		"P2": "esp01s.back.pins.label1.anchor",
+		"P4": "esp01s.back.pins.label2.anchor",
+		"P6": "esp01s.back.pins.label3.anchor",
+		"P8": "esp01s.back.pins.label4.anchor"
+	}
+}

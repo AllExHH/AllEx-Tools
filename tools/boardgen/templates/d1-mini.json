@@ -1,0 +1,124 @@
+{
+	"name": "d1-mini",
+	"title": "Wemos D1 mini (34.2 x 25.6 mm)",
+	"width": 25.6,
+	"height": 34.2,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "25.60,34.20",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "9.05,31.70",
+			"size": "7.50,2.60",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#DCDCDC",
+					"0,1",
+					"#8E8E8E"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.15,32.50",
+			"size": "5.30,1.10",
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.80,6.71",
+			"size": "18.00,11.16",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "4.50,8.72",
+			"size": "16.60,5.58",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.80,11.40",
+			"text": "ESP-12F",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.80,13.41",
+			"text": "4 MB",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.80,30.00",
+			"text": "D1 mini",
+			"font_size": 0.9,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_header_vert",
+			"repeat": 8,
+			"pos": "0,8.21",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_header_vert",
+			"repeat": 8,
+			"pos": "25.60,8.21",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [],
+	"pads": {
+		"RST": "d1-mini.front.left.pin1",
+		"A0": "d1-mini.front.left.pin2",
+		"D0": "d1-mini.front.left.pin3",
+		"D5": "d1-mini.front.left.pin4",
+		"D6": "d1-mini.front.left.pin5",
+		"D7": "d1-mini.front.left.pin6",
+		"D8": "d1-mini.front.left.pin7",
+		"3V3": "d1-mini.front.left.pin8",
+		"TX": "d1-mini.front.right.pin1",
+		"RX": "d1-mini.front.right.pin2",
+		"D1": "d1-mini.front.right.pin3",
+		"D2": "d1-mini.front.right.pin4",
+		"D3": "d1-mini.front.right.pin5",
+		"D4": "d1-mini.front.right.pin6",
+		"GND": "d1-mini.front.right.pin7",
+		"5V": "d1-mini.front.right.pin8"
+	},
+	"test_pads": {}
+}

@@ -1,0 +1,656 @@
+{
+	"name": "xiao-esp32c3",
+	"title": "Seeed XIAO ESP32-C3 (21 x 17.5 mm)",
+	"width": 17.5,
+	"height": 21.0,
+	"vars": {
+		"PINTYPE_VERT": "pin_vert_cast_hole",
+		"RASTER": 2.54,
+		"PAD_Y": 4.7
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "17.50,21.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "4.35,-0.90",
+			"size": "8.80,3.40",
+			"rx": 0.5,
+			"ry": 0.5,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E8E8E8",
+					"0,1",
+					"#9A9A9A"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "5.60,0.10",
+			"size": "6.30,1.50",
+			"rx": 0.7,
+			"ry": 0.7,
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "2.50,2.00",
+			"d": 1.5,
+			"preset": "copper2"
+		},
+		{
+			"type": "text",
+			"pos": "2.50,3.90",
+			"text": "R",
+			"font_size": 1.1,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "15.00,2.00",
+			"d": 1.5,
+			"preset": "copper2"
+		},
+		{
+			"type": "text",
+			"pos": "15.00,3.90",
+			"text": "B",
+			"font_size": 1.1,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.60,4.60",
+			"size": "12.30,10.40",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "3.30,6.47",
+			"size": "10.90,5.20",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,8.97",
+			"text": "seeed studio",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "8.75,10.84",
+			"text": "XIAO ESP32-C3",
+			"font_size": 0.6833333333333333,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "2.60,16.20",
+			"size": "3.40,2.40",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#2C4E8A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "7.20,16.10",
+			"size": "7.60,2.60",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#1C1C1C"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "7.60,16.60",
+			"size": "6.80,1.60",
+			"fill": {
+				"color": "#3E3E3E"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_pins_vert",
+			"repeat": 7,
+			"pos": "0,4.7",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_pins_vert",
+			"repeat": 7,
+			"pos": "17.5,4.7",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "17.50,21.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "text",
+			"pos": "8.75,2.30",
+			"text": "Unterseite - gespiegelt",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,5.00",
+			"text": "5V",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,7.54",
+			"text": "GND",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,10.08",
+			"text": "3V3",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,12.62",
+			"text": "D10",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,15.16",
+			"text": "D9",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,17.70",
+			"text": "D8",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "2.30,20.24",
+			"text": "D7",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,5.00",
+			"text": "D0",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,7.54",
+			"text": "D1",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,10.08",
+			"text": "D2",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,12.62",
+			"text": "D3",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,15.16",
+			"text": "D4",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,17.70",
+			"text": "D5",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "14.40,20.24",
+			"text": "D6",
+			"font_size": 0.8,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "0.00,6.23",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.90,6.23",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "0.00,8.77",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.90,8.77",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "0.00,11.31",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.90,11.31",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "0.00,13.85",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "10.90,13.85",
+			"size": "6.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "6.60,6.30",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "8.10,6.58",
+			"text": "MTDO",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "10.90,6.30",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "12.40,6.58",
+			"text": "MTDI",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "6.60,8.84",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "8.10,9.12",
+			"text": "GND_T",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "10.90,8.84",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "12.40,9.12",
+			"text": "EN",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "6.60,11.38",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "8.10,11.66",
+			"text": "MTCK",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "10.90,11.38",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "12.40,11.66",
+			"text": "MTMS",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "6.60,13.92",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "8.10,14.20",
+			"text": "USB_DP",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "10.90,13.92",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "12.40,14.20",
+			"text": "USB_DM",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "al1",
+			"name": "anchor_edge",
+			"pos": "0,6.30",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "ar1",
+			"name": "anchor_edge",
+			"pos": "17.5,6.30",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "al2",
+			"name": "anchor_edge",
+			"pos": "0,8.84",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "ar2",
+			"name": "anchor_edge",
+			"pos": "17.5,8.84",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "al3",
+			"name": "anchor_edge",
+			"pos": "0,11.38",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "ar3",
+			"name": "anchor_edge",
+			"pos": "17.5,11.38",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "al4",
+			"name": "anchor_edge",
+			"pos": "0,13.92",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "ar4",
+			"name": "anchor_edge",
+			"pos": "17.5,13.92",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "11.50,16.39",
+			"size": "6.00,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "12.83,16.46",
+			"size": "0.14,2.54",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "12.90,18.93",
+			"size": "4.60,0.14",
+			"fill": {
+				"color": "#6E6A5F"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "11.50,16.46",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "circle",
+			"pos": "12.90,16.46",
+			"d": 0.9,
+			"preset": "copper1"
+		},
+		{
+			"type": "text",
+			"pos": "12.20,17.76",
+			"text": "BAT",
+			"font_size": 0.7,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "abm",
+			"name": "anchor_edge",
+			"pos": "17.5,16.46",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"id": "abp",
+			"name": "anchor_edge",
+			"pos": "17.5,19.0",
+			"vars": {
+				"PINDIR": "right"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "5.60,18.60",
+			"text": "seeed studio",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "5.60,19.80",
+			"text": "XIAO ESP32C3",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		}
+	],
+	"pads": {
+		"D0": "xiao-esp32c3.front.left.pin1",
+		"D1": "xiao-esp32c3.front.left.pin2",
+		"D2": "xiao-esp32c3.front.left.pin3",
+		"D3": "xiao-esp32c3.front.left.pin4",
+		"D4": "xiao-esp32c3.front.left.pin5",
+		"D5": "xiao-esp32c3.front.left.pin6",
+		"D6": "xiao-esp32c3.front.left.pin7",
+		"5V": "xiao-esp32c3.front.right.pin1",
+		"GND": "xiao-esp32c3.front.right.pin2",
+		"3V3": "xiao-esp32c3.front.right.pin3",
+		"D10": "xiao-esp32c3.front.right.pin4",
+		"D9": "xiao-esp32c3.front.right.pin5",
+		"D8": "xiao-esp32c3.front.right.pin6",
+		"D7": "xiao-esp32c3.front.right.pin7"
+	},
+	"test_pads": {
+		"BAT-": "xiao-esp32c3.back.abm.a",
+		"BAT+": "xiao-esp32c3.back.abp.a",
+		"MTDO": "xiao-esp32c3.back.al1.a",
+		"GND_T": "xiao-esp32c3.back.al2.a",
+		"MTCK": "xiao-esp32c3.back.al3.a",
+		"USB_DP": "xiao-esp32c3.back.al4.a",
+		"MTDI": "xiao-esp32c3.back.ar1.a",
+		"EN": "xiao-esp32c3.back.ar2.a",
+		"MTMS": "xiao-esp32c3.back.ar3.a",
+		"USB_DM": "xiao-esp32c3.back.ar4.a"
+	}
+}

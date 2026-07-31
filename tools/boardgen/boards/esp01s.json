@@ -1,0 +1,58 @@
+{
+	"build": {
+		"f_cpu": "80000000L",
+		"family": "esp8266",
+		"mcu": "esp8266",
+		"variant": "esp01s"
+	},
+	"name": "ESP-01S",
+	"url": "https://www.espressif.com/en/products/socs/esp8266",
+	"vendor": "Ai-Thinker",
+	"upload": {
+		"flash_size": 1048576,
+		"maximum_size": 419430,
+		"maximum_ram_size": 81920
+	},
+	"pcb": {
+		"symbol": "ESP-01S",
+		"templates": [
+			"pcb-black",
+			"esp01s"
+		],
+		"scale": 30,
+		"pinout": {
+			"P1": {
+				"PHYSICAL": "Pin 1",
+				"UART": "TXD"
+			},
+			"P3": {
+				"PHYSICAL": "Pin 3",
+				"CTRL": "CH_PD"
+			},
+			"P5": {
+				"PHYSICAL": "Pin 5",
+				"CTRL": "RST"
+			},
+			"P7": {
+				"PHYSICAL": "Pin 7",
+				"PWR": "3V3"
+			},
+			"P2": {
+				"PHYSICAL": "Pin 2",
+				"GND": null
+			},
+			"P4": {
+				"PHYSICAL": "Pin 4",
+				"GPIO": "IO2"
+			},
+			"P6": {
+				"PHYSICAL": "Pin 6",
+				"GPIO": "IO0"
+			},
+			"P8": {
+				"PHYSICAL": "Pin 8",
+				"UART": "RXD"
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+[
+	{
+		"comment": "Durchkontaktiertes Stiftleisten-Pad einer senkrechten Reihe. Anders als die Castellated-Pads der XIAO-Boards sitzt es vollstaendig auf der Platine.",
+		"id": "pin<${I} + 1>",
+		"name": "header_pad",
+		"pos": "0 , ${RASTER} * ${I}",
+		"label_dir": "${PINDIR}",
+		"label_size": "${RASTER}"
+	}
+]

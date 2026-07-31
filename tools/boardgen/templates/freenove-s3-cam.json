@@ -1,0 +1,239 @@
+{
+	"name": "freenove-s3-cam",
+	"title": "Freenove ESP32-S3-WROOM CAM (ca. 25 x 55 mm)",
+	"width": 25.0,
+	"height": 55.0,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "25.00,55.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "8.10,52.50",
+			"size": "8.80,3.40",
+			"rx": 0.5,
+			"ry": 0.5,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E8E8E8",
+					"0,1",
+					"#9A9A9A"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "9.35,53.50",
+			"size": "6.30,1.50",
+			"rx": 0.7,
+			"ry": 0.7,
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.50,1.87",
+			"size": "18.00,11.16",
+			"preset": "shield"
+		},
+		{
+			"type": "rect",
+			"pos": "4.20,3.88",
+			"size": "16.60,5.58",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#FBFBFB"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,6.56",
+			"text": "ESP32-S3",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#222222"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,8.57",
+			"text": "8/8 MB",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#555555"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,50.80",
+			"text": "Freenove S3",
+			"font_size": 0.9,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_header_vert",
+			"repeat": 20,
+			"pos": "0,3.37",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_header_vert",
+			"repeat": 20,
+			"pos": "25.00,3.37",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "25.00,55.00",
+			"rx": 1.2,
+			"ry": 1.2,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "text",
+			"pos": "12.50,3.00",
+			"text": "Unterseite",
+			"font_size": 0.95,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "5.50,6.00",
+			"size": "14.00,12.00",
+			"rx": 0.4,
+			"ry": 0.4,
+			"fill": {
+				"color": "#2A2E33"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,12.40",
+			"text": "Kamera-FPC",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.50,22.00",
+			"size": "16.00,6.00",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#D2D2D2",
+					"0,1",
+					"#8F8F8F"
+				]
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,25.40",
+			"text": "microSD",
+			"font_size": 0.85,
+			"fill": {
+				"color": "#333333"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.50,52.00",
+			"text": "FREENOVE ESP32-S3",
+			"font_size": 0.85,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "f1",
+			"name": "anchor_edge",
+			"pos": "0,12.0",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "f2",
+			"name": "anchor_edge",
+			"pos": "25.0,25.0",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"pads": {
+		"3V3": "freenove-s3-cam.front.left.pin1",
+		"RST": "freenove-s3-cam.front.left.pin2",
+		"IO4": "freenove-s3-cam.front.left.pin3",
+		"IO5": "freenove-s3-cam.front.left.pin4",
+		"IO6": "freenove-s3-cam.front.left.pin5",
+		"IO7": "freenove-s3-cam.front.left.pin6",
+		"IO15": "freenove-s3-cam.front.left.pin7",
+		"IO16": "freenove-s3-cam.front.left.pin8",
+		"IO17": "freenove-s3-cam.front.left.pin9",
+		"IO18": "freenove-s3-cam.front.left.pin10",
+		"IO8": "freenove-s3-cam.front.left.pin11",
+		"IO3": "freenove-s3-cam.front.left.pin12",
+		"IO46": "freenove-s3-cam.front.left.pin13",
+		"IO9": "freenove-s3-cam.front.left.pin14",
+		"IO10": "freenove-s3-cam.front.left.pin15",
+		"IO11": "freenove-s3-cam.front.left.pin16",
+		"IO12": "freenove-s3-cam.front.left.pin17",
+		"IO13": "freenove-s3-cam.front.left.pin18",
+		"IO14": "freenove-s3-cam.front.left.pin19",
+		"5V": "freenove-s3-cam.front.left.pin20",
+		"IO43": "freenove-s3-cam.front.right.pin1",
+		"IO44": "freenove-s3-cam.front.right.pin2",
+		"IO1": "freenove-s3-cam.front.right.pin3",
+		"IO2": "freenove-s3-cam.front.right.pin4",
+		"IO42": "freenove-s3-cam.front.right.pin5",
+		"IO41": "freenove-s3-cam.front.right.pin6",
+		"IO40": "freenove-s3-cam.front.right.pin7",
+		"IO39": "freenove-s3-cam.front.right.pin8",
+		"IO38": "freenove-s3-cam.front.right.pin9",
+		"IO37": "freenove-s3-cam.front.right.pin10",
+		"IO36": "freenove-s3-cam.front.right.pin11",
+		"IO35": "freenove-s3-cam.front.right.pin12",
+		"IO0": "freenove-s3-cam.front.right.pin13",
+		"IO45": "freenove-s3-cam.front.right.pin14",
+		"IO48": "freenove-s3-cam.front.right.pin15",
+		"IO47": "freenove-s3-cam.front.right.pin16",
+		"IO21": "freenove-s3-cam.front.right.pin17",
+		"IO20": "freenove-s3-cam.front.right.pin18",
+		"IO19": "freenove-s3-cam.front.right.pin19",
+		"GND": "freenove-s3-cam.front.right.pin20"
+	},
+	"test_pads": {
+		"CAM": "freenove-s3-cam.back.f1.a",
+		"SD": "freenove-s3-cam.back.f2.a"
+	}
+}

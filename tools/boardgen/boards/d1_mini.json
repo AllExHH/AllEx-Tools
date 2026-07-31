@@ -1,0 +1,95 @@
+{
+	"build": {
+		"f_cpu": "80000000L",
+		"family": "esp8266",
+		"mcu": "esp8266",
+		"variant": "d1_mini"
+	},
+	"name": "Wemos D1 mini",
+	"url": "https://www.wemos.cc/en/latest/d1/d1_mini.html",
+	"vendor": "Wemos",
+	"upload": {
+		"flash_size": 4194304,
+		"maximum_size": 1677721,
+		"maximum_ram_size": 81920
+	},
+	"pcb": {
+		"symbol": "D1MINI",
+		"templates": [
+			"pcb-black",
+			"d1-mini"
+		],
+		"scale": 22,
+		"pinout": {
+			"RST": {
+				"CTRL": "RST"
+			},
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"5V": {
+				"PWR": "5V"
+			},
+			"GND": {
+				"GND": null
+			},
+			"A0": {
+				"PHYSICAL": "A0",
+				"ADC": 0
+			},
+			"D0": {
+				"PHYSICAL": "D0",
+				"GPIO": "IO16",
+				"CTRL": "Wake"
+			},
+			"D1": {
+				"PHYSICAL": "D1",
+				"GPIO": "IO5",
+				"I2C": "SCL"
+			},
+			"D2": {
+				"PHYSICAL": "D2",
+				"GPIO": "IO4",
+				"I2C": "SDA"
+			},
+			"D3": {
+				"PHYSICAL": "D3",
+				"GPIO": "IO0",
+				"CTRL": "Strap"
+			},
+			"D4": {
+				"PHYSICAL": "D4",
+				"GPIO": "IO2",
+				"CTRL": "LED"
+			},
+			"D5": {
+				"PHYSICAL": "D5",
+				"GPIO": "IO14",
+				"SPI": "SCK"
+			},
+			"D6": {
+				"PHYSICAL": "D6",
+				"GPIO": "IO12",
+				"SPI": "MISO"
+			},
+			"D7": {
+				"PHYSICAL": "D7",
+				"GPIO": "IO13",
+				"SPI": "MOSI"
+			},
+			"D8": {
+				"PHYSICAL": "D8",
+				"GPIO": "IO15",
+				"CTRL": "Strap"
+			},
+			"TX": {
+				"UART": "TX",
+				"GPIO": "IO1"
+			},
+			"RX": {
+				"UART": "RX",
+				"GPIO": "IO3"
+			}
+		}
+	}
+}

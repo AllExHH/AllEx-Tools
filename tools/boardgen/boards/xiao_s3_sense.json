@@ -1,0 +1,79 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32s3",
+		"mcu": "esp32s3",
+		"variant": "xiao_s3_sense"
+	},
+	"name": "Seeed XIAO ESP32-S3 Sense",
+	"url": "https://wiki.seeedstudio.com/xiao_esp32s3_sense_filesystem/",
+	"vendor": "Seeed Studio",
+	"upload": {
+		"flash_size": 8388608,
+		"maximum_size": 3355443,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "SENSE",
+		"templates": [
+			"pcb-black",
+			"xiao-s3-sense"
+		],
+		"scale": 26,
+		"pinout": {
+			"XCLK": {
+				"DVP": "XCLK",
+				"GPIO": "IO10"
+			},
+			"SIOD": {
+				"DVP": "SIOD",
+				"GPIO": "IO40"
+			},
+			"SIOC": {
+				"DVP": "SIOC",
+				"GPIO": "IO39"
+			},
+			"VSYNC": {
+				"DVP": "VSYNC",
+				"GPIO": "IO38"
+			},
+			"HREF": {
+				"DVP": "HREF",
+				"GPIO": "IO47"
+			},
+			"PCLK": {
+				"DVP": "PCLK",
+				"GPIO": "IO13"
+			},
+			"CAM_Y9": {
+				"DVP": "Y9",
+				"GPIO": "IO48"
+			},
+			"CAM_Y8": {
+				"DVP": "Y8",
+				"GPIO": "IO11"
+			},
+			"CAM_Y7": {
+				"DVP": "Y7",
+				"GPIO": "IO12"
+			},
+			"MIC_CLK": {
+				"PHYSICAL": "MIC",
+				"I2S": "CLK",
+				"GPIO": "IO42"
+			},
+			"MIC_DAT": {
+				"PHYSICAL": "MIC",
+				"I2S": "DAT",
+				"GPIO": "IO41"
+			},
+			"SD_CS": {
+				"SD": "CS",
+				"GPIO": "IO21"
+			},
+			"SD_BUS": {
+				"SPI": "D8/9/10"
+			}
+		}
+	}
+}
