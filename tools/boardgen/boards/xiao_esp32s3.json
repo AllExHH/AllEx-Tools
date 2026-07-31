@@ -1,0 +1,125 @@
+{
+	"build": {
+		"f_cpu": "240000000L",
+		"family": "esp32s3",
+		"mcu": "esp32s3",
+		"variant": "xiao_esp32s3"
+	},
+	"name": "Seeed XIAO ESP32-S3",
+	"url": "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/",
+	"vendor": "Seeed Studio",
+	"upload": {
+		"flash_size": 8388608,
+		"maximum_size": 3342336,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "XIAO-S3",
+		"templates": [
+			"pcb-black",
+			"xiao-esp32s3"
+		],
+		"scale": 26,
+		"pinout": {
+			"D0": {
+				"PHYSICAL": "D0",
+				"GPIO": "IO1",
+				"ADC": 0
+			},
+			"D1": {
+				"PHYSICAL": "D1",
+				"GPIO": "IO2",
+				"ADC": 1
+			},
+			"D2": {
+				"PHYSICAL": "D2",
+				"GPIO": "IO3",
+				"ADC": 2
+			},
+			"D3": {
+				"PHYSICAL": "D3",
+				"GPIO": "IO4",
+				"ADC": 3
+			},
+			"D4": {
+				"PHYSICAL": "D4",
+				"GPIO": "IO5",
+				"ADC": 4,
+				"I2C": "SDA"
+			},
+			"D5": {
+				"PHYSICAL": "D5",
+				"GPIO": "IO6",
+				"ADC": 5,
+				"I2C": "SCL"
+			},
+			"D6": {
+				"PHYSICAL": "D6",
+				"GPIO": "IO43",
+				"UART": "TX"
+			},
+			"D7": {
+				"PHYSICAL": "D7",
+				"GPIO": "IO44",
+				"UART": "RX"
+			},
+			"D8": {
+				"PHYSICAL": "D8",
+				"GPIO": "IO7",
+				"ADC": 8,
+				"SPI": "SCK"
+			},
+			"D9": {
+				"PHYSICAL": "D9",
+				"GPIO": "IO8",
+				"ADC": 9,
+				"SPI": "MISO"
+			},
+			"D10": {
+				"PHYSICAL": "D10",
+				"GPIO": "IO9",
+				"ADC": 10,
+				"SPI": "MOSI"
+			},
+			"5V": {
+				"PWR": "VBUS"
+			},
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"GND": {
+				"GND": null
+			},
+			"MTDO": {
+				"JTAG": "MTDO"
+			},
+			"MTDI": {
+				"JTAG": "MTDI"
+			},
+			"MTCK": {
+				"JTAG": "MTCK"
+			},
+			"MTMS": {
+				"JTAG": "MTMS"
+			},
+			"USB_DP": {
+				"USB": "D+"
+			},
+			"USB_DM": {
+				"USB": "D-"
+			},
+			"EN": {
+				"CTRL": "EN"
+			},
+			"GND_T": {
+				"GND": null
+			},
+			"BAT+": {
+				"PWR": "BAT+"
+			},
+			"BAT-": {
+				"PWR": "BAT-"
+			}
+		}
+	}
+}

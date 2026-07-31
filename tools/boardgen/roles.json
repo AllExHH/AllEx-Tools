@@ -1,0 +1,77 @@
+{
+	"PHYSICAL": {
+		"title": "Pad-Bezeichnung auf der Platine",
+		"color": "#7A5843",
+		"ratio": 1.5
+	},
+	"GPIO": {
+		"title": "GPIO-Nummer",
+		"color": "#4F9243",
+		"ratio": 1.7
+	},
+	"ADC": {
+		"title": "Analogeingang",
+		"color": "#CF8524",
+		"ratio": 1.7
+	},
+	"PWR": {
+		"title": "Versorgung",
+		"color": "#C0392B",
+		"ratio": 2.1
+	},
+	"GND": {
+		"title": "Masse",
+		"color": "#33393D",
+		"ratio": 1.6
+	},
+	"CTRL": {
+		"title": "Steuerpin",
+		"color": "#B8452F",
+		"ratio": 1.6
+	},
+	"I2C": {
+		"title": "I2C-Bus",
+		"color": "#2B8FC4",
+		"ratio": 1.6
+	},
+	"SPI": {
+		"title": "SPI-Bus",
+		"color": "#8E56A8",
+		"ratio": 1.9
+	},
+	"UART": {
+		"title": "Serielle Schnittstelle",
+		"color": "#158B7C",
+		"ratio": 1.7
+	},
+	"USB": {
+		"title": "USB-Datenleitung",
+		"color": "#1A5468",
+		"ratio": 1.4
+	},
+	"JTAG": {
+		"title": "JTAG-Debugschnittstelle",
+		"color": "#B08A2E",
+		"ratio": 1.9
+	},
+	"DVP": {
+		"title": "Kameraschnittstelle",
+		"color": "#3E7C9B",
+		"ratio": 2.4
+	},
+	"SD": {
+		"title": "SD-Karte",
+		"color": "#C2A33A",
+		"ratio": 2.1
+	},
+	"RTC": {
+		"title": "RTC-faehig",
+		"color": "#6D7876",
+		"ratio": 1.5
+	},
+	"IO": {
+		"title": "Richtung",
+		"color": "#4E4C4C",
+		"ratio": 1.8
+	}
+}

@@ -1,0 +1,12 @@
+[
+	{
+		"comment": "Unsichtbarer Anker am Platinenrand. Traegt nur label_dir und label_size, damit boardgen das Callout ausserhalb der Platine ansetzt; die sichtbare Verbindung zum echten, mittig liegenden Pad zeichnet eine Haarlinie im Template.",
+		"id": "a",
+		"type": "rect",
+		"pos": "0,-0.05",
+		"size": "0.05,0.1",
+		"preset": "${MASK_PRESET}",
+		"label_dir": "${PINDIR}",
+		"label_size": "${RASTER}"
+	}
+]

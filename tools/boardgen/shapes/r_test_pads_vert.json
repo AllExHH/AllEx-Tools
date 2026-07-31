@@ -1,0 +1,13 @@
+[
+	{
+		"id": "pin<${I} + 1>",
+		"type": "rect",
+		"pos": "-0.7 , ${RASTER} * ${I} - 0.5",
+		"size": "1.4,1.0",
+		"rx": 0.2,
+		"ry": 0.2,
+		"preset": "copper1",
+		"label_dir": "${PINDIR}",
+		"label_size": "${RASTER}"
+	}
+]
