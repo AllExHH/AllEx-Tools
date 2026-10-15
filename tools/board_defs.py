@@ -7,8 +7,8 @@ CYD aus Schaltplan V1.0 des eigenen Repos, Freenove aus ESP32S3_Pinout.png,
 XIAO S3 aus den Seeed-Pinout-Grafiken. Der Rest aus der Chipdokumentation.
 """
 
-from make_boards import (HAIR, RASTER, board, circle, devkit, pcb, pin_rows,
-                         rect, shield, text, write, xiao, xiao_back)
+from make_boards import (HAIR, RASTER, board, circle, devkit, minilcd, pcb,
+                         pin_rows, rect, shield, text, write, xiao, xiao_back)
 
 SILK = "${SILK_COLOR}"
 
@@ -135,7 +135,7 @@ D1_L = ["RST", "A0", "D0", "D5", "D6", "D7", "D8", "3V3"]
 D1_R = ["TX", "RX", "D1", "D2", "D3", "D4", "GND", "5V"]
 t = devkit("d1-mini", "Wemos D1 mini (34.2 x 25.6 mm)", 25.6, 34.2, D1_L, D1_R,
            module="ESP-12F", module_sub="4 MB", usb="micro", usb_at="bottom",
-           silk="D1 mini")
+           buttons=((3.1, 29.6),), silk="D1 mini")
 write("template", "d1-mini", t)
 
 D1_PINS = {
@@ -170,7 +170,8 @@ DK_R = ["GND2", "IO23", "IO22", "TX0", "RX0", "IO21", "GND3", "IO19", "IO18",
 t = devkit("esp32-devkitc", "ESP32 DevKitC / WROOM-32 (28.2 x 53 mm)", 28.2, 53.0,
            DK_L, DK_R, module="ESP32-WROOM", module_sub="4 MB",
            usb="micro", usb_at="bottom",
-           buttons=((4.0, 48.5), (24.2, 48.5)), silk="ESP32 DevKitC")
+           buttons=((4.0, 48.5), (24.2, 48.5)),
+           leds=((14.1, 46.2, "#C0392B"),), silk="ESP32 DevKitC")
 write("template", "esp32-devkitc", t)
 
 DK_PINS = {
@@ -212,7 +213,8 @@ S3_R = ["GNDb", "TX", "RX", "IO1", "IO2", "IO42", "IO41", "IO40", "IO39",
 t = devkit("esp32s3-devkitc1", "ESP32-S3-DevKitC-1 N16R8 (25.5 x 63 mm)",
            25.5, 63.0, S3_L, S3_R, module="ESP32-S3", module_sub="N16R8",
            usb="c", usb_at="bottom",
-           buttons=((3.6, 58.0), (21.9, 58.0)), silk="S3-DevKitC-1")
+           buttons=((3.6, 58.0), (21.9, 58.0)),
+           leds=((12.75, 7.4, "#E8E8E8"),), silk="S3-DevKitC-1")
 write("template", "esp32s3-devkitc1", t)
 
 S3_PINS = {
@@ -262,7 +264,7 @@ fn_back = [pcb(25.0, 55.0), text(12.5, 3.0, "Unterseite", 0.95),
            text(12.5, 52.0, "FREENOVE ESP32-S3", 0.85),
            {"id": "f1", "name": "anchor_edge", "pos": "0,12.0", "vars": {"PINDIR": "left"}},
            {"id": "f2", "name": "anchor_edge", "pos": "25.0,25.0", "vars": {"PINDIR": "right"}}]
-t = devkit("freenove-s3-cam", "Freenove ESP32-S3-WROOM CAM (ca. 25 x 55 mm)",
+t = devkit("freenove-s3-cam", "Freenove ESP32-S3-WROOM CAM (Maße geschaetzt, aus der Pinzahl abgeleitet)",
            25.0, 55.0, FN_L, FN_R, module="ESP32-S3", module_sub="8/8 MB",
            usb="c", usb_at="bottom", silk="Freenove S3", back=fn_back)
 t["test_pads"] = {"CAM": "freenove-s3-cam.back.f1.a", "SD": "freenove-s3-cam.back.f2.a"}
@@ -319,8 +321,10 @@ def esp01_side(row_labels, title):
           rect(9.8, 2.4, 0.7, 2.6, fill={"color": "#C9922F"}),
           rect(11.6, 1.4, 0.7, 3.2, fill={"color": "#C9922F"})]
     s += shield(2.3, 6.4, 9.7, 6.6, "ESP8266EX", "1 MB")
-    s += [rect(3.0, 14.4, 8.3, 4.4, rx=0.3, ry=0.3, fill={"color": "#1E1E1E"}),
-          text(7.15, 17.0, "ESP-01S", 0.85)]
+    s += [rect(4.3, 14.6, 5.7, 3.4, rx=0.2, ry=0.2, fill={"color": "#232323"}),
+          rect(4.3, 14.6, 5.7, 0.5, fill={"color": "#3A3A3A"}),
+          text(7.15, 16.6, "Flash", 0.7, "#CFCFCF"),
+          text(7.15, 19.4, "ESP-01S", 0.8)]
     s += [text(7.15, 20.6, title, 0.75)]
     s += [{"id": "row", "name": "r_pins_horz", "repeat": 4,
            "pos": f"{HX},{HY}", "vars": {"PINDIR": "down"}}]
@@ -437,3 +441,44 @@ write("board", "cyd_2432s024r", board(
     "https://github.com/AllExHH/CYD_2.4inch_ESP32-2432S024",
     ["pcb-black", "cyd-2432s024r"], CYD_PINS,
     flash=4194304, scale=13, symbol="CYD"))
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# 01Space ESP32-C3-0.42LCD
+# ══════════════════════════════════════════════════════════════════════════
+# Pad-Reihenfolge aus der vom Nutzer gelieferten Pinout-Grafik.
+# Onboard-Verdrahtung aus Schematic/ESP32-C3-0.42OED Schematic.pdf im eigenen
+# Repo: J4 (0.42OLED) fuehrt IO6=SCL und IO5=SDA, beide mit 10K-Pull-up; der
+# WS2812B-1515 haengt an IO2; die blaue LED liegt zwischen 3V3 und GND und ist
+# damit eine reine Betriebsanzeige, nicht GPIO-gesteuert; IO8 traegt nur einen
+# 10K-Pull-up; USB liegt auf IO18/IO19.
+C3L_LEFT = ["5V", "GND", "3V3", "IO20", "IO21", "IO2", "IO1", "IO0"]
+C3L_RIGHT = ["IO10", "IO9", "IO8", "IO7", "IO6", "IO5", "IO4", "IO3"]
+
+write("template", "esp32c3-042lcd", minilcd(
+    "esp32c3-042lcd", "01Space ESP32-C3-0.42LCD (ca. 18 x 23.5 mm)",
+    C3L_LEFT, C3L_RIGHT,
+    subtitle_silk="ESP32-C3FH4", oled_text="0.42\u2033 OLED"))
+
+C3L_PINS = {
+    "5V": {"PWR": "5V"}, "3V3": {"PWR": "3V3"}, "GND": {"GND": None},
+    "IO20": {**gpio(20), "UART": "RX"},
+    "IO21": {**gpio(21), "UART": "TX"},
+    "IO2": {**gpio(2), "ADC": 2, "SD": "WS2812"},
+    "IO1": {**gpio(1), "ADC": 1},
+    "IO0": {**gpio(0), "ADC": 0},
+    "IO10": gpio(10),
+    "IO9": {**gpio(9), "CTRL": "Boot"},
+    "IO8": {**gpio(8), "CTRL": "Pull-up"},
+    "IO7": {**gpio(7), "SPI": "SS"},
+    "IO6": {**gpio(6), "I2C": "SCL", "DVP": "OLED"},
+    "IO5": {**gpio(5), "ADC": 5, "I2C": "SDA", "DVP": "OLED"},
+    "IO4": {**gpio(4), "ADC": 4},
+    "IO3": {**gpio(3), "ADC": 3},
+}
+write("board", "esp32c3_042lcd", board(
+    "esp32c3_042lcd", "01Space ESP32-C3-0.42LCD", "01Space",
+    "https://github.com/AllExHH/ESP32-C3-0.42LCD",
+    ["pcb-black", "esp32c3-042lcd"], C3L_PINS,
+    flash=4194304, mcu="esp32c3", family="esp32c3", fcpu="160000000L",
+    scale=26, symbol="C3-042"))

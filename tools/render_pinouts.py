@@ -30,6 +30,7 @@ BOARDS = [
     "esp32_devkitc", "cyd_2432s024r",
     "xiao_esp32c3",
     "xiao_esp32s3", "xiao_s3_sense", "esp32s3_devkitc1", "freenove_s3_cam",
+    "esp32c3_042lcd",
 ]
 
 
@@ -93,6 +94,12 @@ def main() -> int:
             sys.stderr.write(r.stderr)
             return r.returncode
 
+    # boardgen zeichnet auf eine feste Leinwand; die viewBox danach auf den
+    # Inhalt zuschneiden, sonst steht jede Grafik in viel Leerraum.
+    trim = HERE / "trim_svg.py"
+    if trim.is_file():
+        subprocess.run([sys.executable, str(trim), *[str(p) for p in sorted(OUT.glob("*.svg"))]],
+                       check=False)
     for svg in sorted(OUT.glob("*.svg")):
         print(f"  {svg.name:28} {svg.stat().st_size:>8} Bytes")
     return 0

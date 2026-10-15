@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Vier S3-Boards: XIAO S3, S3 Sense, S3-DevKitC-1 N16R8 und die Freenove-Kamera.">
+<meta name="color-scheme" content="light dark">
+<title>Bestand · ESP32-S3 — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Bestand · ESP32-S3</h1>
+    <p class="lede">Vier S3-Boards: XIAO S3, S3 Sense, S3-DevKitC-1 N16R8 und die Freenove-Kamera.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html">Bestand · ESP8266</a>
+      <a href="esp32.html">Bestand · ESP32</a>
+      <a href="esp32c3.html">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html" class="here">Bestand · ESP32-S3</a>
+      <a href="software.html">Software-Projekte</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="bs3">
+      <h2><span class="num">07</span> Bestand · ESP32-S3</h2>
+      <p class="section-note">Vier Boards, alle mit USB-OTG. Alles, was HID oder Kamera braucht, landet hier — und seit dem XIAO S3 auch alles, was klein bleiben soll.</p>
+
+      <article class="board" id="xiaos3">
+        <div class="board-head">
+          <h3>Seeed XIAO ESP32-S3</h3>
+          <div class="chips"><span class="chip">USB-HID möglich</span><span class="chip">BLE-Keyboard</span></div>
+          <div class="spec">ESP32-S3R8 · 8 MB Flash + 8 MB PSRAM · USB-C · u.FL</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/xiao_esp32s3.svg" alt="Pinout XIAO ESP32-S3, Vorder- und Rückseite" loading="lazy"></div>
+
+
+          <div class="note danger">
+            <p><strong>Die Falle, wenn man C3 und S3 nebeneinander hat.</strong> Beide XIAO haben dieselben Pads mit denselben Aufdrucken — aber andere GPIO-Nummern dahinter. <code>D0</code> ist am C3 <code>GPIO2</code>, am S3 <code>GPIO1</code>. Code, der GPIO-Nummern hart verdrahtet, läuft auf dem falschen Board still auf den falschen Pins.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Gleiches Pad, andere Nummer</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Pad</th><th>XIAO C3</th><th>XIAO S3</th><th>Pad</th><th>XIAO C3</th><th>XIAO S3</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">D0</td><td class="gpio">GPIO2</td><td class="gpio">GPIO1</td><td class="pin">D6</td><td class="gpio">GPIO21</td><td class="gpio">GPIO43</td></tr>
+                  <tr><td class="pin">D1</td><td class="gpio">GPIO3</td><td class="gpio">GPIO2</td><td class="pin">D7</td><td class="gpio">GPIO20</td><td class="gpio">GPIO44</td></tr>
+                  <tr><td class="pin">D2</td><td class="gpio">GPIO4</td><td class="gpio">GPIO3</td><td class="pin">D8</td><td class="gpio">GPIO8</td><td class="gpio">GPIO7</td></tr>
+                  <tr><td class="pin">D3</td><td class="gpio">GPIO5</td><td class="gpio">GPIO4</td><td class="pin">D9</td><td class="gpio">GPIO9</td><td class="gpio">GPIO8</td></tr>
+                  <tr><td class="pin">D4</td><td class="gpio">GPIO6</td><td class="gpio">GPIO5</td><td class="pin">D10</td><td class="gpio">GPIO10</td><td class="gpio">GPIO9</td></tr>
+                  <tr><td class="pin">D5</td><td class="gpio">GPIO7</td><td class="gpio">GPIO6</td><td class="pin">Boot</td><td class="gpio">GPIO9 (= D9)</td><td class="gpio">GPIO0 (eigener Pad)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="note good">
+            <p><strong>Was der S3 kann, was der C3 nicht kann.</strong> USB-OTG, also echtes USB-HID — das Board meldet sich als Tastatur oder Maus am Rechner an. Dazu 8 MB PSRAM, Kamera- und LCD-Peripherie. Und der Boot-Taster sitzt auf einem eigenen Pad (<code>GPIO0</code>) statt auf <code>D9</code>, der damit frei bleibt.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Nicht auf den Pads</div>
+            <ul>
+              <li><code>GPIO21</code> — User-LED, aktiv LOW</li>
+              <li><code>GPIO0</code> — Boot-Taster</li>
+              <li><code>BAT+</code> / <code>BAT−</code> — Akkupads auf der Unterseite, Laderegler an Bord</li>
+              <li><code>MTDO / MTDI / MTCK / MTMS</code> — JTAG auf der Unterseite</li>
+              <li><code>LNA_IN</code> — Umschaltung auf die u.FL-Antenne</li>
+            </ul>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Der IR-Mate-Aufsatz passt mechanisch, aber nicht per Nummer.</strong> Er sitzt auf denselben Pads — deine IR-MATE-Firmware müsste für den S3 also nach <em>Pad-Bezeichnung</em> umgeschrieben werden, nicht nach GPIO-Nummer: IR-Sender D1 wäre dort <code>GPIO2</code> statt <code>GPIO3</code>, der Empfänger D2 <code>GPIO3</code> statt <code>GPIO4</code>. Der Reset-Taster auf D9 verliert seine Doppelrolle, weil Boot beim S3 auf einem eigenen Pad liegt.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="xiaos3sense">
+        <div class="board-head">
+          <h3>Seeed XIAO ESP32-S3 Sense</h3>
+          <div class="chips"><span class="chip">cam-webserver</span></div>
+          <div class="spec">S3 + Aufsatz: OV2640 · PDM-Mikrofon · microSD</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/xiao_s3_sense.svg" alt="Pinout XIAO ESP32-S3 Sense" loading="lazy"></div>
+
+
+          <div class="field">
+            <p>Derselbe XIAO ESP32-S3 mit aufgestecktem Sense-Aufsatz. Der Aufsatz greift auf GPIOs zu, die am nackten Board gar nicht auf den Pads liegen — die elf D-Pads bleiben dadurch weitgehend frei.</p>
+          </div>
+
+          <div class="note good">
+            <p><strong>Dein drittes Kameraboard — und das kleinste.</strong> Neben ESP32-CAM-Portierung und Freenove S3 ist das hier die kompakteste Variante, mit Mikrofon und SD-Slot obendrein. Für <code>esp32-cam-webserver-servos</code> wäre es die naheliegende Zielplattform, wenn es klein werden soll; für Servos bleiben die D-Pads frei.</p>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Diese Belegung ist nicht aus deinen Repos belegt</strong>, sondern aus der Seeed-Dokumentation. Bevor du darauf aufbaust, gegen das Wiki deiner Revision prüfen — beim SD-Slot teilen sich Karte und Aufsatz den SPI-Bus mit <code>D8/D9/D10</code>.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="s3devkit">
+        <div class="board-head">
+          <h3>ESP32-S3-DevKitC-1 / N16R8</h3>
+          <div class="chips"><span class="chip">Bus-Pirate</span><span class="chip">BLE-Keyboard</span></div>
+          <div class="spec">16 MB Flash + 8 MB Oktal-PSRAM · zwei USB-Buchsen</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/esp32s3_devkitc1.svg" alt="Pinout ESP32-S3-DevKitC-1 N16R8" loading="lazy"></div>
+
+          <div class="field">
+            <div class="field-label">Belegte und verbotene Pins</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Pins</th><th>Belegung</th></tr></thead>
+                <tbody>
+                  <tr><td class="gpio">GPIO26–32</td><td>SPI-Flash — tabu</td></tr>
+                  <tr><td class="gpio">GPIO33–37</td><td><strong>Bei N16R8 zusätzlich vom Oktal-PSRAM belegt</strong></td></tr>
+                  <tr><td class="gpio">GPIO0, 3, 45, 46</td><td>Strapping</td></tr>
+                  <tr><td class="gpio">GPIO19, 20</td><td>Natives USB (D−/D+)</td></tr>
+                  <tr><td class="gpio">GPIO48</td><td>Onboard-WS2812</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="note danger">
+            <p><strong>Die N16R8-Falle.</strong> Bei der Oktal-PSRAM-Variante sind GPIO33–37 zusätzlich vergeben. Der Aufdruck auf der Platine zeigt sie trotzdem als frei. Wer sie belegt, bekommt sporadische Abstürze, die wie Softwarefehler aussehen.</p>
+          </div>
+          <div class="field">
+            <div class="field-label">Zwei USB-Buchsen — welche wofür</div>
+            <ul>
+              <li><strong>UART</strong> (CP2102): Flashen und serielle Ausgabe, funktioniert immer</li>
+              <li><strong>USB / OTG</strong>: HID, MSC, CDC — und wenn die Firmware abstürzt, verschwindet der Port. Dann über UART flashen.</li>
+            </ul>
+          </div>
+          <div class="note good">
+            <p><strong>Dein Bus-Pirate-Target.</strong> Von den vier Build-Zielen des Projekts ist <code>s3-devkit-n16r8</code> das einzige, für das du die Hardware hast — und zugleich das mit dem größten Dateisystem (12 MB SPIFFS statt 4,5 MB).</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="freenove">
+        <div class="board-head">
+          <h3>Freenove ESP32-S3-WROOM CAM</h3>
+          <div class="chips"><span class="chip">cam-webserver</span></div>
+          <div class="spec">ESP32-S3-WROOM-1 · 8 MB Flash + 8 MB PSRAM · OV2640</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/freenove_s3_cam.svg" alt="Pinout Freenove ESP32-S3-WROOM CAM" loading="lazy"></div>
+
+          <div class="field">
+            <div class="field-label">Kamera-Pinbelegung — für <code>camera_config_t</code></div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Signal</th><th>GPIO</th><th>Signal</th><th>GPIO</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">XCLK</td><td class="gpio">15</td><td class="pin">Y2</td><td class="gpio">11</td></tr>
+                  <tr><td class="pin">PCLK</td><td class="gpio">13</td><td class="pin">Y3</td><td class="gpio">9</td></tr>
+                  <tr><td class="pin">VSYNC</td><td class="gpio">6</td><td class="pin">Y4</td><td class="gpio">8</td></tr>
+                  <tr><td class="pin">HREF</td><td class="gpio">7</td><td class="pin">Y5</td><td class="gpio">10</td></tr>
+                  <tr><td class="pin">SIOD (SDA)</td><td class="gpio">4</td><td class="pin">Y6</td><td class="gpio">12</td></tr>
+                  <tr><td class="pin">SIOC (SCL)</td><td class="gpio">5</td><td class="pin">Y7</td><td class="gpio">18</td></tr>
+                  <tr><td class="pin">PWDN</td><td class="gpio">−1</td><td class="pin">Y8</td><td class="gpio">17</td></tr>
+                  <tr><td class="pin">RESET</td><td class="gpio">−1</td><td class="pin">Y9</td><td class="gpio">16</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="field">
+            <div class="field-label">Weitere Onboard-Pins</div>
+            <ul>
+              <li>microSD: <code>CLK 39</code> · <code>CMD 38</code> · <code>D0 40</code></li>
+              <li>RGB-LED: <code>GPIO48</code></li>
+            </ul>
+          </div>
+          <div class="note caution">
+            <p><strong>Für den Servo-Webserver ist eine Portierung nötig.</strong> Dein <code>esp32-cam-webserver-servos</code>-Fork ist auf den AI-Thinker ESP32-CAM geschrieben — anderer Chip, andere Kamera-Pins, andere Servo-GPIOs. Der Kamerateil ist über die Tabelle oben ausgetauscht; die Servo-Pins musst du auf freie S3-GPIOs neu legen.</p>
+          </div>
+          <div class="note good">
+            <p><strong>Der bessere Weg.</strong> USB-C direkt an Bord, 8 MB PSRAM statt 4, und die Stromversorgung bricht beim Kamera-Init nicht ein — der klassische Brownout-Ärger des AI-Thinker entfällt hier.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══════════ SOFTWARE ══════════ -->
+
+  </main>
+</div>
+</body>
+</html>

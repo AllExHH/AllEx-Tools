@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ESP32 DevKitC und das CYD-Displayboard — die beiden klassischen ESP32 im Bestand.">
+<meta name="color-scheme" content="light dark">
+<title>Bestand · ESP32 — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Bestand · ESP32</h1>
+    <p class="lede">ESP32 DevKitC und das CYD-Displayboard — die beiden klassischen ESP32 im Bestand.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html">Bestand · ESP8266</a>
+      <a href="esp32.html" class="here">Bestand · ESP32</a>
+      <a href="esp32c3.html">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html">Bestand · ESP32-S3</a>
+      <a href="software.html">Software-Projekte</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="b32">
+      <h2><span class="num">05</span> Bestand · ESP32</h2>
+
+      <article class="board" id="devkit">
+        <div class="board-head">
+          <h3>ESP32 DevKitC / WROOM-32</h3>
+          <div class="chips"><span class="chip">pov-esp32</span><span class="chip">SuperGreenOS</span><span class="chip">squeezelite</span><span class="chip">BLE-Keyboard</span><span class="chip">WLED</span></div>
+          <div class="spec">ESP32-D0WD · 4 MB · 2× 240 MHz</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/esp32_devkitc.svg" alt="Pinout ESP32 DevKitC" loading="lazy"></div>
+
+          <div class="field">
+            <div class="field-label">GPIO-Klassen — was du wirklich benutzen darfst</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Klasse</th><th>Pins</th><th>Konsequenz</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">Tabu</td><td class="gpio">6, 7, 8, 9, 10, 11</td><td>Interner SPI-Flash. Anfassen = Board tot.</td></tr>
+                  <tr><td class="pin">Nur Eingang</td><td class="gpio">34, 35, 36, 39</td><td>Kein Ausgang, <strong>kein interner Pull-up</strong> — extern beschalten.</td></tr>
+                  <tr><td class="pin">Strapping</td><td class="gpio">0, 2, 5, 12, 15</td><td>Bestimmen den Boot-Modus, siehe Abschnitt 09.</td></tr>
+                  <tr><td class="pin">ADC1</td><td class="gpio">32–39</td><td>Funktioniert bei aktivem WLAN.</td></tr>
+                  <tr><td class="pin">ADC2</td><td class="gpio">0, 2, 4, 12–15, 25–27</td><td><strong>Unbrauchbar, solange WLAN läuft.</strong></td></tr>
+                  <tr><td class="pin">Unkritisch</td><td class="gpio">4, 13, 14, 16, 17, 18, 19, 21, 22, 23, 25, 26, 27, 32, 33</td><td>Die üblichen Verdächtigen für LED-Daten, I²C, SPI.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="note caution">
+            <p><strong>pov-esp32 braucht APA102.</strong> Die Bibliothek nutzt Adafruit DotStar — WS2812B wird ausdrücklich <em>nicht</em> unterstützt. Bei POV ist das kein Verlust: APA102 taktet um Größenordnungen schneller, WS2812 würde bei rotierender Anzeige sichtbar schmieren.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="cyd">
+        <div class="board-head">
+          <h3>CYD — ESP32-2432S024<span style="color:var(--copper)">R</span> · resistiv</h3>
+          <div class="chips"><span class="chip">LVGL</span><span class="chip">Launcher</span></div>
+          <div class="spec">ESP32-WROOM-32 · ILI9341 240×320 · XPT2046</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/cyd_2432s024r.svg" alt="Pinout CYD ESP32-2432S024R, Vorder- und Rückseite" loading="lazy"></div>
+
+
+          <div class="note danger">
+            <p><strong>Der resistive Touch hängt am Display-Bus.</strong> Nicht auf einem eigenen SPI. Der XPT2046 teilt sich SCK/MOSI/MISO mit dem ILI9341 und wird nur über <code>CS = GPIO33</code> unterschieden. Wer die verbreitete 2432S028-Beschaltung übernimmt — Touch auf 25/32/39 — bekommt einen toten Touchscreen bei funktionierendem Display.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Onboard-Verdrahtung — aus dem Schaltplan V1.0 deines Repos</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Funktion</th><th>Pins</th><th>Quelle</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">TFT ILI9341 (SPI)</td><td class="gpio">SCK 14 · MOSI 13 · MISO 12 · DC 2 · CS 15 · RST −1</td><td>P1, 18-pol.</td></tr>
+                  <tr><td class="pin">Backlight</td><td class="gpio">GPIO27 → Gate Q2 (AO3402)</td><td>MOSFET-Treiber</td></tr>
+                  <tr><td class="pin">Touch XPT2046 (U3)</td><td class="gpio">CLK 14 · DIN 13 · DOUT 12 · <strong>CS 33</strong> · IRQ 36</td><td>gemeinsamer Bus</td></tr>
+                  <tr><td class="pin">microSD (eigener SPI)</td><td class="gpio">CLK 18 · MISO 19 · MOSI 23 · CS 5</td><td>—</td></tr>
+                  <tr><td class="pin">RGB-LED (MHP5050)</td><td class="gpio">4 · 16 · 17 — <strong>aktiv LOW</strong></td><td>gemeinsame Anode</td></tr>
+                  <tr><td class="pin">Lichtsensor (LDR)</td><td class="gpio">GPIO34</td><td>GT36516 + 1 M</td></tr>
+                  <tr><td class="pin">Audio (SC8002B)</td><td class="gpio">GPIO26 → Verstärker → JST P4</td><td>—</td></tr>
+                  <tr><td class="pin">Frei auf P3 / CN1</td><td class="gpio">21 · 22 · 35</td><td>HC-1.25-4PWT</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Vorsicht mit den Vendor-Demos im Repo.</strong> Das Paket deckt mehrere Panels ab. <code>7_1_Touch_button_ILI9341</code> setzt Backlight auf GPIO21 und Touch auf einen eigenen Bus — das ist die 2,8″-Platine. <code>7_3_..._2.4RTP</code> hat die richtige Touch-Beschaltung, ist aber auf einen ST7796 mit 320×480 konfiguriert. Für dein Board: Panel <strong>ILI9341 240×320</strong> aus 7_1, Touch- und Backlight-Werte aus 7_3.</p>
+          </div>
+
+          <div class="note">
+            <p><strong>GPIO33 ist der Unterschied zwischen den Varianten.</strong> Auf der resistiven Platine ist er Touch-CS, auf der kapazitiven die I²C-Datenleitung. Beide Bestückungen sind im selben Schaltplan vorgesehen und schließen sich gegenseitig aus.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══════════ BESTAND · C3 ══════════ -->
+
+  </main>
+</div>
+</body>
+</html>

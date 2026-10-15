@@ -101,7 +101,7 @@ def pads_for(name, left, right, side="front"):
 
 # ── Grundform: langes Devkit mit Stiftleisten ─────────────────────────────
 def devkit(name, title, w, h, left, right, *, module=None, module_sub=None,
-           usb="micro", usb_at="bottom", buttons=(), extras_front=(),
+           usb="micro", usb_at="bottom", buttons=(), leds=(), extras_front=(),
            back=None, pad_inset=None, silk=None):
     n = max(len(left), len(right))
     pad_y = pad_inset if pad_inset is not None else (h - (n - 1) * RASTER) / 2
@@ -117,6 +117,9 @@ def devkit(name, title, w, h, left, right, *, module=None, module_sub=None,
         front += shield((w - mw) / 2, pad_y - 1.5, mw, mw * 0.62, module, module_sub)
     for bx, by in buttons:
         front += button(bx, by)
+    for lx, ly, lc in leds:
+        front += [rect(lx - 0.8, ly - 0.5, 1.6, 1.0, rx=0.2, ry=0.2,
+                       fill={"color": lc})]
     front += list(extras_front)
     front += [text(w / 2, h - 4.2, silk or title.split("·")[0].strip(), 0.9)]
     front += pin_rows(w, pad_y, n)
@@ -231,4 +234,42 @@ def board(variant, name, vendor, url, tpl, pinout, *, flash, ram=327680,
                    "maximum_ram_size": ram},
         "pcb": {"symbol": symbol or variant.upper(), "templates": tpl,
                 "scale": scale, "pinout": pinout},
+    }
+
+
+# ── Grundform: Mini-Board mit mittigem OLED ───────────────────────────────
+def minilcd(name, title, left, right, *, subtitle_silk, oled_text):
+    """Kleines C3-Board: Type-C oben, OLED mittig, zwei Taster unten,
+    je acht Pads an den Laengsseiten. Maße ca. 18 x 23.5 mm."""
+    W, H, PAD_Y = 18.0, 23.5, 3.2
+    front = [pcb(W, H, 0.9)]
+    front += usb_c((W - 8.0) / 2, -0.9, 8.0, 3.2)
+
+    # Betriebs-LED und Pull-up-Pad oben, laut Schaltplan keine GPIO-LED
+    front += [circle(3.0, 2.2, 1.0, fill={"color": "#3A6FD8"}),
+              circle(15.0, 2.2, 1.0, fill={"color": "#3A6FD8"})]
+
+    # 0.42-Zoll-OLED mittig, Glas deutlich groesser als die Anzeigeflaeche
+    front += [rect(3.4, 6.2, 11.2, 9.6, rx=0.3, ry=0.3, fill={"color": "#15171A"}),
+              rect(4.6, 8.6, 8.8, 4.8, fill={"color": "#05070A"}),
+              text(9.0, 11.6, oled_text, 1.0, "#5FA8E8"),
+              rect(6.2, 15.8, 5.6, 1.1, fill={"color": "#8A7A3A"})]
+
+    # WS2812 neben dem OLED
+    front += [rect(15.3, 7.0, 1.6, 1.6, rx=0.2, ry=0.2, fill={"color": "#E8E8E8"}),
+              text(16.1, 9.5, "RGB", 0.6)]
+
+    # Boot- und Reset-Taster unten, innenliegend zwischen den Padreihen
+    front += button(5.6, 20.6, 2.4) + [text(5.6, 22.6, "BOOT", 0.62)]
+    front += button(12.4, 20.6, 2.4) + [text(12.4, 22.6, "RST", 0.62)]
+
+    front += [text(W / 2, 5.2, subtitle_silk, 0.62)]
+    front += pin_rows(W, PAD_Y, max(len(left), len(right)))
+
+    return {
+        "name": name, "title": title, "width": W, "height": H,
+        "vars": {"RASTER": RASTER, "MASK_HOLE": "#101010"},
+        "front": front, "back": [],
+        "pads": pads_for(name, left, right),
+        "test_pads": {},
     }

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="XIAO ESP32-C3 mit IR-Mate-Aufsatz und das 01Space-Board mit 0,42-Zoll-OLED.">
+<meta name="color-scheme" content="light dark">
+<title>Bestand · ESP32-C3 — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Bestand · ESP32-C3</h1>
+    <p class="lede">XIAO ESP32-C3 mit IR-Mate-Aufsatz und das 01Space-Board mit 0,42-Zoll-OLED.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html">Bestand · ESP8266</a>
+      <a href="esp32.html">Bestand · ESP32</a>
+      <a href="esp32c3.html" class="here">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html">Bestand · ESP32-S3</a>
+      <a href="software.html">Software-Projekte</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="bc3">
+      <h2><span class="num">06</span> Bestand · ESP32-C3</h2>
+      <p class="section-note">Beide teilen dieselben zwei Einschränkungen: <strong>GPIO9 ist der Boot-Pin</strong> und <strong>USB-HID ist nicht möglich</strong>.</p>
+
+      <article class="board" id="xiaoc3">
+        <div class="board-head">
+          <h3>Seeed XIAO ESP32-C3 + IR Mate</h3>
+          <div class="chips"><span class="chip own">eigene Firmware v2.0</span></div>
+          <div class="spec">ESP32-C3 · 4 MB · USB-C · Keramikantenne + u.FL</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/xiao_esp32c3.svg" alt="Pinout XIAO ESP32-C3, Vorder- und Rückseite" loading="lazy"></div>
+
+
+          <div class="field">
+            <div class="field-label">XIAO-Grundbelegung</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Label</th><th>GPIO</th><th>Alternativfunktion</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">D0</td><td class="gpio">GPIO2</td><td>A0</td></tr>
+                  <tr><td class="pin">D1</td><td class="gpio">GPIO3</td><td>A1</td></tr>
+                  <tr><td class="pin">D2</td><td class="gpio">GPIO4</td><td>A2</td></tr>
+                  <tr><td class="pin">D3</td><td class="gpio">GPIO5</td><td>A3</td></tr>
+                  <tr><td class="pin">D4</td><td class="gpio">GPIO6</td><td>SDA</td></tr>
+                  <tr><td class="pin">D5</td><td class="gpio">GPIO7</td><td>SCL</td></tr>
+                  <tr><td class="pin">D6</td><td class="gpio">GPIO21</td><td>TX</td></tr>
+                  <tr><td class="pin">D7</td><td class="gpio">GPIO20</td><td>RX</td></tr>
+                  <tr><td class="pin">D8</td><td class="gpio">GPIO8</td><td>SCK</td></tr>
+                  <tr><td class="pin">D9</td><td class="gpio">GPIO9</td><td>MISO — <strong>Boot-Strapping</strong></td></tr>
+                  <tr><td class="pin">D10</td><td class="gpio">GPIO10</td><td>MOSI</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Mit IR-Mate-Aufsatz — belegt, aus deinem README</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>GPIO</th><th>Pin</th><th>Funktion</th><th>Pegel</th></tr></thead>
+                <tbody>
+                  <tr><td class="gpio">GPIO3</td><td class="pin">D1</td><td>IR-Sender, 3× High-Power-LED</td><td>aktiv HIGH</td></tr>
+                  <tr><td class="gpio">GPIO4</td><td class="pin">D2</td><td>IR-Empfänger</td><td><strong>aktiv LOW / invertiert</strong></td></tr>
+                  <tr><td class="gpio">GPIO5</td><td class="pin">D3</td><td>Touch-Sensor</td><td>INPUT_PULLDOWN</td></tr>
+                  <tr><td class="gpio">GPIO6</td><td class="pin">D4</td><td>Vibrationsmotor</td><td>aktiv HIGH</td></tr>
+                  <tr><td class="gpio">GPIO7</td><td class="pin">D5</td><td>WS2812, 1 Pixel</td><td>—</td></tr>
+                  <tr><td class="gpio">GPIO9</td><td class="pin">D9</td><td>Reset-Taste</td><td>INPUT_PULLUP, aktiv LOW</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="note good">
+            <p><strong>Der Reset-Taster ist kein Zufall.</strong> GPIO9 ist beim C3 der Strapping-Pin: LOW beim Einschalten bedeutet Download-Modus. Der Aufsatz nutzt genau diesen Pin doppelt — im Betrieb als Taster, beim Flashen als Boot-Wahl. Wenn ein Upload klemmt: Taste halten, Reset, loslassen.</p>
+          </div>
+
+          <div class="note danger">
+            <p><strong>Kein USB-HID.</strong> Der C3 hat kein USB-OTG, nur USB-CDC. Das Board kann sich nicht als Tastatur oder Maus melden — Hardware-Grenze, nicht Firmware. Wenn du HID brauchst: das S3-DevKit nehmen, oder über BLE gehen.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Firmware-Eckdaten</div>
+            <ul>
+              <li>AP-Fallback: SSID <code>XIAO-IR-Bridge</code>, Passwort <code>12345678</code>, <code>192.168.4.1</code></li>
+              <li>Protokolle: OSC :8000/:9000 · Art-Net :6454 · WebSocket <code>/ws</code> · MQTT · LIRC :8765</li>
+              <li>10 Slots für rohe IR-Signale, kein Protokoll-Decode nötig</li>
+              <li>Reset lang &gt; 5 s = Werksreset</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="c3lcd">
+        <div class="board-head">
+          <h3>01Space ESP32-C3 0.42″ LCD</h3>
+          <div class="chips"><span class="chip">eigene Experimente</span></div>
+          <div class="spec">ESP32-C3FH4 · 4 MB · OLED 72×40 SSD1306</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/esp32c3_042lcd.svg" alt="Pinout 01Space ESP32-C3-0.42LCD" loading="lazy"></div>
+
+          <div class="field">
+            <div class="field-label">Onboard-Peripherie</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Funktion</th><th>Pin</th><th>Anmerkung</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">I²C SDA</td><td class="gpio">GPIO5</td><td>zum OLED</td></tr>
+                  <tr><td class="pin">I²C SCL</td><td class="gpio">GPIO6</td><td>zum OLED</td></tr>
+                  <tr><td class="pin">WS2812</td><td class="gpio">GPIO2</td><td>WS2812B-1515, laut Schaltplan</td></tr>
+                  <tr><td class="pin">Boot</td><td class="gpio">GPIO9</td><td>Taster, C3-Standard</td></tr>
+                  <tr><td class="pin">IO8</td><td class="gpio">GPIO8</td><td>nur 10-k-Pull-up, keine LED</td></tr>
+                  <tr><td class="pin">USB</td><td class="gpio">GPIO18 / GPIO19</td><td>D&minus; / D+</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="note caution">
+            <p><strong>Der Display-Offset.</strong> Das Panel ist ein 72×40-Ausschnitt aus einem 128×64-SSD1306-Controller. Ohne Versatz zeichnest du ins Leere. In u8g2 mit <code>x = 30</code>, <code>y = 12</code> arbeiten.</p>
+          </div>
+          <div class="note">
+            <p><strong>Treiber unter Windows:</strong> laut deinem README erst <a href="https://zadig.akeo.ie/">Zadig</a> installieren, sonst taucht der USB-Seriell-Port nicht auf.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══════════ BESTAND · S3 ══════════ -->
+
+  </main>
+</div>
+</body>
+</html>

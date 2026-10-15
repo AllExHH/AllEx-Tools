@@ -1,0 +1,90 @@
+{
+	"build": {
+		"f_cpu": "160000000L",
+		"family": "esp32c3",
+		"mcu": "esp32c3",
+		"variant": "esp32c3_042lcd"
+	},
+	"name": "01Space ESP32-C3-0.42LCD",
+	"url": "https://github.com/AllExHH/ESP32-C3-0.42LCD",
+	"vendor": "01Space",
+	"upload": {
+		"flash_size": 4194304,
+		"maximum_size": 1677721,
+		"maximum_ram_size": 327680
+	},
+	"pcb": {
+		"symbol": "C3-042",
+		"templates": [
+			"pcb-black",
+			"esp32c3-042lcd"
+		],
+		"scale": 26,
+		"pinout": {
+			"5V": {
+				"PWR": "5V"
+			},
+			"3V3": {
+				"PWR": "3V3"
+			},
+			"GND": {
+				"GND": null
+			},
+			"IO20": {
+				"GPIO": "IO20",
+				"UART": "RX"
+			},
+			"IO21": {
+				"GPIO": "IO21",
+				"UART": "TX"
+			},
+			"IO2": {
+				"GPIO": "IO2",
+				"ADC": 2,
+				"SD": "WS2812"
+			},
+			"IO1": {
+				"GPIO": "IO1",
+				"ADC": 1
+			},
+			"IO0": {
+				"GPIO": "IO0",
+				"ADC": 0
+			},
+			"IO10": {
+				"GPIO": "IO10"
+			},
+			"IO9": {
+				"GPIO": "IO9",
+				"CTRL": "Boot"
+			},
+			"IO8": {
+				"GPIO": "IO8",
+				"CTRL": "Pull-up"
+			},
+			"IO7": {
+				"GPIO": "IO7",
+				"SPI": "SS"
+			},
+			"IO6": {
+				"GPIO": "IO6",
+				"I2C": "SCL",
+				"DVP": "OLED"
+			},
+			"IO5": {
+				"GPIO": "IO5",
+				"ADC": 5,
+				"I2C": "SDA",
+				"DVP": "OLED"
+			},
+			"IO4": {
+				"GPIO": "IO4",
+				"ADC": 4
+			},
+			"IO3": {
+				"GPIO": "IO3",
+				"ADC": 3
+			}
+		}
+	}
+}

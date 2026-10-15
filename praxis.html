@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Die zwei Dinge, die am häufigsten Zeit kosten: Strapping-Pins und die Beschaltung eines LED-Ausgangs.">
+<meta name="color-scheme" content="light dark">
+<title>Praxis — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Praxis</h1>
+    <p class="lede">Die zwei Dinge, die am häufigsten Zeit kosten: Strapping-Pins und die Beschaltung eines LED-Ausgangs.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html">Bestand · ESP8266</a>
+      <a href="esp32.html">Bestand · ESP32</a>
+      <a href="esp32c3.html">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html">Bestand · ESP32-S3</a>
+      <a href="software.html">Software-Projekte</a>
+      <a href="praxis.html" class="here">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="strapping">
+      <h2><span class="num">09</span> Strapping-Pins</h2>
+      <p class="section-note">Die häufigste Ursache für ein Board, das „auf einmal nicht mehr startet". Diese Pins werden im Moment des Resets abgetastet; was danach passiert, ist egal — aber was in diesem Moment daran hängt, entscheidet über den Boot.</p>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>Chip</th><th>Pin</th><th>Muss beim Reset sein</th><th>Wenn falsch</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="pin">ESP8266</td><td class="gpio">GPIO0</td><td>HIGH</td><td>LOW = Flash-Modus, Firmware startet nicht</td></tr>
+            <tr><td class="pin">ESP8266</td><td class="gpio">GPIO2</td><td>HIGH</td><td>LOW = kein Boot</td></tr>
+            <tr><td class="pin">ESP8266</td><td class="gpio">GPIO15</td><td>LOW</td><td>HIGH = kein Boot</td></tr>
+            <tr><td class="pin">ESP32</td><td class="gpio">GPIO0</td><td>HIGH</td><td>LOW = Download-Modus</td></tr>
+            <tr><td class="pin">ESP32</td><td class="gpio">GPIO12 (MTDI)</td><td><strong>LOW</strong></td><td>HIGH = Flash auf 1,8 V → Board startet nie wieder normal</td></tr>
+            <tr><td class="pin">ESP32</td><td class="gpio">GPIO2, 5, 15</td><td>tolerant</td><td>Beeinflussen Timing und Debug-Ausgabe</td></tr>
+            <tr><td class="pin">ESP32-C3</td><td class="gpio">GPIO9</td><td>HIGH</td><td>LOW = Download-Modus (= der Boot-Taster)</td></tr>
+            <tr><td class="pin">ESP32-C3</td><td class="gpio">GPIO8</td><td>HIGH</td><td>Zusammen mit GPIO9 LOW → Boot blockiert</td></tr>
+            <tr><td class="pin">ESP32-S3</td><td class="gpio">GPIO0</td><td>HIGH</td><td>LOW = Download-Modus</td></tr>
+            <tr><td class="pin">ESP32-S3</td><td class="gpio">GPIO3, 45, 46</td><td>tolerant</td><td>JTAG-Quelle, Flash-Spannung, Debug-Level</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note danger" style="margin-top:1rem">
+        <p><strong>GPIO12 am ESP32 ist der teuerste Fehler auf dieser Seite.</strong> Ein Pull-up dort stellt den Flash beim Start auf 1,8 V. Der Chip bootet dann nie wieder regulär — und der Fehler sieht aus wie ein Hardwaredefekt. Ein Servo oder ein Taster mit Pull-up an GPIO12 genügt.</p>
+      </div>
+    </section>
+
+    <!-- ══════════ MINIMALBESCHALTUNG ══════════ -->
+
+<section id="minimal">
+      <h2><span class="num">10</span> Minimalbeschaltung LED-Ausgang</h2>
+      <p class="section-note">Das Rezept, das für jedes deiner WLED- und POV-Projekte gilt — unabhängig vom Board. Dein ESP-01-Shield ist die kompakteste Umsetzung davon.</p>
+
+      <div class="circuit">
+        <div class="field-label">Bidirektionaler MOSFET-Pegelwandler — Q1/Q2 aus deinem Shield</div>
+        <svg viewBox="0 0 460 190" role="img" aria-label="Schaltbild: BSS138 Pegelwandler mit 10k Pull-ups auf 3V3- und 5V-Seite">
+          <!-- Versorgungsschienen -->
+          <line x1="30" y1="26" x2="180" y2="26" class="svg-ink" stroke-width="1.4"/>
+          <line x1="280" y1="26" x2="430" y2="26" class="svg-copper" stroke-width="1.4"/>
+          <text x="30" y="18" class="svg-label">3V3</text>
+          <text x="404" y="18" class="svg-label-accent">+5V</text>
+
+          <!-- Pull-up links (R3/R4) -->
+          <rect x="98" y="46" width="18" height="34" fill="none" class="svg-ink" stroke-width="1.3"/>
+          <line x1="107" y1="26" x2="107" y2="46" class="svg-ink" stroke-width="1.3"/>
+          <line x1="107" y1="80" x2="107" y2="110" class="svg-ink" stroke-width="1.3"/>
+          <text x="122" y="68" class="svg-label">R3/R4 10k</text>
+
+          <!-- Pull-up rechts (R1/R2) -->
+          <rect x="344" y="46" width="18" height="34" fill="none" class="svg-copper" stroke-width="1.3"/>
+          <line x1="353" y1="26" x2="353" y2="46" class="svg-copper" stroke-width="1.3"/>
+          <line x1="353" y1="80" x2="353" y2="110" class="svg-copper" stroke-width="1.3"/>
+          <text x="270" y="68" class="svg-label-accent">R1/R2 10k</text>
+
+          <!-- Signalbahn -->
+          <line x1="30" y1="110" x2="200" y2="110" class="svg-ink" stroke-width="1.6"/>
+          <line x1="260" y1="110" x2="430" y2="110" class="svg-copper" stroke-width="1.6"/>
+
+          <!-- MOSFET Symbol -->
+          <line x1="200" y1="88" x2="200" y2="132" class="svg-ink" stroke-width="1.6"/>
+          <line x1="208" y1="92" x2="208" y2="104" class="svg-ink" stroke-width="2.4"/>
+          <line x1="208" y1="104" x2="208" y2="116" class="svg-ink" stroke-width="2.4"/>
+          <line x1="208" y1="116" x2="208" y2="128" class="svg-ink" stroke-width="2.4"/>
+          <line x1="208" y1="98" x2="260" y2="98" class="svg-ink" stroke-width="1.4"/>
+          <line x1="260" y1="98" x2="260" y2="110" class="svg-copper" stroke-width="1.4"/>
+          <line x1="208" y1="122" x2="230" y2="122" class="svg-ink" stroke-width="1.4"/>
+          <line x1="230" y1="122" x2="230" y2="110" class="svg-ink" stroke-width="1.4"/>
+          <line x1="200" y1="110" x2="176" y2="110" class="svg-ink" stroke-width="1.4"/>
+          <!-- Gate nach 3V3 -->
+          <line x1="176" y1="110" x2="176" y2="152" class="svg-ink" stroke-width="1.3"/>
+          <line x1="176" y1="152" x2="60" y2="152" class="svg-ink" stroke-width="1.3"/>
+          <line x1="60" y1="152" x2="60" y2="26" class="svg-ink" stroke-width="1.3"/>
+          <circle cx="60" cy="26" r="2.6" fill="currentColor" class="svg-ink"/>
+          <text x="186" y="168" class="svg-label">Gate → 3V3</text>
+          <text x="214" y="146" class="svg-label">BSS138</text>
+
+          <!-- Beschriftung Enden -->
+          <text x="30" y="103" class="svg-label">ESP GPIO</text>
+          <text x="364" y="103" class="svg-label-accent">→ LED DATA/CLK</text>
+        </svg>
+        <p style="margin:0;color:var(--ink-2);font-size:var(--step--1)">Beide Richtungen funktionieren: Von 3V3 nach 5 V leitet die Body-Diode und der Pull-up zieht nach. Von 5 V nach 3V3 schaltet der MOSFET durch. Deshalb ist derselbe Aufbau auch für I²C brauchbar.</p>
+      </div>
+
+      <div class="grid-2" style="margin-top:1rem">
+        <div class="note good">
+          <p><strong>Pflicht bei jedem LED-Aufbau</strong></p>
+          <ul style="margin:0.5rem 0 0;padding-left:1.1rem">
+            <li>Pegelwandler auf 5 V — WS2812 erwartet 0,7 × V<sub>DD</sub> = 3,5 V als HIGH. 3,3 V liegen darunter.</li>
+            <li>330–470 Ω in Reihe zur Datenleitung, direkt am ESP</li>
+            <li>1000 µF Elko über 5 V/GND am Streifenanfang</li>
+            <li>Masse von Netzteil, ESP und Streifen zusammenführen</li>
+          </ul>
+        </div>
+        <div class="note caution">
+          <p><strong>Bei mehr als ~2 m Streifen</strong></p>
+          <ul style="margin:0.5rem 0 0;padding-left:1.1rem">
+            <li>Strom einspeisen: alle 2–3 m 5 V und GND zusätzlich einschleifen</li>
+            <li>Sicherung in die 5-V-Zuleitung (60 mA je LED bei Vollweiß rechnen)</li>
+            <li>Bei APA102 auch die Taktleitung wandeln — nicht nur DATA</li>
+          </ul>
+        </div>
+      </div>
+
+      <details style="margin-top:1rem">
+        <summary>Warum es manchmal auch ohne Pegelwandler läuft — und warum du dich nicht darauf verlassen solltest</summary>
+        <p style="margin-top:0.6rem;color:var(--ink-2);font-size:var(--step--1)">Viele WS2812-Chargen akzeptieren 3,3 V, weil ihre echte Schaltschwelle unter der Spezifikation liegt. Das ist Bauteilstreuung, keine Eigenschaft. Der Aufbau läuft auf der Werkbank und fällt bei der nächsten Charge oder bei Kälte aus. Alternativ die 5-V-Versorgung des ersten Pixels auf ~4,3 V absenken (eine Diode in Reihe) — dann passt die Schwelle. Sauberer bleibt der Pegelwandler.</p>
+      </details>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

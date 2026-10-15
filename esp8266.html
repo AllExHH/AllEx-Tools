@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ESP-01S und Wemos D1 mini — die beiden ESP8266-Boards im Bestand, mit Pinout und Minimalbeschaltung.">
+<meta name="color-scheme" content="light dark">
+<title>Bestand · ESP8266 — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Bestand · ESP8266</h1>
+    <p class="lede">ESP-01S und Wemos D1 mini — die beiden ESP8266-Boards im Bestand, mit Pinout und Minimalbeschaltung.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html" class="here">Bestand · ESP8266</a>
+      <a href="esp32.html">Bestand · ESP32</a>
+      <a href="esp32c3.html">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html">Bestand · ESP32-S3</a>
+      <a href="software.html">Software-Projekte</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="b8266">
+      <h2><span class="num">04</span> Bestand · ESP8266</h2>
+
+      <article class="board" id="esp01">
+        <div class="board-head">
+          <h3>ESP-01 / ESP-01S</h3>
+          <div class="chips"><span class="chip own">eigenes Shield</span></div>
+          <div class="spec">ESP8266EX · 2×4 Header 2,54 mm</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/esp01s.svg" alt="Pinout ESP-01S, Vorder- und Rückansicht" loading="lazy"></div>
+
+
+          <div class="note danger">
+            <p><strong>Variante prüfen.</strong> Der blaue ESP-01 hat nur <strong>512 KB Flash</strong> — WLED passt dort nicht hinein. Du brauchst den schwarzen <strong>ESP-01S mit 1 MB</strong>. Optisch fast identisch, funktional nicht.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Pinbelegung — Nummerierung wie in deinem Schaltplan (JP2)</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Pin</th><th>Signal</th><th>Im Shield verdrahtet auf</th><th>Anmerkung</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">1</td><td class="gpio">TXD / GPIO1</td><td>offen</td><td>Nur zum Flashen / Debug</td></tr>
+                  <tr><td class="pin">2</td><td class="gpio">GND</td><td>GND</td><td>Gemeinsame Masse mit dem Streifen</td></tr>
+                  <tr><td class="pin">3</td><td class="gpio">CH_PD / EN</td><td>3V3</td><td>Muss dauerhaft HIGH sein, sonst startet nichts</td></tr>
+                  <tr><td class="pin">4</td><td class="gpio">GPIO2</td><td>Q1 → LED_out Pin 2</td><td>Level-geshiftet auf 5 V</td></tr>
+                  <tr><td class="pin">5</td><td class="gpio">RST</td><td>3V3</td><td>Pull-up, aktiv LOW</td></tr>
+                  <tr><td class="pin">6</td><td class="gpio">GPIO0</td><td>Q2 → LED_out Pin 3</td><td>Level-geshiftet auf 5 V</td></tr>
+                  <tr><td class="pin">7</td><td class="gpio">VCC 3V3</td><td>REG1117 VOUT</td><td>Niemals an 5 V</td></tr>
+                  <tr><td class="pin">8</td><td class="gpio">RXD / GPIO3</td><td>offen</td><td>Nur zum Flashen / Debug</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Minimalbeschaltung — Netzliste aus deinem Eagle-Schaltplan</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Bauteil</th><th>Wert</th><th>Funktion</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">IC1</td><td class="gpio">REG1117</td><td>5 V → 3V3 Linearregler</td></tr>
+                  <tr><td class="pin">C1 / C2</td><td class="gpio">10 µF</td><td>Ein- und Ausgangspuffer am Regler</td></tr>
+                  <tr><td class="pin">Q1 / Q2</td><td class="gpio">BSS138</td><td>Bidirektionale MOSFET-Pegelwandler, Gates an 3V3</td></tr>
+                  <tr><td class="pin">R1 / R2</td><td class="gpio">10 k → +5 V</td><td>Pull-ups auf der Streifen-Seite (Drain)</td></tr>
+                  <tr><td class="pin">R3 / R4</td><td class="gpio">10 k → 3V3</td><td>Pull-ups auf der ESP-Seite (Source)</td></tr>
+                  <tr><td class="pin">JP1</td><td class="gpio">1=+5V · 2=GPIO2 · 3=GPIO0 · 4=GND</td><td>LED_out, 4-polig abgewinkelt</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="note good">
+            <p><strong>Warum genau zwei Datenleitungen.</strong> Am ESP-01 sind nur GPIO0 und GPIO2 nutzbar — das passt exakt auf <strong>APA102 / DotStar</strong>, die DATA <em>und</em> CLOCK brauchen. Welcher der beiden Pins CLK wird, stellst du in den WLED-LED-Einstellungen ein.</p>
+          </div>
+
+          <div class="note caution">
+            <p><strong>Boot-Falle.</strong> GPIO0 und GPIO2 müssen beim Einschalten beide HIGH sein. Die 10-k-Pull-ups im Shield erledigen das — aber ein angeschlossener LED-Streifen kann sie herunterziehen. Wenn das Modul nicht startet: Streifen abziehen und gegenprüfen.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="board" id="d1mini">
+        <div class="board-head">
+          <h3>Wemos D1 mini</h3>
+          <div class="chips"><span class="chip">WLED</span></div>
+          <div class="spec">ESP8266EX · 4 MB · micro-USB</div>
+        </div>
+        <div class="board-body">
+
+          <div class="pinout"><img src="assets/pinouts/d1_mini.svg" alt="Pinout Wemos D1 mini" loading="lazy"></div>
+
+          <div class="field">
+            <div class="field-label">D-Label → GPIO</div>
+            <div class="scroller">
+              <table>
+                <thead><tr><th>Label</th><th>GPIO</th><th>Zweitfunktion</th><th>Für LED-Ausgang</th></tr></thead>
+                <tbody>
+                  <tr><td class="pin">D0</td><td class="gpio">GPIO16</td><td>Deep-Sleep-Wakeup</td><td>Kein Interrupt, kein PWM</td></tr>
+                  <tr><td class="pin">D1</td><td class="gpio">GPIO5</td><td>SCL</td><td><strong>Erste Wahl</strong></td></tr>
+                  <tr><td class="pin">D2</td><td class="gpio">GPIO4</td><td>SDA</td><td><strong>Zweite Wahl</strong></td></tr>
+                  <tr><td class="pin">D3</td><td class="gpio">GPIO0</td><td>Flash-Taster</td><td>Strapping — meiden</td></tr>
+                  <tr><td class="pin">D4</td><td class="gpio">GPIO2</td><td>Onboard-LED</td><td>WLED-Standard, aber Strapping</td></tr>
+                  <tr><td class="pin">D5</td><td class="gpio">GPIO14</td><td>SCK</td><td>Frei nutzbar</td></tr>
+                  <tr><td class="pin">D6</td><td class="gpio">GPIO12</td><td>MISO</td><td>Frei nutzbar</td></tr>
+                  <tr><td class="pin">D7</td><td class="gpio">GPIO13</td><td>MOSI</td><td>Frei nutzbar</td></tr>
+                  <tr><td class="pin">D8</td><td class="gpio">GPIO15</td><td>SS</td><td>Strapping, fester Pull-down — meiden</td></tr>
+                  <tr><td class="pin">A0</td><td class="gpio">ADC0</td><td>0–3,2 V per Teiler</td><td>Einziger Analogeingang</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="note">
+            <p><strong>Das srg74-Shield</strong> aus deinem Fork nimmt dir die Beschaltung aus Abschnitt 10 komplett ab: 74AHCT125-Pegelwandler, Sicherung, IR-Empfänger, dazu Add-ons für Relais und Temperatursensor.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ══════════ BESTAND · ESP32 ══════════ -->
+
+  </main>
+</div>
+</body>
+</html>

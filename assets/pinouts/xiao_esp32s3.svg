@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="584" version="1.1" viewBox="118.1,457.3,2817.3,584.3" width="2817">
+    <defs/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id1" x1="1151.552520361991" x2="699.1525203619908" y1="490.0" y2="1033.4">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id1) none" height="543.4" rx="31.2" ry="31.2" stroke="#b5a739" stroke-width="2.6" width="452.4" x="699.1525203619908" y="490.0"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id2" x1="810.9525203619909" x2="810.9525203619909" y1="465.3" y2="553.7">
+        <stop offset="0%" stop-color="#e8e8e8"/>
+        <stop offset="100%" stop-color="#9a9a9a"/>
+    </linearGradient>
+    <rect fill="url(#id2) none" height="88.39999999999999" rx="13.0" ry="13.0" width="228.8" x="810.9525203619909" y="465.3"/>
+    <rect fill="#4a4a4a" height="39.0" rx="18.2" ry="18.2" width="163.79999999999998" x="843.4525203619909" y="491.3"/>
+    <circle cx="762.8525203619909" cy="540.7" fill="#ce7823" r="19.5"/>
+    <text fill="#fff" font-family="Consolas" font-size="28.6" x="762.8525203619909" y="590.0999999999999">R</text>
+    <circle cx="1087.8525203619909" cy="540.7" fill="#ce7823" r="19.5"/>
+    <text fill="#fff" font-family="Consolas" font-size="28.6" x="1087.8525203619909" y="590.0999999999999">B</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id3" x1="1085.252520361991" x2="765.4525203619909" y1="608.3" y2="878.6999999999999">
+        <stop offset="0%" stop-color="whitesmoke"/>
+        <stop offset="100%" stop-color="#999"/>
+    </linearGradient>
+    <rect fill="url(#id3) none" height="270.40000000000003" rx="13.0" ry="13.0" width="319.8" x="765.4525203619909" y="608.3"/>
+    <rect fill="#fbfbfb" height="192.4" rx="7.8" ry="7.8" width="283.40000000000003" x="783.6525203619908" y="647.3"/>
+    <text fill="#222" font-family="Consolas" font-size="24.7" x="925.3525203619909" y="701.9">seeed studio</text>
+    <text fill="#222" font-family="Consolas" font-size="21.32" x="925.3525203619909" y="753.9">XIAO ESP32-S3</text>
+    <text fill="#555" font-family="Consolas" font-size="16.12" x="925.3525203619909" y="800.7">8 MB / 8 MB PSRAM</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id4" x1="765.4525203619908" x2="765.4525203619908" y1="907.3000000000002" y2="974.9">
+        <stop offset="0%" stop-color="#d8d8d8"/>
+        <stop offset="100%" stop-color="#8c8c8c"/>
+    </linearGradient>
+    <circle cx="799.2525203619907" cy="941.1" fill="url(#id4) none" r="33.800000000000004"/>
+    <circle cx="799.2525203619907" cy="941.1" fill="#3a3a3a" r="13.0"/>
+    <rect fill="#1c1c1c" height="67.60000000000001" rx="5.2" ry="5.2" width="197.6" x="885.0525203619909" y="907.3000000000002"/>
+    <rect fill="#3e3e3e" height="41.6" rx="0.0" ry="0.0" width="176.79999999999998" x="895.4525203619909" y="920.3000000000002"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin1.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="591.088"/>
+    <circle cx="697.8525203619909" cy="610.9" fill="#fff" id="xiao-esp32s3.front.left.pin1.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="610.9" fill="#fff" id="xiao-esp32s3.front.left.pin1.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin2.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="657.1279999999999"/>
+    <circle cx="697.8525203619909" cy="676.9399999999999" fill="#fff" id="xiao-esp32s3.front.left.pin2.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="676.9399999999999" fill="#fff" id="xiao-esp32s3.front.left.pin2.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin3.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="723.168"/>
+    <circle cx="697.8525203619909" cy="742.98" fill="#fff" id="xiao-esp32s3.front.left.pin3.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="742.98" fill="#fff" id="xiao-esp32s3.front.left.pin3.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin4.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="789.208"/>
+    <circle cx="697.8525203619909" cy="809.02" fill="#fff" id="xiao-esp32s3.front.left.pin4.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="809.02" fill="#fff" id="xiao-esp32s3.front.left.pin4.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin5.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="855.2479999999998"/>
+    <circle cx="697.8525203619909" cy="875.06" fill="#fff" id="xiao-esp32s3.front.left.pin5.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="875.06" fill="#fff" id="xiao-esp32s3.front.left.pin5.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin6.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="921.288"/>
+    <circle cx="697.8525203619909" cy="941.1" fill="#fff" id="xiao-esp32s3.front.left.pin6.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="941.1" fill="#fff" id="xiao-esp32s3.front.left.pin6.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.left.pin7.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="697.8525203619909" y="987.328"/>
+    <circle cx="697.8525203619909" cy="1007.14" fill="#fff" id="xiao-esp32s3.front.left.pin7.cast" r="11.556999999999999"/>
+    <circle cx="732.5235203619908" cy="1007.14" fill="#fff" id="xiao-esp32s3.front.left.pin7.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin1.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="591.088"/>
+    <circle cx="1152.8525203619909" cy="610.9" fill="#fff" id="xiao-esp32s3.front.right.pin1.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="610.9" fill="#fff" id="xiao-esp32s3.front.right.pin1.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin2.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="657.1279999999999"/>
+    <circle cx="1152.8525203619909" cy="676.9399999999999" fill="#fff" id="xiao-esp32s3.front.right.pin2.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="676.9399999999999" fill="#fff" id="xiao-esp32s3.front.right.pin2.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin3.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="723.168"/>
+    <circle cx="1152.8525203619909" cy="742.98" fill="#fff" id="xiao-esp32s3.front.right.pin3.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="742.98" fill="#fff" id="xiao-esp32s3.front.right.pin3.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin4.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="789.208"/>
+    <circle cx="1152.8525203619909" cy="809.02" fill="#fff" id="xiao-esp32s3.front.right.pin4.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="809.02" fill="#fff" id="xiao-esp32s3.front.right.pin4.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin5.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="855.2479999999998"/>
+    <circle cx="1152.8525203619909" cy="875.06" fill="#fff" id="xiao-esp32s3.front.right.pin5.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="875.06" fill="#fff" id="xiao-esp32s3.front.right.pin5.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin6.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="921.288"/>
+    <circle cx="1152.8525203619909" cy="941.1" fill="#fff" id="xiao-esp32s3.front.right.pin6.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="941.1" fill="#fff" id="xiao-esp32s3.front.right.pin6.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.front.right.pin7.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="1096.7185203619908" y="987.328"/>
+    <circle cx="1152.8525203619909" cy="1007.14" fill="#fff" id="xiao-esp32s3.front.right.pin7.cast" r="11.556999999999999"/>
+    <circle cx="1118.1815203619908" cy="1007.14" fill="#fff" id="xiao-esp32s3.front.right.pin7.hole" r="11.556999999999999"/>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="607.598"/>
+    <g transform="translate(483.69666622925126,584.484)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="610.9">D0</text>
+    <g transform="translate(364.8246662292514,584.484)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="610.9">IO1</text>
+    <g transform="translate(245.95266622925143,584.484)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="610.9">ADC0</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="673.638"/>
+    <g transform="translate(483.69666622925126,650.524)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="676.9399999999999">D1</text>
+    <g transform="translate(364.8246662292514,650.524)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="676.9399999999999">IO2</text>
+    <g transform="translate(245.95266622925143,650.524)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="676.9399999999999">ADC1</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="739.6780000000001"/>
+    <g transform="translate(483.69666622925126,716.564)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="742.9799999999999">D2</text>
+    <g transform="translate(364.8246662292514,716.564)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="742.9799999999999">IO3</text>
+    <g transform="translate(245.95266622925143,716.564)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="742.9799999999999">ADC2</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="805.7180000000001"/>
+    <g transform="translate(483.69666622925126,782.6039999999999)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="809.0199999999999">D3</text>
+    <g transform="translate(364.8246662292514,782.6039999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="809.0199999999999">IO4</text>
+    <g transform="translate(245.95266622925143,782.6039999999999)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="809.0199999999999">ADC3</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="871.7579999999998"/>
+    <g transform="translate(483.69666622925126,848.6439999999999)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="875.06">D4</text>
+    <g transform="translate(364.8246662292514,848.6439999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="875.06">IO5</text>
+    <g transform="translate(245.95266622925143,848.6439999999999)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="875.06">ADC4</text>
+    <g transform="translate(140.2886662292514,848.6439999999999)">
+        <rect fill="#2b8fc4" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="182.74052036199086" y="875.06">SDA</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="937.798"/>
+    <g transform="translate(483.69666622925126,914.6840000000001)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="941.1">D5</text>
+    <g transform="translate(364.8246662292514,914.6840000000001)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="941.1">IO6</text>
+    <g transform="translate(245.95266622925143,914.6840000000001)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="941.1">ADC5</text>
+    <g transform="translate(140.2886662292514,914.6840000000001)">
+        <rect fill="#2b8fc4" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="182.74052036199086" y="941.1">SCL</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="595.4905203619909" y="1003.838"/>
+    <g transform="translate(483.69666622925126,980.724)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="526.1485203619908" y="1007.14">D6</text>
+    <g transform="translate(364.8246662292514,980.724)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="413.8805203619909" y="1007.14">IO43</text>
+    <g transform="translate(245.95266622925143,980.724)">
+        <rect fill="#158b7c" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="295.0085203619909" y="1007.14">TX</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="1003.838"/>
+    <g transform="translate(1282.1046662292515,980.724)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1324.556520361991" y="1007.14">D7</text>
+    <g transform="translate(1387.7686662292513,980.724)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1436.8245203619908" y="1007.14">IO44</text>
+    <g transform="translate(1506.6406662292513,980.724)">
+        <rect fill="#158b7c" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1555.6965203619907" y="1007.14">RX</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="937.798"/>
+    <g transform="translate(1282.1046662292515,914.6840000000001)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1324.556520361991" y="941.1">D8</text>
+    <g transform="translate(1387.7686662292513,914.6840000000001)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1436.8245203619908" y="941.1">IO7</text>
+    <g transform="translate(1506.6406662292513,914.6840000000001)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1555.6965203619907" y="941.1">ADC8</text>
+    <g transform="translate(1625.5126662292514,914.6840000000001)">
+        <rect fill="#8e56a8" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1681.172520361991" y="941.1">SCK</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="871.7579999999998"/>
+    <g transform="translate(1282.1046662292515,848.6439999999999)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1324.556520361991" y="875.06">D9</text>
+    <g transform="translate(1387.7686662292513,848.6439999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1436.8245203619908" y="875.06">IO8</text>
+    <g transform="translate(1506.6406662292513,848.6439999999999)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1555.6965203619907" y="875.06">ADC9</text>
+    <g transform="translate(1625.5126662292514,848.6439999999999)">
+        <rect fill="#8e56a8" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1681.172520361991" y="875.06">MISO</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="805.7180000000001"/>
+    <g transform="translate(1282.1046662292515,782.6039999999999)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1324.556520361991" y="809.0199999999999">D10</text>
+    <g transform="translate(1387.7686662292513,782.6039999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1436.8245203619908" y="809.0199999999999">IO9</text>
+    <g transform="translate(1506.6406662292513,782.6039999999999)">
+        <rect fill="#cf8524" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1555.6965203619907" y="809.0199999999999">ADC10</text>
+    <g transform="translate(1625.5126662292514,782.6039999999999)">
+        <rect fill="#8e56a8" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1681.172520361991" y="809.0199999999999">MOSI</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="607.598"/>
+    <g transform="translate(1282.1046662292515,584.484)">
+        <rect fill="#c0392b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="132.08" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1341.066520361991" y="610.9">VBUS</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="739.6780000000001"/>
+    <g transform="translate(1282.1046662292515,716.564)">
+        <rect fill="#c0392b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="132.08" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1341.066520361991" y="742.9799999999999">3V3</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1169.3625203619908" y="673.638"/>
+    <g transform="translate(1282.1046662292515,650.524)">
+        <rect fill="#33393d" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1324.556520361991" y="676.9399999999999">GND</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id5" x1="2658.1565203619907" x2="2205.756520361991" y1="475.1800000000001" y2="1018.5800000000002">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id5) none" height="543.4" rx="31.2" ry="31.2" stroke="#b5a739" stroke-width="2.6" width="452.4" x="2205.756520361991" y="475.1800000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="22.099999999999998" x="2431.956520361991" y="533.6800000000001">Unterseite - gespiegelt</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="603.8800000000001">5V</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="669.9200000000001">GND</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="735.96">3V3</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="802.0">D10</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="868.04">D9</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="934.0800000000002">D8</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2264.256520361991" y="1000.1199999999999">D7</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="603.8800000000001">D0</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="669.9200000000001">D1</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="735.96">D2</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="802.0">D3</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="868.04">D4</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="934.0800000000002">D5</text>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2578.856520361991" y="1000.1199999999999">D6</text>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2204.456520361991" y="635.8600000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2487.856520361991" y="635.8600000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2204.456520361991" y="701.9000000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2487.856520361991" y="701.9000000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2204.456520361991" y="767.9400000000002"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2487.856520361991" y="767.9400000000002"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2204.456520361991" y="833.9800000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="171.6" x="2487.856520361991" y="833.9800000000001"/>
+    <circle cx="2376.056520361991" cy="637.6800000000001" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2415.056520361991" y="644.96">MTDO</text>
+    <circle cx="2487.856520361991" cy="637.6800000000001" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2526.856520361991" y="644.96">MTDI</text>
+    <circle cx="2376.056520361991" cy="703.72" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2415.056520361991" y="711.0">GND</text>
+    <circle cx="2487.856520361991" cy="703.72" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2526.856520361991" y="711.0">EN</text>
+    <circle cx="2376.056520361991" cy="769.7600000000001" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2415.056520361991" y="777.0400000000001">MTCK</text>
+    <circle cx="2487.856520361991" cy="769.7600000000001" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2526.856520361991" y="777.0400000000001">MTMS</text>
+    <circle cx="2376.056520361991" cy="835.8000000000002" fill="#e5b472" r="11.700000000000001"/>
+    <circle cx="2487.856520361991" cy="835.8000000000002" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="22.099999999999998" x="2350.056520361991" y="957.4800000000001">seeed studio</text>
+    <text fill="#fff" font-family="Consolas" font-size="22.099999999999998" x="2350.056520361991" y="988.6800000000001">XIAO ESP32S3</text>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin1.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="576.268"/>
+    <circle cx="2204.456520361991" cy="596.08" fill="#fff" id="xiao-esp32s3.back.left.pin1.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="596.08" fill="#fff" id="xiao-esp32s3.back.left.pin1.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin2.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="642.3080000000001"/>
+    <circle cx="2204.456520361991" cy="662.1200000000001" fill="#fff" id="xiao-esp32s3.back.left.pin2.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="662.1200000000001" fill="#fff" id="xiao-esp32s3.back.left.pin2.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin3.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="708.3480000000001"/>
+    <circle cx="2204.456520361991" cy="728.1600000000001" fill="#fff" id="xiao-esp32s3.back.left.pin3.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="728.1600000000001" fill="#fff" id="xiao-esp32s3.back.left.pin3.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin4.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="774.388"/>
+    <circle cx="2204.456520361991" cy="794.2" fill="#fff" id="xiao-esp32s3.back.left.pin4.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="794.2" fill="#fff" id="xiao-esp32s3.back.left.pin4.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin5.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="840.4280000000001"/>
+    <circle cx="2204.456520361991" cy="860.24" fill="#fff" id="xiao-esp32s3.back.left.pin5.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="860.24" fill="#fff" id="xiao-esp32s3.back.left.pin5.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin6.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="906.4680000000001"/>
+    <circle cx="2204.456520361991" cy="926.2800000000001" fill="#fff" id="xiao-esp32s3.back.left.pin6.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="926.2800000000001" fill="#fff" id="xiao-esp32s3.back.left.pin6.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.left.pin7.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2204.456520361991" y="972.508"/>
+    <circle cx="2204.456520361991" cy="992.32" fill="#fff" id="xiao-esp32s3.back.left.pin7.cast" r="11.556999999999999"/>
+    <circle cx="2239.127520361991" cy="992.32" fill="#fff" id="xiao-esp32s3.back.left.pin7.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin1.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="576.268"/>
+    <circle cx="2659.456520361991" cy="596.08" fill="#fff" id="xiao-esp32s3.back.right.pin1.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="596.08" fill="#fff" id="xiao-esp32s3.back.right.pin1.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin2.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="642.3080000000001"/>
+    <circle cx="2659.456520361991" cy="662.1200000000001" fill="#fff" id="xiao-esp32s3.back.right.pin2.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="662.1200000000001" fill="#fff" id="xiao-esp32s3.back.right.pin2.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin3.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="708.3480000000001"/>
+    <circle cx="2659.456520361991" cy="728.1600000000001" fill="#fff" id="xiao-esp32s3.back.right.pin3.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="728.1600000000001" fill="#fff" id="xiao-esp32s3.back.right.pin3.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin4.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="774.388"/>
+    <circle cx="2659.456520361991" cy="794.2" fill="#fff" id="xiao-esp32s3.back.right.pin4.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="794.2" fill="#fff" id="xiao-esp32s3.back.right.pin4.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin5.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="840.4280000000001"/>
+    <circle cx="2659.456520361991" cy="860.24" fill="#fff" id="xiao-esp32s3.back.right.pin5.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="860.24" fill="#fff" id="xiao-esp32s3.back.right.pin5.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin6.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="906.4680000000001"/>
+    <circle cx="2659.456520361991" cy="926.2800000000001" fill="#fff" id="xiao-esp32s3.back.right.pin6.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="926.2800000000001" fill="#fff" id="xiao-esp32s3.back.right.pin6.hole" r="11.556999999999999"/>
+    <rect fill="#e5b472" height="39.624" id="xiao-esp32s3.back.right.pin7.trace" rx="0.0" ry="0.0" width="56.13399999999999" x="2603.3225203619913" y="972.508"/>
+    <circle cx="2659.456520361991" cy="992.32" fill="#fff" id="xiao-esp32s3.back.right.pin7.cast" r="11.556999999999999"/>
+    <circle cx="2624.785520361991" cy="992.32" fill="#fff" id="xiao-esp32s3.back.right.pin7.hole" r="11.556999999999999"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id6" x1="4408.913040723982" x2="4410.213040723982" y1="1111.5600000000002" y2="1111.5600000000002">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id6) none" height="0.0" id="xiao-esp32s3.back.al1.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4410.213040723982" y="1111.5600000000002"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id7" x1="4863.913040723982" x2="4865.213040723982" y1="1111.5600000000002" y2="1111.5600000000002">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id7) none" height="0.0" id="xiao-esp32s3.back.ar1.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1111.5600000000002"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id8" x1="4408.913040723982" x2="4410.213040723982" y1="1177.6000000000001" y2="1177.6000000000001">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id8) none" height="0.0" id="xiao-esp32s3.back.al2.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4410.213040723982" y="1177.6000000000001"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id9" x1="4863.913040723982" x2="4865.213040723982" y1="1177.6000000000001" y2="1177.6000000000001">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id9) none" height="0.0" id="xiao-esp32s3.back.ar2.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1177.6000000000001"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id10" x1="4408.913040723982" x2="4410.213040723982" y1="1243.64" y2="1243.64">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id10) none" height="0.0" id="xiao-esp32s3.back.al3.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4410.213040723982" y="1243.64"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id11" x1="4863.913040723982" x2="4865.213040723982" y1="1243.64" y2="1243.64">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id11) none" height="0.0" id="xiao-esp32s3.back.ar3.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1243.64"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id12" x1="4408.913040723982" x2="4410.213040723982" y1="1309.68" y2="1309.68">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id12) none" height="0.0" id="xiao-esp32s3.back.al4.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4410.213040723982" y="1309.68"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id13" x1="4863.913040723982" x2="4865.213040723982" y1="1309.68" y2="1309.68">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id13) none" height="0.0" id="xiao-esp32s3.back.ar4.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1309.68"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="156.0" x="2503.456520361991" y="900.0200000000001"/>
+    <rect fill="#6e6a5f" height="66.04" rx="0.0" ry="0.0" width="3.6400000000000006" x="2538.036520361991" y="901.8400000000001"/>
+    <rect fill="#6e6a5f" height="3.6400000000000006" rx="0.0" ry="0.0" width="119.6" x="2539.856520361991" y="966.0600000000001"/>
+    <circle cx="2503.456520361991" cy="901.8400000000001" fill="#e5b472" r="11.700000000000001"/>
+    <circle cx="2539.856520361991" cy="901.8400000000001" fill="#e5b472" r="11.700000000000001"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2521.656520361991" y="935.6400000000002">BAT</text>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2415.056520361991" y="843.0800000000002">D+</text>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="2526.856520361991" y="843.0800000000002">D-</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id14" x1="4863.913040723982" x2="4865.213040723982" y1="1375.72" y2="1375.72">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id14) none" height="0.0" id="xiao-esp32s3.back.abm.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1375.72"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id15" x1="4863.913040723982" x2="4865.213040723982" y1="1441.7600000000002" y2="1441.7600000000002">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id15) none" height="0.0" id="xiao-esp32s3.back.abp.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4865.213040723982" y="1441.7600000000002"/>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2102.094520361991" y="633.0780000000001"/>
+    <g transform="translate(1963.8846662292513,609.9640000000002)">
+        <rect fill="#b08a2e" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2019.5445203619906" y="636.3800000000001">MTDO</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="633.0780000000001"/>
+    <g transform="translate(2788.7086662292513,609.9640000000002)">
+        <rect fill="#b08a2e" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2844.3685203619907" y="636.3800000000001">MTDI</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2102.094520361991" y="765.158"/>
+    <g transform="translate(1963.8846662292513,742.0440000000001)">
+        <rect fill="#b08a2e" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2019.5445203619906" y="768.46">MTCK</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="765.158"/>
+    <g transform="translate(2788.7086662292513,742.0440000000001)">
+        <rect fill="#b08a2e" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2844.3685203619907" y="768.46">MTMS</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2102.094520361991" y="831.1980000000001"/>
+    <g transform="translate(2003.5086662292513,808.0840000000001)">
+        <rect fill="#1a5468" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="85.85199999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2039.3565203619908" y="834.5">D+</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="831.1980000000001"/>
+    <g transform="translate(2788.7086662292513,808.0840000000001)">
+        <rect fill="#1a5468" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="85.85199999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2824.556520361991" y="834.5">D-</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="699.118"/>
+    <g transform="translate(2788.7086662292513,676.0040000000001)">
+        <rect fill="#b8452f" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2850.972520361991" y="702.4200000000001">EN</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2102.094520361991" y="699.118"/>
+    <g transform="translate(1990.3006662292514,676.0040000000001)">
+        <rect fill="#33393d" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2032.752520361991" y="702.4200000000001">GND</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="963.2780000000001"/>
+    <g transform="translate(2788.7086662292513,940.1640000000002)">
+        <rect fill="#c0392b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="132.08" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2847.6705203619913" y="966.5800000000002">BAT+</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2675.966520361991" y="897.2379999999999"/>
+    <g transform="translate(2788.7086662292513,874.124)">
+        <rect fill="#c0392b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="132.08" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2847.6705203619913" y="900.54">BAT-</text>
+</svg>

@@ -1,6 +1,6 @@
 {
 	"name": "freenove-s3-cam",
-	"title": "Freenove ESP32-S3-WROOM CAM (ca. 25 x 55 mm)",
+	"title": "Freenove ESP32-S3-WROOM CAM (Maße geschaetzt, aus der Pinzahl abgeleitet)",
 	"width": 25.0,
 	"height": 55.0,
 	"vars": {

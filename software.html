@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Was auf den Boards läuft: vier Toolchains, der Projekt-Katalog und die Repos ohne baubaren Code.">
+<meta name="color-scheme" content="light dark">
+<title>Software-Projekte — ESP-Hardware-Referenz</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">AllExTechnik · Werkbank-Referenz</div>
+    <h1>Software-Projekte</h1>
+    <p class="lede">Was auf den Boards läuft: vier Toolchains, der Projekt-Katalog und die Repos ohne baubaren Code.</p>
+    <div class="masthead-meta">
+      <span>Stand: 15.10.2026</span>
+      <span>Bestand vom Besitzer bestätigt</span>
+      <span>3V3-Logik, sofern nicht markiert</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail" aria-label="Seiten">
+    <div class="rail-group">
+      <div class="rail-title">Referenz</div>
+      <a href="index.html">Übersicht</a>
+      <a href="esp8266.html">Bestand · ESP8266</a>
+      <a href="esp32.html">Bestand · ESP32</a>
+      <a href="esp32c3.html">Bestand · ESP32-C3</a>
+      <a href="esp32s3.html">Bestand · ESP32-S3</a>
+      <a href="software.html" class="here">Software-Projekte</a>
+      <a href="praxis.html">Praxis</a>
+      <a href="referenz.html">Nicht im Bestand</a>
+    </div>
+  </nav>
+
+  <main>
+
+<section id="software">
+      <h2><span class="num">08</span> Software-Projekte</h2>
+      <p class="section-note">28 Repos, aber nur etwa die Hälfte enthält Code, den du selbst bauen kannst. Die trennende Größe ist nicht das Board, sondern die Toolchain — davon sind vier im Umlauf, und sie vertragen sich nur bedingt.</p>
+
+      <div class="subsec" id="toolchains">
+        <div class="field-label" style="margin-bottom:0.6rem">Vier Toolchains</div>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr><th>Toolchain</th><th>Deine Projekte</th><th>Wofür nötig</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="pin">Arduino IDE</td>
+                <td>ESP32-C3-0.42LCD · Freenove-Kit · ESP32-BLE-Keyboard · cam-webserver</td>
+                <td>Bibliotheken über den Library Manager, Boards über die Board-URL. Am einfachsten, am wenigsten reproduzierbar.</td>
+              </tr>
+              <tr>
+                <td class="pin">PlatformIO · espressif32</td>
+                <td class="gpio">XIAO IR-MATE <span class="chip own">eigen</span> · FluidDial · LVGL-CYD</td>
+                <td>Das offizielle Espressif-Paket. Deckt ESP8266 bis S3 ab, hinkt bei neuen Arduino-Cores aber hinterher.</td>
+              </tr>
+              <tr>
+                <td class="pin">PlatformIO · pioarduino</td>
+                <td>SmartPoi (51.03.04) · ESP32-Bus-Pirate (stable)</td>
+                <td><strong>Ersatz für espressif32</strong>, wenn ein Projekt einen aktuellen Arduino-Core auf S3 braucht. Wird als ZIP-URL in der <code>platformio.ini</code> gezogen.</td>
+              </tr>
+              <tr>
+                <td class="pin">ESP-IDF</td>
+                <td>squeezelite-esp32 · SuperGreenOS</td>
+                <td>Espressifs natives SDK, ganz ohne Arduino. Eigener Installationspfad, eigenes <code>menuconfig</code>, eigene Projektstruktur.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note caution" style="margin-top:1rem">
+          <p><strong>Die häufigste Reibung.</strong> <code>espressif32</code> und <code>pioarduino</code> installieren beide eine Plattform namens <em>espressif32</em> in <code>~/.platformio</code>. Wer zwischen Projekten wechselt, bekommt Builds, die grundlos scheitern. Im Zweifel <code>pio pkg update</code> im Projektordner oder <code>~/.platformio/platforms</code> aufräumen — nicht die <code>platformio.ini</code> anpassen.</p>
+        </div>
+      </div>
+
+      <div class="subsec" id="katalog" style="margin-top:2rem">
+        <div class="field-label" style="margin-bottom:0.6rem">Projekt-Katalog</div>
+
+        <h3 style="margin-bottom:0.6rem">Eigenentwicklung</h3>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was es tut</th><th>Toolchain</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">XIAO_IR-MATE-Server</td>
+                <td>IR-Brücke mit 10 Slots und Web-UI. Sendet und empfängt über OSC, Art-Net, WebSocket, MQTT und LIRC gleichzeitig.</td>
+                <td class="gpio">PIO · espressif32</td>
+                <td>XIAO C3</td>
+              </tr>
+              <tr>
+                <td class="pin">WLED-ESP-01-shield</td>
+                <td>Eagle-Layout für den kleinstmöglichen APA102-Adapter. Kein Code, nur Schaltplan und Board.</td>
+                <td class="gpio">Eagle</td>
+                <td>ESP-01S</td>
+              </tr>
+              <tr>
+                <td class="pin">AllEx-Tools</td>
+                <td>Diese Übersichtsseite. Statisches HTML, keine externen Ressourcen.</td>
+                <td class="gpio">—</td>
+                <td>Browser</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:1.5rem 0 0.6rem">LED und Licht</h3>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was es tut</th><th>Toolchain</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">WLED-MM</td>
+                <td>MoonModules-Zweig von WLED — dieselbe Basis, zusätzlich audioreaktive Effekte und erweiterte Segmentlogik.</td>
+                <td class="gpio">PIO</td>
+                <td>ESP-01S · D1 mini · DevKitC</td>
+              </tr>
+              <tr>
+                <td class="pin">pov-esp32</td>
+                <td>Persistence-of-Vision: liest BMP-Dateien aus LittleFS und gibt sie zeilenweise auf den Streifen aus.</td>
+                <td class="gpio">Arduino-Lib</td>
+                <td>DevKitC · <strong>nur APA102</strong></td>
+              </tr>
+              <tr>
+                <td class="pin">WLED-wemos-shield</td>
+                <td>Shield-Hardware plus fertige Firmware-Builds und Add-ons für Relais, IR und Temperatur.</td>
+                <td class="gpio">—</td>
+                <td>D1 mini</td>
+              </tr>
+              <tr>
+                <td class="pin">SmartPoi ×3</td>
+                <td>Firmware, ESP32-Neufassung und ein Downloader für die Bildsequenzen.</td>
+                <td class="gpio">PIO · pioarduino</td>
+                <td class="miss">Hardware fehlt</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:1.5rem 0 0.6rem">Werkzeuge und Geräte-Firmware</h3>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was es tut</th><th>Toolchain</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">ESP32-Bus-Pirate</td>
+                <td>Protokoll-Werkbank über ein Terminal: I²C, SPI, UART, 1-Wire, CAN und Funk — Busse abtasten, mitlesen, einspeisen.</td>
+                <td class="gpio">PIO · pioarduino</td>
+                <td>S3-DevKit N16R8</td>
+              </tr>
+              <tr>
+                <td class="pin">Launcher</td>
+                <td>Startmenü für ESP32-Geräte: lädt <code>.bin</code>-Dateien von SD-Karte, ohne jedes Mal neu zu flashen.</td>
+                <td class="gpio">vorgebaute Binaries</td>
+                <td>CYD</td>
+              </tr>
+              <tr>
+                <td class="pin">FluidDial</td>
+                <td>Bedienpendant für FluidNC-CNC-Steuerungen — Achsen tippen, Nullpunkte setzen, Jobs starten.</td>
+                <td class="gpio">PIO · espressif32</td>
+                <td class="miss">M5Dial fehlt</td>
+              </tr>
+              <tr>
+                <td class="pin">ESP32-DIV</td>
+                <td>Funk-Werkzeugkasten: 2,4 GHz über NRF24, Sub-GHz über CC1101, dazu Infrarot.</td>
+                <td class="gpio">Arduino</td>
+                <td class="miss">Hardware fehlt</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:1.5rem 0 0.6rem">Medien und Sensorik</h3>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was es tut</th><th>Toolchain</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">squeezelite-esp32</td>
+                <td>Netzwerk-Audioplayer für Logitech Media Server. Bluetooth, AirPlay und Spotify sind Zusätze, nicht der Kern.</td>
+                <td class="gpio">ESP-IDF</td>
+                <td>DevKitC · <strong>nur ESP32</strong></td>
+              </tr>
+              <tr>
+                <td class="pin">SuperGreenOS</td>
+                <td>Steuerung für Pflanzenkammern: Licht, Lüftung, Sensorik, App-Anbindung.</td>
+                <td class="gpio">ESP-IDF</td>
+                <td>DevKitC</td>
+              </tr>
+              <tr>
+                <td class="pin">esp32-cam-webserver-servos</td>
+                <td>Kamera-Webserver mit Schwenk- und Neigesteuerung über zwei Servos.</td>
+                <td class="gpio">Arduino</td>
+                <td>Freenove S3, nach Portierung</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:1.5rem 0 0.6rem">Bibliotheken und Infrastruktur</h3>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was es tut</th><th>Toolchain</th><th>Ziel</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">ESPAsyncWebServer</td>
+                <td>Asynchroner Webserver. Dein IR-MATE zieht bewusst den <code>esp32async</code>-Zweig statt des Originals.</td>
+                <td class="gpio">Lib</td>
+                <td>alle</td>
+              </tr>
+              <tr>
+                <td class="pin">ESPConnect</td>
+                <td>Kontrollzentrum im Browser — spricht das Board über WebSerial an, ohne Firmware auf der Gegenseite.</td>
+                <td class="gpio">Browser</td>
+                <td>alle</td>
+              </tr>
+              <tr>
+                <td class="pin">ESP32-BLE-Keyboard</td>
+                <td>Meldet das Board als Bluetooth-Tastatur an. Der Weg zu HID, wenn USB-OTG fehlt.</td>
+                <td class="gpio">Arduino-Lib</td>
+                <td>DevKitC · XIAO C3 · S3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsec" id="kein-code" style="margin-top:2rem">
+        <div class="field-label" style="margin-bottom:0.6rem">Repos ohne baubaren Code</div>
+        <p class="section-note">Nützlich zu wissen, bevor du dort nach einer <code>platformio.ini</code> suchst.</p>
+        <div class="scroller">
+          <table>
+            <thead><tr><th>Repo</th><th>Was tatsächlich drin ist</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="pin">pixelblaze</td>
+                <td><strong>Nur Muster- und Mapper-Dokumentation.</strong> Die Pixelblaze-Firmware selbst ist proprietär und liegt nicht offen — das Repo enthält die Sprachreferenz, keinen Quellcode.</td>
+              </tr>
+              <tr>
+                <td class="pin">CYD_2.4inch_ESP32-2432S024</td>
+                <td>Herstellerpaket: Schaltplan V1.0, Spezifikationen, Datenblätter, Arduino-Demos, Flash-Tool. <strong>Die Quelle für die CYD-Pinbelegung in Abschnitt 05.</strong></td>
+              </tr>
+              <tr>
+                <td class="pin">esp32-2432S024-Capacitive</td>
+                <td>LVGL-Portierung für die kapazitive Schwestervariante. Baubar, aber für das falsche Touch-Panel.</td>
+              </tr>
+              <tr>
+                <td class="pin">ESP32-C3-0.42LCD · Freenove-Kit</td>
+                <td>Herstellerdemos und Lehrmaterial. Einzelne Sketches, kein zusammenhängendes Projekt.</td>
+              </tr>
+              <tr>
+                <td class="pin">WLED</td>
+                <td>Leer — enthält nur eine README-Zeile. Kein Fork des Upstream-Projekts.</td>
+              </tr>
+              <tr>
+                <td class="pin">LibreELEC.tv</td>
+                <td><strong>Kein Mikrocontroller.</strong> Eine schlanke Linux-Distribution für Kodi, gebaut für Raspberry Pi und PC.</td>
+              </tr>
+              <tr>
+                <td class="pin">screenplay-dx</td>
+                <td><strong>Kein ESP.</strong> Firmware für einen Mediaplayer älterer Bauart.</td>
+              </tr>
+              <tr>
+                <td class="pin">XIAO-Controller</td>
+                <td><strong>Kein ESP.</strong> Nordic nRF52840 — siehe <a href="referenz.html">Seite 2</a>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+<!-- ══════════ STRAPPING ══════════ -->
+
+  </main>
+</div>
+</body>
+</html>

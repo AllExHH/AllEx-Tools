@@ -1,0 +1,222 @@
+{
+	"name": "esp32c3-042lcd",
+	"title": "01Space ESP32-C3-0.42LCD (ca. 18 x 23.5 mm)",
+	"width": 18.0,
+	"height": 23.5,
+	"vars": {
+		"RASTER": 2.54,
+		"MASK_HOLE": "#101010"
+	},
+	"front": [
+		{
+			"type": "rect",
+			"pos": "0.00,0.00",
+			"size": "18.00,23.50",
+			"rx": 0.9,
+			"ry": 0.9,
+			"preset": "${MASK_PRESET}"
+		},
+		{
+			"type": "rect",
+			"pos": "5.00,-0.90",
+			"size": "8.00,3.20",
+			"rx": 0.5,
+			"ry": 0.5,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E8E8E8",
+					"0,1",
+					"#9A9A9A"
+				]
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "6.25,0.10",
+			"size": "5.50,1.30",
+			"rx": 0.7,
+			"ry": 0.7,
+			"fill": {
+				"color": "#4A4A4A"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "3.00,2.20",
+			"d": 1.0,
+			"fill": {
+				"color": "#3A6FD8"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "15.00,2.20",
+			"d": 1.0,
+			"fill": {
+				"color": "#3A6FD8"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "3.40,6.20",
+			"size": "11.20,9.60",
+			"rx": 0.3,
+			"ry": 0.3,
+			"fill": {
+				"color": "#15171A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.60,8.60",
+			"size": "8.80,4.80",
+			"fill": {
+				"color": "#05070A"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "9.00,11.60",
+			"text": "0.42″ OLED",
+			"font_size": 1.0,
+			"fill": {
+				"color": "#5FA8E8"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "6.20,15.80",
+			"size": "5.60,1.10",
+			"fill": {
+				"color": "#8A7A3A"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "15.30,7.00",
+			"size": "1.60,1.60",
+			"rx": 0.2,
+			"ry": 0.2,
+			"fill": {
+				"color": "#E8E8E8"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "16.10,9.50",
+			"text": "RGB",
+			"font_size": 0.6,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "5.60,20.60",
+			"d": 2.4,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "5.60,20.60",
+			"d": 1.08,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "5.60,22.60",
+			"text": "BOOT",
+			"font_size": 0.62,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "12.40,20.60",
+			"d": 2.4,
+			"fill": {
+				"lgrad": [
+					"0,0",
+					"#E0E0E0",
+					"0,1",
+					"#9C9C9C"
+				]
+			}
+		},
+		{
+			"type": "circle",
+			"pos": "12.40,20.60",
+			"d": 1.08,
+			"fill": {
+				"color": "#2B2B2B"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "12.40,22.60",
+			"text": "RST",
+			"font_size": 0.62,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "9.00,5.20",
+			"text": "ESP32-C3FH4",
+			"font_size": 0.62,
+			"fill": {
+				"color": "${SILK_COLOR}"
+			}
+		},
+		{
+			"id": "left",
+			"name": "r_header_vert",
+			"repeat": 8,
+			"pos": "0,3.20",
+			"vars": {
+				"PINDIR": "left"
+			}
+		},
+		{
+			"id": "right",
+			"name": "r_header_vert",
+			"repeat": 8,
+			"pos": "18.00,3.20",
+			"vars": {
+				"PINDIR": "right"
+			}
+		}
+	],
+	"back": [],
+	"pads": {
+		"5V": "esp32c3-042lcd.front.left.pin1",
+		"GND": "esp32c3-042lcd.front.left.pin2",
+		"3V3": "esp32c3-042lcd.front.left.pin3",
+		"IO20": "esp32c3-042lcd.front.left.pin4",
+		"IO21": "esp32c3-042lcd.front.left.pin5",
+		"IO2": "esp32c3-042lcd.front.left.pin6",
+		"IO1": "esp32c3-042lcd.front.left.pin7",
+		"IO0": "esp32c3-042lcd.front.left.pin8",
+		"IO10": "esp32c3-042lcd.front.right.pin1",
+		"IO9": "esp32c3-042lcd.front.right.pin2",
+		"IO8": "esp32c3-042lcd.front.right.pin3",
+		"IO7": "esp32c3-042lcd.front.right.pin4",
+		"IO6": "esp32c3-042lcd.front.right.pin5",
+		"IO5": "esp32c3-042lcd.front.right.pin6",
+		"IO4": "esp32c3-042lcd.front.right.pin7",
+		"IO3": "esp32c3-042lcd.front.right.pin8"
+	},
+	"test_pads": {}
+}

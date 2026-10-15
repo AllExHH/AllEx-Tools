@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="559" version="1.1" viewBox="307.0,470.3,2526.6,559.4" width="2527">
+    <defs/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id1" x1="1155.4930826616294" x2="703.0930826616294" y1="478.3" y2="1021.6999999999999">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id1) none" height="543.4" rx="31.2" ry="31.2" stroke="#b5a739" stroke-width="2.6" width="452.4" x="703.0930826616294" y="478.3"/>
+    <rect fill="#22262b" height="244.4" rx="10.4" ry="10.4" width="330.2" x="764.1930826616293" y="518.6"/>
+    <rect fill="#33393f" height="202.79999999999998" rx="7.8" ry="7.8" width="288.59999999999997" x="784.9930826616294" y="539.4"/>
+    <text fill="#c9d2d8" font-family="Consolas" font-size="24.7" x="929.2930826616293" y="653.8000000000001">OV2640</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id2" x1="751.1930826616293" x2="751.1930826616293" y1="799.4" y2="939.8">
+        <stop offset="0%" stop-color="#d2d2d2"/>
+        <stop offset="100%" stop-color="#8f8f8f"/>
+    </linearGradient>
+    <rect fill="url(#id2) none" height="140.4" rx="7.8" ry="7.8" width="356.2" x="751.1930826616293" y="799.4"/>
+    <rect fill="#6e6e6e" height="104.0" rx="5.2" ry="5.2" width="319.8" x="769.3930826616295" y="817.6"/>
+    <text fill="#f2f2f2" font-family="Consolas" font-size="20.8" x="929.2930826616293" y="882.6">microSD</text>
+    <rect fill="#1c1c1c" height="46.800000000000004" rx="5.2" ry="5.2" width="197.6" x="829.1930826616293" y="963.1999999999999"/>
+    <text fill="#fff" font-family="Consolas" font-size="18.2" x="929.2930826616293" y="778.6">PDM-Mikrofon</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id3" x1="1403.5861653232587" x2="1404.8861653232586" y1="1037.1999999999998" y2="1037.1999999999998">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id3) none" height="0.0" id="xiao-s3-sense.front.sl1.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1404.8861653232586" y="1037.1999999999998"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id4" x1="1403.5861653232587" x2="1404.8861653232586" y1="1103.2399999999998" y2="1103.2399999999998">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id4) none" height="0.0" id="xiao-s3-sense.front.sl2.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1404.8861653232586" y="1103.2399999999998"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id5" x1="1403.5861653232587" x2="1404.8861653232586" y1="1169.28" y2="1169.28">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id5) none" height="0.0" id="xiao-s3-sense.front.sl3.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1404.8861653232586" y="1169.28"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id6" x1="1403.5861653232587" x2="1404.8861653232586" y1="1235.32" y2="1235.32">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id6) none" height="0.0" id="xiao-s3-sense.front.sl4.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1404.8861653232586" y="1235.32"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id7" x1="1403.5861653232587" x2="1404.8861653232586" y1="1301.3600000000001" y2="1301.3600000000001">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id7) none" height="0.0" id="xiao-s3-sense.front.sl5.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1404.8861653232586" y="1301.3600000000001"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id8" x1="1858.5861653232587" x2="1859.8861653232586" y1="1037.1999999999998" y2="1037.1999999999998">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id8) none" height="0.0" id="xiao-s3-sense.front.sr1.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1037.1999999999998"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id9" x1="1858.5861653232587" x2="1859.8861653232586" y1="1103.2399999999998" y2="1103.2399999999998">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id9) none" height="0.0" id="xiao-s3-sense.front.sr2.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1103.2399999999998"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id10" x1="1858.5861653232587" x2="1859.8861653232586" y1="1169.28" y2="1169.28">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id10) none" height="0.0" id="xiao-s3-sense.front.sr3.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1169.28"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id11" x1="1858.5861653232587" x2="1859.8861653232586" y1="1235.32" y2="1235.32">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id11) none" height="0.0" id="xiao-s3-sense.front.sr4.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1235.32"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id12" x1="1858.5861653232587" x2="1859.8861653232586" y1="1301.3600000000001" y2="1301.3600000000001">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id12) none" height="0.0" id="xiao-s3-sense.front.sr5.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1301.3600000000001"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id13" x1="1858.5861653232587" x2="1859.8861653232586" y1="1367.4" y2="1367.4">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id13) none" height="0.0" id="xiao-s3-sense.front.sr6.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1367.4"/>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id14" x1="1858.5861653232587" x2="1859.8861653232586" y1="1433.44" y2="1433.44">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id14) none" height="0.0" id="xiao-s3-sense.front.sr7.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="1859.8861653232586" y="1433.44"/>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="599.4310826616295" y="555.598"/>
+    <g transform="translate(474.4292285288899,532.484)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="523.4850826616293" y="558.9">IO10</text>
+    <g transform="translate(329.14122852889,532.484)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="391.4050826616294" y="558.9">XCLK</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="599.4310826616295" y="621.638"/>
+    <g transform="translate(474.4292285288899,598.524)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="523.4850826616293" y="624.9399999999999">IO40</text>
+    <g transform="translate(329.14122852889,598.524)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="391.4050826616294" y="624.9399999999999">SIOD</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="599.4310826616295" y="687.678"/>
+    <g transform="translate(474.4292285288899,664.564)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="523.4850826616293" y="690.9799999999999">IO39</text>
+    <g transform="translate(329.14122852889,664.564)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="391.4050826616294" y="690.9799999999999">SIOC</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="599.4310826616295" y="753.7180000000001"/>
+    <g transform="translate(474.4292285288899,730.6039999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="523.4850826616293" y="757.0199999999999">IO38</text>
+    <g transform="translate(329.14122852889,730.6039999999999)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="391.4050826616294" y="757.0199999999999">VSYNC</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="599.4310826616295" y="819.758"/>
+    <g transform="translate(474.4292285288899,796.6439999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="523.4850826616293" y="823.06">IO47</text>
+    <g transform="translate(329.14122852889,796.6439999999999)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="391.4050826616294" y="823.06">HREF</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="555.598"/>
+    <g transform="translate(1286.04522852889,532.484)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1335.1010826616296" y="558.9">IO13</text>
+    <g transform="translate(1404.9172285288898,532.484)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1467.1810826616295" y="558.9">PCLK</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="621.638"/>
+    <g transform="translate(1286.04522852889,598.524)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1335.1010826616296" y="624.9399999999999">IO48</text>
+    <g transform="translate(1404.9172285288898,598.524)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1467.1810826616295" y="624.9399999999999">Y9</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="687.678"/>
+    <g transform="translate(1286.04522852889,664.564)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1335.1010826616296" y="690.9799999999999">IO11</text>
+    <g transform="translate(1404.9172285288898,664.564)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1467.1810826616295" y="690.9799999999999">Y8</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="753.7180000000001"/>
+    <g transform="translate(1286.04522852889,730.6039999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1335.1010826616296" y="757.0199999999999">IO12</text>
+    <g transform="translate(1404.9172285288898,730.6039999999999)">
+        <rect fill="#3e7c9b" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="138.68400000000003" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1467.1810826616295" y="757.0199999999999">Y7</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="819.758"/>
+    <g transform="translate(1286.04522852889,796.6439999999999)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1328.4970826616295" y="823.06">MIC</text>
+    <g transform="translate(1391.7092285288898,796.6439999999999)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1440.7650826616293" y="823.06">IO42</text>
+    <g transform="translate(1510.5812285288898,796.6439999999999)">
+        <rect fill="#b0603c" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1566.2410826616294" y="823.06">CLK</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="885.798"/>
+    <g transform="translate(1286.04522852889,862.6840000000001)">
+        <rect fill="#7a5843" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="99.06" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1328.4970826616295" y="889.1">MIC</text>
+    <g transform="translate(1391.7092285288898,862.6840000000001)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1440.7650826616293" y="889.1">IO41</text>
+    <g transform="translate(1510.5812285288898,862.6840000000001)">
+        <rect fill="#b0603c" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1566.2410826616294" y="889.1">DAT</text>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="1173.3030826616293" y="951.838"/>
+    <g transform="translate(1286.04522852889,928.724)">
+        <rect fill="#4f9243" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="112.26799999999999" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1335.1010826616296" y="955.14">IO21</text>
+    <g transform="translate(1404.9172285288898,928.724)">
+        <rect fill="#c2a33a" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="151.89200000000002" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="1473.7850826616293" y="955.14">CS</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id15" x1="2825.546082661629" x2="2373.1460826616294" y1="478.3" y2="1021.6999999999999">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id15) none" height="543.4" rx="31.2" ry="31.2" stroke="#b5a739" stroke-width="2.6" width="452.4" x="2373.1460826616294" y="478.3"/>
+    <text fill="#fff" font-family="Consolas" font-size="23.400000000000002" x="2599.346082661629" y="539.4">Unterseite</text>
+    <rect fill="#1c1c1c" height="62.4" rx="5.2" ry="5.2" width="197.6" x="2499.2460826616293" y="581.0"/>
+    <text fill="#fff" font-family="Consolas" font-size="20.8" x="2599.346082661629" y="674.6">B2B zum XIAO</text>
+    <text fill="#fff" font-family="Consolas" font-size="22.099999999999998" x="2599.346082661629" y="960.6">seeed studio</text>
+    <text fill="#fff" font-family="Consolas" font-size="22.099999999999998" x="2599.346082661629" y="991.8000000000002">XIAO Sense</text>
+    <linearGradient gradientUnits="userSpaceOnUse" id="id16" x1="4743.692165323258" x2="4744.992165323259" y1="1240.0" y2="1240.0">
+        <stop offset="0%" stop-color="#4d4d4d"/>
+        <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+    <rect fill="url(#id16) none" height="0.0" id="xiao-s3-sense.back.b1.a" rx="0.0" ry="0.0" stroke="#b5a739" stroke-width="2.6" width="-1.3" x="4744.992165323259" y="1240.0"/>
+    <rect fill="#4e4c4c" height="6.604" width="85.852" x="2269.484082661629" y="758.398"/>
+    <g transform="translate(2131.2742285288896,735.284)">
+        <rect fill="#8e56a8" height="52.832" rx="7.8" ry="7.8" transform="skewX(-15)" width="125.47600000000001" x="0" y="0"/>
+    </g>
+    <text dominant-baseline="central" fill="white" font-family="Consolas" font-size="39.624" text-anchor="middle" x="2186.934082661629" y="761.6999999999999">D8/9/10</text>
+</svg>

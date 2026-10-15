@@ -102,19 +102,36 @@
 		},
 		{
 			"type": "rect",
-			"pos": "3.00,14.40",
-			"size": "8.30,4.40",
-			"rx": 0.3,
-			"ry": 0.3,
+			"pos": "4.30,14.60",
+			"size": "5.70,3.40",
+			"rx": 0.2,
+			"ry": 0.2,
 			"fill": {
-				"color": "#1E1E1E"
+				"color": "#232323"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.30,14.60",
+			"size": "5.70,0.50",
+			"fill": {
+				"color": "#3A3A3A"
 			}
 		},
 		{
 			"type": "text",
-			"pos": "7.15,17.00",
+			"pos": "7.15,16.60",
+			"text": "Flash",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#CFCFCF"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,19.40",
 			"text": "ESP-01S",
-			"font_size": 0.85,
+			"font_size": 0.8,
 			"fill": {
 				"color": "${SILK_COLOR}"
 			}
@@ -240,19 +257,36 @@
 		},
 		{
 			"type": "rect",
-			"pos": "3.00,14.40",
-			"size": "8.30,4.40",
-			"rx": 0.3,
-			"ry": 0.3,
+			"pos": "4.30,14.60",
+			"size": "5.70,3.40",
+			"rx": 0.2,
+			"ry": 0.2,
 			"fill": {
-				"color": "#1E1E1E"
+				"color": "#232323"
+			}
+		},
+		{
+			"type": "rect",
+			"pos": "4.30,14.60",
+			"size": "5.70,0.50",
+			"fill": {
+				"color": "#3A3A3A"
 			}
 		},
 		{
 			"type": "text",
-			"pos": "7.15,17.00",
+			"pos": "7.15,16.60",
+			"text": "Flash",
+			"font_size": 0.7,
+			"fill": {
+				"color": "#CFCFCF"
+			}
+		},
+		{
+			"type": "text",
+			"pos": "7.15,19.40",
 			"text": "ESP-01S",
-			"font_size": 0.85,
+			"font_size": 0.8,
 			"fill": {
 				"color": "${SILK_COLOR}"
 			}
